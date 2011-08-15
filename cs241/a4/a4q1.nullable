@@ -1,0 +1,12 @@
+This file contains the Nullable results from running calcNullable.
+The column indicates whether or not a given nonterminal is nullable.
+The only changes you should make to this file are to change the
+appropriate 'N's to 'Y's. For example, if you calculated that <S> was
+nullable, you would change the 'N' beside <S> to 'Y'.
+
+<S>     N
+<T>     N
+<U>     Y
+<V>     Y
+<W>     Y
+<X>     N

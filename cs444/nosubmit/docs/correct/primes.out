@@ -1,0 +1,7 @@
+-== 273 ==- npow@cpu16 -== ~/compilers/docs/correct ==-
+--> ./primes.exe
+Please enter a number:  10
+
+The first  10  prime numbers are:
+2   3   5   7   11   13   17   19   23   29
+

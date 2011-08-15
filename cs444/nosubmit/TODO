@@ -1,0 +1,29 @@
+TODO
+
+combined package head/body
+
+more flags - MAYBE
+
+in/out - NOT
+constants - NOT
+change output filename from a.out - NOT
+aggregates - NOT
+arrays - NOT
+overloading based on return value - NOT
+generics - NOT
+use -- Need to generate actual Python code - NOT
+public/private - NOT
+subtypes - NOT
+
+read input - DONE
+fix record assignment - DONE
+pointers - DONE
+for loops - DONE
+type-check when/case stmts - DONE
+enumerations - DONE
+fix label names - DONE
+make sure there is a package body - DONE
+function parameters - DONE
+function overloading - DONE
+exceptions - DONE
+attributes - DONE

@@ -1,0 +1,35 @@
+# Name: Nissan Pow
+# $4 - used for trap 1
+# $5 - value of current element
+# $3 - address of next element
+
+.globl a1p4		
+
+a1p4:	addi $30, $30, -24
+	sw $4, 8($30)
+	sw $3, 12($30)
+	sw $31, 16($30)
+	sw $5, 20($30)
+	
+	lw $2, 24($30)		# put address of list in $2
+	lw $5, 0($2)		# put value of current item in $5
+	
+	lw $3, 4($2)		# put address of sublist in $3
+	beq $0, $3, base	# if last element in list
+
+	addi $30, $30, -4
+	sw $3, 0($30)
+	jal a1p4		# calculate total of the remaining n-1 elements
+	addi $30, $30, 4
+
+	add $1, $1, $5		# add current element to $1
+	j done
+
+base:	add $1, $0, $5		# return last element
+
+done:	lw $4, 8($30)
+	lw $3, 12($30)
+	lw $31, 16($30)
+	lw $5, 20($30)
+	addi $30, $30, 24 
+	jr $31			# return to caller

@@ -1,0 +1,51 @@
+(a) The given code was tested on Solaris 5.8 using gcc 3.4.2.
+Below are the runtimes:
+
+EXCEPT undefined, no optimizations:
+User: 0m0.010s
+
+EXCEPT undefined, no optimizations, times=100000000:
+User: 0m1.980s
+
+EXCEPT undefined, O2 optimizations:
+User: 0m0.010s
+
+EXCEPT defined, no optimizations:
+User: 0m2.030s
+
+EXCEPT defined, O2 optimizations:
+User: 0m2.030s
+
+Dynamic multi-level exit took much longer than static multi-level exit
+(2.030s vs 0.010s). This is because with dynamic multi-level exit,
+the program needs to unwind the stack and search for an appropriate
+handler for the exception, whereas with static multi-level exit the
+program can simply jump to the apropriate code. Furthermore, in C++,
+exceptions are objects dynamically allocated from the heap, which adds
+to the overhead since we need to make a system call.
+
+With optimizations enabled, the compiler was unable to optimize the
+code with or without EXCEPT defined. This is probably because of the
+hack in the code to prevent loop elimination. In the case with EXCEPT
+defined, it illustrates that exceptions cannot be optimized by the
+compiler. This may be partly because exceptions are dynamically allocated
+-- which is really slow, as we saw in Assignment 1.
+
+(b) Below are the runtimes for recurse=1..9
+
+1: User    0m3.300s
+2: User    0m3.930s
+3: User    0m4.650s
+4: User    0m5.370s
+5: User    0m5.870s
+6: User    0m6.480s
+7: User    0m7.190s
+8: User    0m8.020s
+9: User    0m8.450s
+
+Based on the times shown above, it seems that unwinding one function call
+takes roughly 0.5s.
+
+(c) Dynamic multi-level exit is necessary when we cannot determine at
+compile-time the point where we want to exit to. Otherwise, we can use
+gotos or labelled breaks instead.

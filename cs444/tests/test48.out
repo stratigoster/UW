@@ -1,0 +1,35 @@
+
+
+#!/usr/bin/env python
+import math
+def _forwardGen(seq):
+	for i in seq:
+		yield { 'all':i }
+def _reverseGen(seq):
+	i = len(seq)
+	while i>0:
+		i = i - 1
+		yield { 'all':seq[i] }
+class _dummy_(Exception):pass
+class _numeric_error(Exception):pass
+class _constraint_error(Exception):pass
+class main:
+	try:
+		i = { 'all':0 }
+		x = { 'all':0 }
+		def __init__(self):
+			try:
+				pass
+				if 1:
+					self.x['all'] = 5 
+				elif 0:
+					pass
+				elif 1:
+					pass
+				else:
+					self.i['all'] = 6 
+			except _dummy_:
+				pass
+	except _dummy_:
+		pass
+main()

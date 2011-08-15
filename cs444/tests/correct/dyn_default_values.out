@@ -1,0 +1,10 @@
+-== 263 ==- npow@cpu16 -== ~/compilers/docs/correct ==-
+--> ./dyn_default_values.exe
+Cows = 2    Pigs = 3    Dogs = 4    and they total 9
+Cows = 2    Pigs = 3    Dogs = 4    and they total 9
+Cows = 14    Pigs = 20    Dogs = 4    and they total 38
+Cows = 5    Pigs = 7    Dogs = 0    and they total 12
+Cows = 14    Pigs = 20    Dogs = 7    and they total 41
+Cows = 2    Pigs = 3    Dogs = 4    and they total 9
+Cows = 14    Pigs = 20    Dogs = 0    and they total 34
+

@@ -1,0 +1,11 @@
+.globl main
+main:
+	llo	$1, 123		# Load 123
+	lhi	$1, 123
+	add	$4, $1, $0	# printing int
+	trap	1
+	llo	$1, 456		# Load 456
+	lhi	$1, 456
+	add	$4, $1, $0	# printing int
+	trap	1
+	trap	10		# Quit

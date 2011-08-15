@@ -1,0 +1,63 @@
+\documentclass[onecolumn,11pt]{article}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\usepackage{amsfonts}
+\usepackage{alltt}
+\usepackage[latin1]{inputenc}
+\usepackage{moreverb}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{fullpage}
+\usepackage{alltt}
+
+\title{CS442 Assignment 3}
+\author{Nissan Pow\\20187246\\npow}
+\date{\today}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newcommand{\nonterm}[1]{\ensuremath{\langle\mbox{\emph{#1}}\rangle}}
+\newcommand{\post}[2]{\ensuremath{\frac{\begin{array}{c}#1\end{array}}{\begin{array}{c}#2\end{array}}}}
+\newcommand{\sem}[1]{\ensuremath{[\![#1]\!]}}
+
+\begin{document}
+\maketitle
+
+\section*{Part A}
+\verbatimtabinput[2]{a3a.sml}
+
+\subsection*{Discussion}
+\begin{enumerate}
+  \item{
+    Yes it can be done. We need to make a new datatype to contain strings and integers, like so: 
+    \verbatimtabinput[2]{StringOrInt.sml}
+    Then we can do stuff like: val myList = [Int 5, String "hi", Int 10, String "bye"]; \\
+    newset myList
+  }
+  \item{No this cannot be done. Although we can create a list of the polymorphic functions, ML will not allow us to create a set of polymorphic functions due to the value restriction.}
+\end{enumerate}
+
+\section*{Part B}
+\verbatimtabinput[2]{a3b.sml}
+
+\subsection*{Discussion}
+\begin{enumerate}
+  \item{The problem is that with intersection, we enforce the alphabets of the 2 DFAs to be the same, but with union they may be different. }
+\end{enumerate}
+
+\subsection*{Transcript}
+\verbatimtabinput[2]{b.transcript}
+
+\section*{Part C}
+\verbatimtabinput[2]{a3c.hs}
+
+\subsection*{Transcript}
+\verbatimtabinput[2]{c.transcript}
+
+\end{document}

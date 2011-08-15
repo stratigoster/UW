@@ -1,0 +1,229 @@
+\documentclass{article}[12pt]
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{amsmath}
+
+\title{CS240 Assignment 1}
+\author{Nissan Pow}
+
+\begin{document}
+\maketitle
+
+\section*{Problem 2} 
+
+\subsection*{2. (a)} 
+  $n^{3} \in O(2^{n})$ \\ \\
+\begin{eqnarray*}
+  \lim_{x \to \infty}
+    \frac{n^{3}}{2^{n}}
+  & = & \lim_{x \to \infty}
+    \frac{3n^{2}}{(\ln2)2^{n}} \qquad (L'H\hat{o}pital's\ Rule) \\ 
+  & = & \lim_{x \to \infty}
+    \frac{6n}{(\ln2)^{2}2^{n}} \qquad (L'H\hat{o}pital's\ Rule) \\ 
+  & = & \lim_{x \to \infty}
+    \frac{6}{(\ln2)^{3}2^{n}} \qquad (L'H\hat{o}pital's\ Rule) \\ 
+  & = & 0 \\
+  \Rightarrow n^{3} \in O(2^{n}) \\
+  & & \Box
+\end{eqnarray*}
+
+\subsection*{2. (b)}
+  $n\lg\lg n \in \Omega(n\lg n)$ 
+  \begin{eqnarray*}
+    \lg n                         & <         & n \qquad \forall n \geq1 \\
+    \Leftrightarrow \lg \lg n     & <         & \lg n \qquad \forall n \geq1 \\
+    \Leftrightarrow n\lg \lg n    & <         & n\lg n \qquad \forall n \geq1 \\
+    \Rightarrow n\lg \lg n        & \notin    & \Omega (n\lg n) \\
+    & & \indent \indent \indent \indent \Box \\
+  \end{eqnarray*}
+
+\newpage
+
+\subsection*{2. (c)}
+  $1 + n + n^{2} + \ldots + n^{k-1} \in \Theta(n^{k})$ 
+  \begin{eqnarray*}
+    1 + n + n^{2} + \ldots + n^{k-1}                & \leq      & k \times n^{k-1} \qquad \forall n \geq 1 \\
+    \Rightarrow 1 + n + n^{2} + \ldots + n^{k-1}    & \in       & O(n^{k-1}) \\
+    \Rightarrow 1 + n + n^{2} + \ldots + n^{k-1}    & \notin    & \Omega(n^{k}) \\
+    \Rightarrow 1 + n + n^{2} + \ldots + n^{k-1}    & \notin    & \Theta(n^{k}) \\
+    &           & \indent \indent \indent \Box \\
+  \end{eqnarray*}
+
+\subsection*{2. (d)}
+  $2^{n} \in O(3^{n})$ 
+  \begin{eqnarray*}
+      2 < 3 & \Rightarrow & 2^{n} \leq 3^{n} \qquad \forall n \geq 0 \\
+            & \Rightarrow & 2^{n} \in o(3^{n}) \\
+            & \Rightarrow & 2^{n} \in O(3^{n}) \\
+            &             & \indent \indent \indent \indent \Box \\
+  \end{eqnarray*}
+
+\subsection*{2. (e)}
+  $2^{n} \in O(3^{n})$ 
+  \begin{eqnarray*}
+    2^{n}                 & \in       & o(3^{n}) \qquad \textrm{(from 1.d)} \\
+    \Rightarrow 2^{n}     & \notin    & \Omega(3^{n}) \\
+                          &           & \indent \indent \indent \Box \\
+  \end{eqnarray*}
+
+\subsection*{2. (f)}
+  $2^{n} \in \Theta(3^{n})$ 
+  \begin{eqnarray*}
+    2^{n}                 & \notin    & \Omega(3^{n}) \qquad \textrm{(from 1.e)} \\
+    \Rightarrow 2^{n}     & \notin    & \Theta(3^{n}) \\
+                          &           & \indent \indent \indent \Box \\
+  \end{eqnarray*}
+
+\newpage
+
+\subsection*{2. (g)}
+  Given three positive functions f, g, h,
+  \begin{displaymath}
+    f,g \in O(h) \Rightarrow max\{f,g\} \in O(h)
+  \end{displaymath}
+  \begin{eqnarray*}
+    f                       & \leq    & c_{0}h \qquad c_{0} > 0, n_{0} \geq 0, n \geq n_{0} \\
+    g                       & \leq    & c_{1}h \qquad c_{1} > 0, n_{0}' \geq 0, n \geq n_{0}' \\
+    max\{f,g\}              & \leq    & f + g \qquad \textrm{(since f,g are positive functions)} \\
+                            & \leq    & c_{0}h + c_{1}h \\
+                            & =       & (c_{0} + c_{1})h \\
+    \Rightarrow max\{f,g\}  & \in     & O(h) \\
+    & & \indent \indent \indent \Box \\
+  \end{eqnarray*}
+
+\subsection*{2. (h)}
+  Given a positive function $h$ and $k$ positive functions $f_{1}, \ldots, f_{k} \in \Omega(h)$, then 
+  \begin{displaymath}
+    \sum_{i=1}^k(p_{i}f_{i}) \in \Omega(h) \qquad \forall p_{i} > 0 \\
+  \end{displaymath}
+  \begin{eqnarray*}
+    f_{1}    & \geq    & c_{1}h \qquad c_{1} > 0, n_{0} \geq 0, n\geq n_{0} \\
+    f_{2}    & \geq    & c_{2}h \qquad c_{2} > 0, n_{0}' \geq 0, n\geq n_{0}' \\
+                       & \vdots  \\
+    f_{k}    & \geq    & c_{k}h \qquad c_{k} > 0, n_{0}^{(k-1)} \geq 0, n\geq n_{0}^{(k-1)} \\
+    \Rightarrow p_{1}f_{1}    & \geq    & p_{1}c_{1}h    \qquad (\textrm{since } p_{1} > 0) \\
+    \Rightarrow p_{2}f_{2}    & \geq    & p_{2}c_{2}h    \qquad (\textrm{since } p_{2} > 0) \\
+                              & \vdots  \\
+    \Rightarrow p_{k}f_{k}    & \geq    & p_{k}c_{k}h    \qquad (\textrm{since } p_{k} > 0) \\
+    \Rightarrow \sum_{i=1}^k(p_{i}f_{i}) & \geq & \sum_{i=1}^k(p_{i}c_{i}h) \\
+                                         & =    & h\sum_{i=1}^k(p_{i}c_{i}) \\
+    \Rightarrow \sum_{i=1}^k(p_{i}f_{i}) & \in  & \Omega(h) \\
+    & & \indent \indent \indent \Box \\
+  \end{eqnarray*}
+
+\subsection*{2. (i)}
+  Given two positive functions $f$ and $g$,
+  \begin{displaymath}
+    f \in \Theta(g) \Leftrightarrow g \in \Theta(f)
+  \end{displaymath}
+  \begin{eqnarray*}
+    f \in \Theta(g) & \Leftrightarrow & 0 \leq c_{1}g \leq f \leq c_{2}g \\
+                    & \Leftrightarrow & 0 \leq c_{1}g \leq f \textrm{ and } 0 \leq f \leq c_{2}g \\
+                    & \Leftrightarrow & 0 \leq g \leq \frac{f}{c_{1}} \textrm{ and } 0 \leq \frac{f}{c_{2}} \leq g \qquad \textrm{since } c_{1},c_{2} > 0 \\
+                    & \Leftrightarrow & 0 \leq \frac{f}{c_{2}} \leq g \leq \frac{f}{c_{1}} \\
+                    & \Leftrightarrow & g \in \Theta(f) \\
+                    &                 & \indent \indent \indent \Box \\
+  \end{eqnarray*}
+
+\section*{Problem 3}
+
+\subsection*{3. (a)}
+
+  Given A (an array of k sorted arrays), the algorithm will output all the elements of A[1] that occur in at least t-1 other arrays from A[2] to A[k] inclusive.
+
+\subsection*{3. (b)}
+  In its worst case, for each element of A[1] the algorithm will need to search all the arrays from A[2] to A[k]. So the resulting worst case complexity is:
+  \begin{eqnarray*}
+    n_{1}\underbrace{(\lg n_{2} + \ldots + \lg n_{k})}_{k-1} & \leq & (n_{1})(k-1)(\lg m), \qquad m = max\{n_{2}, \ldots, n_{k}\} \\
+    & \leq & (n)(k-1)(\lg n) \qquad n = max\{n_{1}, \ldots, n_{k}\} \\
+    & \in & O(n\lg n) \\
+    & & \indent \indent \indent \Box \\
+  \end{eqnarray*}
+  Note: binary search $\in \Theta(\lg n)$ \\
+
+
+\newpage
+
+\subsection*{3. (c)}
+  The algorithm can be improved by using a hashtable to facilitate element lookups in constant time (assuming that we can hash/dehash in constant time). Building the entire hashtable will take:
+  \begin{eqnarray*}
+    \sum_{i=2}^k(cn_{i}) & \leq & \sum_{i=2}^k(cm) \qquad m = max\{n_{2}, \ldots, n_{k}\}, c \textrm{ is the time taken to hash a single element} \\
+    & = & c(k-1)m \textrm{ time} \\
+  \end{eqnarray*}
+
+  Then for each element of A[1], we check to see whether the element occurs at least t-1 times in the other k-1 arrays. Using the previously built hashtable, this should take us at most k-1 checks. Therefore, for a single element we can determine whether it occurs at least t-1 times in O(1) time. Hence the resulting complexity in the worst case is as follows: \\
+  \begin{eqnarray*}
+    \underbrace{c(k-1)m}_{\textrm{build hash}} + \underbrace{(k-1)n_{1}}_{\textrm{check each element of A[1]}}
+    & \leq & c(k-1)n + (k-1)n \qquad n = max\{n_{1}, \ldots, n_{k}\} \\
+    & = & (c+1)(k-1)n \\
+    & \in & O(n) \qquad \textrm{since $c,k$ are constants} \\
+  \end{eqnarray*}
+
+  So we have improved the running time in the worst case to O(n). \\
+  
+\section*{Problem 4}
+
+\subsection*{4. (a)}
+  For a single array, $A$, of size $n$, we can determine if $x \in A$ by using binary search, which has tight bound $\Theta(n)$. Therefore a lower bound on the worst case complexity of any deterministic algorithm is $\Omega(n)$, since binary search is among the fastest deterministic search algorithm for sorted arrays (as of today).
+
+\subsection*{4. (b)}
+  For $k$ fixed, we will need to search every array, so the worst case complexity of any deterministic algorithm will be:
+  \begin{eqnarray*}
+    \sum_{i=1}^k \lg n_{i} & \geq & \sum_{i=1}^k \lg m \qquad m = min\{n_{1}, \ldots, n_{k}\} \\
+    & = & k \lg m \qquad m = min\{n_{1}, \ldots, n_{k}\} \\
+    & \in & \Omega(\lg m) \qquad m = min\{n_{1}, \ldots, n_{k}\} \\
+  \end{eqnarray*}
+
+\section*{Problem 5}
+
+\subsection*{5. (a)}
+  main() \\
+    \indent seek(1, n, A) \\ \\
+  seek(start,end,A) \\
+    \indent // $start$,$end$ are integers, $1 \leq start,end \leq n$ \\
+    \indent // A is an array of $n$ non-negative integers \\
+      \indent mid = $\lceil(\frac{end}{2})\rceil$ \\
+      \indent x = A[start] * A[start+1] * $\ldots$ * A[ mid ] \\
+      \indent \emph{The question states that we are only able to take the product of $\frac{n}{2}$ elements. Thus if start-mid+1 $\leq \lceil(\frac{n}{2})\rceil$ then simply fill in the outstanding elements with some elements from the \emph{non-zero} set. The non-zero set is the set of elements whose product is non-zero, which can be obtained from previous computations.} \\
+      \indent if (start = end) then \\
+        \indent \indent if (x = 0) then output start // we have found the zero element \\
+        \indent \indent else output NOT\_FOUND // there isn't a zero element in A \\
+        \indent \indent exit // we're done searching \\
+      \indent if (x = 0) then // zero element is somewhere between start-mid \\
+        \indent \indent seek(start, mid, A) \\
+      \indent else // it's somewhere between (mid+1) - end \\
+        \indent \indent seek(mid+1, end) \\
+
+    The algorithm is pretty much the same as binary search, except that we're using products to determine whether to search the lower half or the upper half. First we call seek(1,n,A) which starts the recurstion. Then in seek(), it will take the product of the lower half of the elements (A[start], $\ldots$, A[ $\lceil(\frac{n}{2})\rceil$ ]). If this product is 0, then we know that the zero element lies somewhere between $start$ and $\lceil(\frac{n}{2})\rceil$, since the product of a set of numbers is equal to zero iff one of the numbers is zero. So then we call seek recursively on $start$ and $\lceil(\frac{n}{2})\rceil$. Otherwise we know that the zero element should lie in the upper half, so we call seek on $\lceil(\frac{n}{2})\rceil+1$ and $end$. Eventually we will reach the point where we have narrowed down the position to a single element (ie when $start = end$). Then we can simply check to see if the product is zero. If it is, then we have found the position of the element, otherwise zero doesn't exist in the array. The algorithm is guaranteed to take at most $O(\log n)$ products, since the height of the recursion is of order $O(\log n)$. 
+      
+\subsection*{5. (b)}
+Assumptions: We have a bit-vector that will automagically store the results of the products for us, and we can compute binary to decimal in constant time (needed to output the index of the zero element in decimal). If the result of a product is 0, then the bitvector for that product\# will be zero, otherwise it will be 1.
+\begin{enumerate}
+  \item x = A[1] * \ldots * A[$\lceil(\frac{n}{2})\rceil$].
+  \item The other $\lceil(\frac{n}{2})\rceil$ products will be of the form: \\
+    x = product of the left half of the elements previously computed AND the left half of the elements \emph{not} previously computed. \\
+  To illustrate: suppose we have n = 16, and we previously computed the products of elements 1-4 and 9-12. Then in the next run, we will compute the product of elements at indexes 1-2, 5-6, 9-10, 13-14. The table below shows a sample run of the algorithm for n=16. The X's mean that we're taking the product of those numbers. \\ \\
+  \begin{tabular}{r|cccccccccccccccc}
+    \#  & 1 & 2 & 3 & 4 & 0 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 \\
+    1   & X & X & X & X & X & X & X & X \\
+    2   & X & X & X & X &   &   &   &   & X & X  & X  & X \\
+    3   & X & X &   &   & X & X &   &   & X & X  &    &    & X  & X \\
+    4   & X &   & X &   & X &   & X &   & X &    & X  &    & X  &    & X \\
+  \end{tabular} \\ \\
+  And the corresponding bit-vector: \\ \\
+  \begin{tabular}{|cccc|}
+    \hline
+    0 & 1 & 0 & 0 \\
+    \hline
+  \end{tabular} \\ \\
+  As seen from the table and the position of the zero element, $product_{1}=0, product_{2}\neq0, product_{3}=0, product_{4}=0$, thus we get the bit-vector shown above. In addition, 0100 is binary for 4 in decimal (+1 to get index in the array).\\
+\item If the bitvector is not all 1's, then the 1+(binary representation of the bitvector) indicates the position of the zero element. \\
+Else we need to take the product of the right half of the array (ie from $\lceil(\frac{n}{n})\rceil$+1 to $n$) $\lceil(\log n)\rceil$ times, but store this product in some variable $Z$. If (Z = 0) then we know that the zero element is at position $n$, otherwise it is not in the array.
+
+  This algorithm will always run in at most 2 steps. In addition, the index of the zero element can be obtained from the bitvector. After one step, we have essentially figured out where the zero element is. In the worst case scenario when there is no zero element, the bitvector will contain all 1's, and we simply perform one more step on the upper half, which will indicate whether it is present or not. \\
+
+\end{enumerate}
+
+\end{document}
+

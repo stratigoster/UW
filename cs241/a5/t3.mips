@@ -1,0 +1,17 @@
+.globl main
+main:
+	llo	$1, 241		# Load 241
+	lhi	$1, 241
+	sw	$1, -12($30)	# saving variable
+	addi	$1, $0, 33	# Load ASCII value
+	sw	$1, -16($30)	# saving variable
+	lw	$1, -12($30)	# load int variable
+	add	$4, $1, $0	# printing int
+	trap	1
+	lw	$1, -16($30)	# load char variable
+	add	$4, $1, $0	# printing char
+	trap	101
+	addi	$1, $0, 10	# Load ASCII value
+	add	$4, $1, $0	# printing char
+	trap	101
+	trap	10		# Quit

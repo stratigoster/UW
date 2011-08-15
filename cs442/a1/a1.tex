@@ -1,0 +1,86 @@
+\documentclass[onecolumn,11pt]{article}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\usepackage{amsfonts}
+\usepackage{alltt}
+\usepackage[latin1]{inputenc}
+\usepackage{moreverb}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{fullpage}
+\usepackage{alltt}
+
+\title{CS442 Assignment 1}
+\author{Nissan Pow\\20187246\\npow}
+\date{\today}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newcommand{\nonterm}[1]{\ensuremath{\langle\mbox{\emph{#1}}\rangle}}
+\newcommand{\post}[2]{\ensuremath{\frac{\begin{array}{c}#1\end{array}}{\begin{array}{c}#2\end{array}}}}
+\newcommand{\sem}[1]{\ensuremath{[\![#1]\!]}}
+
+\begin{document}
+\maketitle
+
+\section*{Question 1}
+
+\subsection*{Part A}
+\begin{alltt}
+\verbatimtabinput[2]{foldl.scm}
+\verbatimtabinput[2]{foldr.scm}
+\end{alltt}
+
+\subsection*{Part B}
+\begin{enumerate}
+\item (foldl + 0 L)
+\item (foldl (lambda (x y) (+ y 1)) 0 L)
+\item (foldl min (car L) L)
+\item (foldl (lambda (x y) (or y (p x))) \#f L)
+\item (foldl (lambda (x y) (cons (f x) y)) '() L)
+\item (foldr cons M L)
+\end{enumerate}
+
+\subsection*{Part C}
+\begin{enumerate}
+\item foldl is better to use since it uses tail recursion (foldl is called last), whereas in foldr, f is called last. And Scheme is optimized for tail-recursion. 
+
+\item The implementation listed is more efficient. Although the asymptotic runtimes are the same, the one listed will perform faster in the average case, since it can terminate immediately if an element is found.
+
+\item 5.2.2 $\sem{scc} = \lambda n. \lambda s. \lambda z. (n\ s\ (s\ z))$ \\
+5.2.3 $\sem{times} = \lambda m. \lambda n. \lambda s. n\ (m\ s)$ \\
+5.2.4 $\sem{pow} = \lambda m. \lambda n. n\ m$ \\
+5.2.5 $\sem{sub} = \lambda m. \lambda n.\ (n\ \sem{prd})\ m$ \\
+
+\end{enumerate}
+
+\section*{Question 2}
+
+\subsection*{Parts A and B}
+\begin{alltt}
+\verbatimtabinput[2]{subst.scm}
+\end{alltt}
+
+\subsection*{Part C}
+\begin{alltt}
+\verbatimtabinput[2]{transcript}
+\end{alltt}
+
+\section*{Question 3}
+
+\begin{enumerate}
+\item $\sem{sum} = Y^{\prime}(\lambda s. \lambda x. \lambda y. (\sem{zero?} x)(\lambda z.y) (\lambda z. s(\sem{pred}\ x)(\sem{succ}\ y))\ z)$
+
+\item Yes it should still work correctly. AOE uses $\eta$-expansion to ``wrap'' the results in a lambda expression, which NOR will reduce by $\eta$-reduction and produce the same results as in the original version of sum.
+
+\item No. Consider $(\lambda x.\ ((\lambda y.\ x)\ z))$. Using NOR, this will reduce to $\lambda x.x$, but with AOE it will not reduce at all, since an abstraction is at the outermost level.
+
+\end{enumerate}
+
+\end{document}

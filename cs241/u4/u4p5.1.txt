@@ -1,0 +1,1 @@
+tr -cd ? < nine.fourteen | wc -c

@@ -1,0 +1,64 @@
+%%
+
+%cup
+%line
+%{
+	private void error() {
+		System.out.println("\nIllegal character at line " + (yyline+1));
+		System.exit(-1);	
+	}
+%}
+
+%eofval{
+		return new SLToken.EOF();  	      
+%eofval}
+
+%% 
+
+\/\/.*$	{	}
+[0-9]+	
+	{ 	return new SLToken.IntLiteral(yytext());}
+'.'	{	return new SLToken.CharLiteral(yytext().substring(1, 2));}
+'[0-7][0-7][0-7]'	
+	{	Integer val = Integer.valueOf(yytext().substring(1,4), 8);
+		return new SLToken.CharLiteral("" + ((char) val.intValue()));}
+true	{ 	return new SLToken.BoolLiteral(true);}
+false	{ 	return new SLToken.BoolLiteral(false);}
+return 	{ 	return new SLToken.RETURN();}
+while	{ 	return new SLToken.WHILE();}
+if	{ 	return new SLToken.IF();}
+elseif	{ 	return new SLToken.ELSEIF();}
+else	{ 	return new SLToken.ELSE();}
+in	{ 	return new SLToken.IN();}
+out	{ 	return new SLToken.OUT();}
+"<<"	{	return new SLToken.OUTSIGN();}
+">>"	{	return new SLToken.INSIGN();}
+struct	{ 	return new SLToken.STRUCT();}
+"."	{	return new SLToken.PERIOD();}
+","	{	return new SLToken.COMMA();}
+int	{ 	return new SLToken.Type("int");}
+char	{ 	return new SLToken.Type("char");}
+bool	{ 	return new SLToken.Type("bool");}
+& 	{ 	return new SLToken.AMPERSAND();}
+"|" 	{ 	return new SLToken.OR();}
+"<"	{ 	return new SLToken.RelOp("<");}
+">"	{ 	return new SLToken.RelOp(">");}
+"=="	{ 	return new SLToken.EqOp("==");}
+"*"	{ 	return new SLToken.MulOp("*");}
+"/"	{ 	return new SLToken.MulOp("/");}
+%	{ 	return new SLToken.MulOp("%");}
+"+"	{ 	return new SLToken.AddOp("+");}
+-	{ 	return new SLToken.AddOp("-");}
+";" 	{ 	return new SLToken.SEMI();}
+"("	{ 	return new SLToken.OPENP();}
+")" 	{ 	return new SLToken.CLOSEP();}
+"{"	{	return new SLToken.OPENB();}
+"}"	{	return new SLToken.CLOSEB();}
+! 	{ 	return new SLToken.NOT();}
+"="	{ 	return new SLToken.ASSIGN();}
+
+[a-zA-Z](([0-9]|[a-zA-Z]|"_")*([a-zA-Z]|[0-9]))?	
+	{ 	return new SLToken.Identifier(yytext());}
+" "	{	}
+[\t\n\r]	{	}
+.	{	error();}

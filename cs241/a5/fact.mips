@@ -1,0 +1,73 @@
+fact:
+	sw	$31, -8($30)
+				# if #2
+	lw	$1, -12($30)	# load int variable
+	llo	$2, 0		# Load 0
+	lhi	$2, 0
+	sub	$1, $1, $2	# subtracting
+	bne	$0, $1, _E1	# if not equal
+	addi	$1, $0, 1	# load 'true'
+	j	_L1
+_E1:				# if equal
+	add	$1, $0, $0	# load 'false'
+_L1:
+	blez	$1, _E2
+	lw	$31, -8($30)
+	jr	$31	# return
+	j	_L2
+_E2:				# else
+	lw	$1, -16($30)	# load int variable
+	lw	$2, -12($30)	# load int variable
+	mult	$1, $2		# multiply
+	mflo	$1
+	sw	$1, -16($30)	# saving variable
+	lw	$1, -16($30)	# load int variable
+	add	$4, $1, $0	# printing int
+	trap	1
+	addi	$1, $0, 10	# Load ASCII value
+	add	$4, $1, $0	# printing char
+	trap	101
+	jal	fact
+_L2:
+	lw	$31, -8($30)
+	jr	$31
+.globl main
+main:
+	llo	$3, 1		# Load 1
+	lhi	$3, 1
+	sw	$1, -32($30)	# saving variable
+	addi	$1, $0, 97	# Load ASCII value
+	add	$4, $1, $0	# printing char
+	trap	101
+	trap	5		# read int
+	sw $2, -28($30)
+				# if #4
+	lw	$1, -28($30)	# load int variable
+	llo	$2, 0		# Load 0
+	lhi	$2, 0
+	slt	$1, $2, $1	# comparing
+	lw	$2, -28($30)	# load int variable
+	llo	$3, 0		# Load 0
+	lhi	$3, 0
+	sub	$2, $2, $3	# subtracting
+	bne	$0, $2, _E3	# if not equal
+	addi	$2, $0, 1	# load 'true'
+	j	_L3
+_E3:				# if equal
+	add	$2, $0, $0	# load 'false'
+_L3:
+	or	$1, $1, $2	# OR
+	blez	$1, _E4
+	lw	$1, -28($30)	# load int variable
+	sw	$1, -12($30)	# save parameter
+	jal	fact
+	lw	$3, -32($30)	# load int variable
+	add	$4, $1, $0	# printing int
+	trap	1
+	j	_L4
+_E4:				# no else
+_L4:
+	addi	$1, $0, 10	# Load ASCII value
+	add	$4, $1, $0	# printing char
+	trap	101
+	trap	10		# Quit

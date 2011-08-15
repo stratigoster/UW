@@ -1,0 +1,31 @@
+(a) The sample code was tested on Solaris 5.8 using gcc 3.4.2.
+Below are the runtimes:
+
+SS undefined, no optimizations, times=1000000
+User:    0m2.560s
+
+SS undefined, O2 optimizations, times=1000000
+User:    0m2.560s
+
+SS defined, no optimizations, times=1000000
+User:    0m10.310s
+
+SS defined, O2 optimizations, times=1000000
+User:    0m9.550s
+
+With SS defined, the program took almost 4 times longer to run than with SS
+undefined (10.310s vs 2.560s). This is so because with SS defined, during each
+iteration of the loop it must append several strings together (the line with
+"s:" + s + "s:" + s + "s:" + s), and string appends are not done in constant
+time. With O2 optimizations turned on, the runtime with SS undefined was the 
+same, and only decreased by about 1s with SS defined. It is interesting to 
+observe that gcc was unable to perform loop-invariant optimization on the
+string appends. The reason for this is that cout is actually a function call,
+and since C++ strings are mutable objects, gcc is unable to determine whether
+the function call has side-effects and thus can possibly change the value of
+the arguments (in this case the appended string), so it must append the
+strings together during each iteration.
+
+The program runs slower if "\n" is replaced with endl. This is because endl
+causes the output buffer to be flushed i.e. the data in the buffer to be
+printed immediately.

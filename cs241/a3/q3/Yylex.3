@@ -1,0 +1,223 @@
+/*********************************************************
+CS241 
+Assignment #3
+Yylex.3
+
+A sample scanner that recognizes all tokens in SL
+
+*********************************************************/
+
+%%
+
+%cup
+%notunix
+%line
+
+WS=[\n\ \t\b\012]
+
+%{
+	// Here is where any extra Java methods, etc. would go, if needed.
+%}
+
+%eof{
+	System.out.println();
+        System.exit(0);
+%eof}
+
+%% 
+
+<YYINITIAL> == { 
+	yybegin (YYINITIAL);	
+	return new SLToken.EqOp("==");
+}
+
+<YYINITIAL> [(] {
+	yybegin (YYINITIAL);
+	return new SLToken.OPENP();
+}
+
+<YYINITIAL> [)] {
+	yybegin (YYINITIAL);
+	return new SLToken.CLOSEP();
+}
+
+<YYINITIAL> [=] { 
+	yybegin (YYINITIAL);	
+	return new SLToken.ASSIGN();
+}
+
+<YYINITIAL> [|] {
+	yybegin (YYINITIAL);	
+	return new SLToken.OR();
+}
+
+<YYINITIAL> [&] {
+	yybegin (YYINITIAL);	
+	return new SLToken.AMPERSAND();
+}
+
+<YYINITIAL> [+] {
+	yybegin (YYINITIAL);	
+	return new SLToken.AddOp("+");
+}
+
+<YYINITIAL> - {
+	yybegin (YYINITIAL);	
+	return new SLToken.AddOp("-");
+}
+
+<YYINITIAL> [*] {
+	yybegin (YYINITIAL);	
+	return new SLToken.MulOp("*");
+}
+
+<YYINITIAL> [%] {
+	yybegin (YYINITIAL);	
+	return new SLToken.MulOp("%");
+}
+
+<YYINITIAL> [/] {
+	yybegin (YYINITIAL);	
+	return new SLToken.MulOp("/");
+}
+
+<YYINITIAL> [!] {
+	yybegin (YYINITIAL);	
+	return new SLToken.NOT();
+}
+
+<YYINITIAL> in {
+	yybegin (YYINITIAL);
+	return new SLToken.IN();
+}
+
+<YYINITIAL> out {
+	yybegin (YYINITIAL);
+	return new SLToken.OUT();
+}
+
+<YYINITIAL> ">>" {
+	yybegin (YYINITIAL);
+	return new SLToken.INSIGN();
+}
+
+<YYINITIAL> "<<" {
+	yybegin (YYINITIAL);
+	return new SLToken.OUTSIGN();
+}
+
+<YYINITIAL> [>] {
+	yybegin (YYINITIAL);	
+	return new SLToken.RelOp(">");
+}
+
+<YYINITIAL> [<] {
+	yybegin (YYINITIAL);	
+	return new SLToken.RelOp("<");
+}
+
+<YYINITIAL> [.] {
+	yybegin (YYINITIAL);	
+	return new SLToken.PERIOD();
+}
+
+<YYINITIAL> [{] {
+	yybegin (YYINITIAL);	
+	return new SLToken.OPENB();
+}
+
+<YYINITIAL> [}] {
+	yybegin (YYINITIAL);	
+	return new SLToken.CLOSEB();
+}
+
+<YYINITIAL> [;] {
+	yybegin (YYINITIAL);	
+	return new SLToken.SEMI();
+}
+
+<YYINITIAL> //.*$ {
+	yybegin (YYINITIAL);
+}
+
+<YYINITIAL> while { 
+	yybegin (YYINITIAL);	
+	return new SLToken.WHILE();
+}
+
+<YYINITIAL> return {
+	yybegin (YYINITIAL);
+	return new SLToken.RETURN();
+}
+
+<YYINITIAL> elseif { 
+	yybegin (YYINITIAL);	
+	return new SLToken.ELSEIF();
+}
+
+<YYINITIAL> if { 
+	yybegin (YYINITIAL);	
+	return new SLToken.IF();
+}
+
+<YYINITIAL> else { 
+	yybegin (YYINITIAL);	
+	return new SLToken.ELSE();
+}
+
+<YYINITIAL> int{WS} {
+	yybegin (YYINITIAL);
+	return new SLToken.Type("int");
+}
+
+<YYINITIAL> bool{WS} {
+	yybegin (YYINITIAL);
+	return new SLToken.Type("bool");
+}
+
+<YYINITIAL> true{WS} {
+	yybegin (YYINITIAL);
+	return new SLToken.BoolLiteral(true);
+}
+
+<YYINITIAL> false{WS} {
+	yybegin (YYINITIAL);
+	return new SLToken.BoolLiteral(false);
+}
+
+<YYINITIAL> \'[01][0-7][0-7]' {
+	yybegin (YYINITIAL);
+	int x = Integer.parseInt(yytext().substring(1,yytext().length()-1), 8);
+	char c = (char)x;
+	return new SLToken.CharLiteral(c+"");
+}
+
+<YYINITIAL> \'.\' {
+	yybegin (YYINITIAL);
+	return new SLToken.CharLiteral(yytext().substring(1,yytext().length()-1));
+}
+
+<YYINITIAL> struct {
+	yybegin (YYINITIAL);
+	return new SLToken.STRUCT();
+}
+
+<YYINITIAL> [1-9][0-9]* {
+	yybegin (YYINITIAL);
+	return new SLToken.IntLiteral(yytext());
+}
+
+<YYINITIAL> [a-zA-Z][a-zA-Z0-9]*(_?[a-zA-Z0-9]+)* {
+	yybegin (YYINITIAL);
+	return new SLToken.Identifier(yytext());
+}
+
+<YYINITIAL> {WS} {
+	yybegin (YYINITIAL);
+}
+
+<YYINITIAL> . {
+	System.out.println();
+	System.out.println("Illegal character at line " + (yyline + 1));
+	System.exit(0);
+}

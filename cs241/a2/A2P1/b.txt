@@ -1,0 +1,1 @@
+grep -E .*[uU]+.*[uU]+.*[uU]+.* /usr/dict/words

@@ -1,0 +1,75 @@
+%
+% function [t, y] = MyOde(f, tspan, y0, N, events)
+%
+% Numerically solves the initial value problem
+%
+%    dy(t)/dt = f(t,y)
+%        y(0) = y0
+%
+% using the Modified Euler time-stepping method.
+%
+% Input
+%   f       handle to a Matlab dynamics function with calling sequence
+%              dydt = f(t, y)
+%   tspan   1x2 vector giving the start and end times, [start end]
+%   y0      initial state of the system (as a column vector)
+%   N       the number of time steps to take
+%   events  handle to a Matlab event function with calling sequence
+%              val = events(t, y)
+%           The computation stops as soon as a negative value is
+%           returned by the event function.
+%
+% Output
+%   t       column vector holding time stamps
+%   y       holds one state vector per row (corresponding
+%           to the time stamps)
+%
+%   Note:
+%       - t and y have the same number of rows.
+%
+%       - If the computation was stopped by the triggering of an event,
+%         then the last row of t and y should correspond to the exact
+%         time of the event. That is, you should interpolate between
+%         the last two points to extract the time and system state
+%         corresponding to the event.
+%
+function [t, y] = MyOde(f, tspan, y0, N, events)
+
+    h = ( tspan(2) - tspan(1) ) / N; % step size
+    
+    m = length(y0); % Number of state variables
+    
+    % Initialize output arrays
+    t = zeros(N,1);
+    y = zeros(N,m);
+    
+    % *** YOUR CODE HERE ***
+    y(1,:) = y0';
+    t(1) = tspan(1);
+    
+    n = 1;
+    val = events( t(1), y(1,:) );
+    while n<=N && val>=0
+        t(n+1) = t(n)+h;
+        
+        k1 = h*f( t(n), y(n,:) );
+        k2 = h*f( t(n)+h, y(n,:)+k1 );
+        y(n+1,:) = y(n,:) + k1/2 + k2/2;
+        
+        n = n+1;
+        val = events( t(n), y(n,:) );
+    end
+    if val<0
+        % update row n of t & y
+        y1 = y(n-1,2);
+        y2 = y(n,2);
+        alpha = 1 - y2/(y2-y1);
+        beta = y2/(y2-y1);
+        
+        t(n) = alpha*t(n) + beta*t(n-1);
+        y(n,:) = alpha*y(n,:) + beta*y(n-1,:);
+        
+    end
+    t = t(1:n);
+    y = y(1:n,:);
+    

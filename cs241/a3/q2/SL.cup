@@ -1,0 +1,49 @@
+import java.util.*;
+
+terminal			SEMI;
+terminal			OPENP;
+terminal			CLOSEP;
+terminal			OPENB;
+terminal			CLOSEB;
+terminal			COMMA;
+terminal			AMPERSAND;
+terminal			NOT;
+terminal			OR;
+
+
+terminal			RETURN;
+
+terminal			IF;
+terminal			ELSEIF;
+terminal			ELSE;
+terminal			WHILE;
+
+terminal			IN;
+terminal			OUT;
+terminal			INSIGN;
+terminal			OUTSIGN;
+terminal			ASSIGN;
+
+terminal			STRUCT;
+terminal			PERIOD;
+
+terminal String			TYPE;
+terminal String			MULOP;
+terminal String			ADDOP;
+terminal String			RELOP;
+terminal String			EQOP;
+
+terminal Integer		INT;
+terminal Character		CHAR;
+terminal Boolean		BOOL;
+terminal String			ID;
+
+non terminal			SL;
+
+SL	::= ;
+
+
+
+
+
+

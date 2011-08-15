@@ -1,0 +1,5 @@
+***ERROR***:3:82:	Conflicting declaration `plus:function (integer,integer,integer,float,float,float,boolean,boolean,boolean) return void'
+
+------
+Compilation error
+------

@@ -1,0 +1,84 @@
+/*********************************************************
+CS241 
+Assignment #3
+Yylex.0
+
+A sample scanner that recognizes binary integers, loosely
+based on the DFA presented in lecture. 
+ 
+To compile:
+	java JLex.Main Yylex
+then
+	javac Main.java Yylex.java
+
+To run:
+	java Main < in 
+
+where 'in' is a file containing a single line to be
+read by the DFA.
+
+*********************************************************/
+
+%%
+
+%cup
+
+%state ZERO, NZERO, ERROR, FINAL
+
+%{
+	// Here is where any extra Java methods, etc. would go, if needed.
+%}
+
+%eof{
+        System.out.println ("Done!");
+%eof}
+
+%% 
+
+<YYINITIAL> "0"	{ 
+	yybegin (ZERO);	
+	System.out.println ("Processed 0");
+}
+
+<YYINITIAL> "1" {
+	yybegin (NZERO);	
+	System.out.println ("Processed 1");
+}
+
+<YYINITIAL> . {
+	yybegin (ERROR);
+	System.out.println ("Error: Invalid Character \"" + yytext() + "\"");
+}
+
+<ZERO>  [\n] {
+	yybegin (FINAL);
+}
+
+<ZERO>  . {
+	yybegin (ERROR);
+	System.out.println ("Error: Leading zero before character \"" + yytext() + "\"");
+}
+
+<NZERO> [01] {
+	yybegin (NZERO);
+	System.out.println ("Processed " + yytext());
+}
+
+<NZERO> [\n] {
+	yybegin (FINAL);
+}
+
+<NZERO> . {
+	yybegin (ERROR);
+	System.out.println ("Error: Invalid Character \"" + yytext() + "\"");
+}
+
+<ERROR> \n {
+	yybegin (ERROR);
+	System.out.println ("Error: Extra newline");
+}
+
+<ERROR> . {
+	yybegin (ERROR);
+	System.out.println ("Error: Spurious Character \"" + yytext() + "\"");
+}

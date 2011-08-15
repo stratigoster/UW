@@ -1,0 +1,18 @@
+# Course Number: CS241
+# Problem: #1
+# Name: Nissan Pow
+# UserName: npow
+# 
+# Given 2 numbers in $2 and $3, calculate $2 * ($3-32) / (212-32)
+# Store result in $1 
+.globl a1p1 
+
+a1p1:   addi $4, $3, -32 	# add -32 to $3 and store result in $4
+	mult $4, $2 		# multiply $2 by $4
+	mflo $4
+	addi $5, $0, 212	# initialise $5 to 212
+	addi $5, $5, -32 	# minus 32 from $5 and store result in $5
+	div $4, $5 		# divide
+	mflo $4 		# store result of division in $4
+	add $1, $4, $0 		# put result of calculation in $1
+	jr $31 			# return to caller

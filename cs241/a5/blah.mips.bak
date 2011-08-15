@@ -1,0 +1,18 @@
+method:
+	sw	$31, 0($30)
+	lw	$1, -4($30)	# load int variable
+	add	$4, $1, $0	# printing int
+	trap	1
+	lw	$31, 0($30)
+	jr	$31
+.globl main
+main:
+	llo	$1, 10		# Load 10
+	lhi	$1, 10
+	sw	$1, -12($30)	# saving variable
+	lw	$1, -12($30)	# load int variable
+	sw	$1, -4($30)	# save parameter
+	addi	$30, $30, -16
+	jal	method
+	addi	$30, $30, 16
+	trap	10		# Quit

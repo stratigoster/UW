@@ -1,0 +1,41 @@
+.globl main
+main:
+	addi	$1, $0, 72	# Load ASCII value
+	add	$4, $1, $0	# printing char
+	trap	101
+	addi	$1, $0, 101	# Load ASCII value
+	add	$4, $1, $0	# printing char
+	trap	101
+	addi	$1, $0, 108	# Load ASCII value
+	add	$4, $1, $0	# printing char
+	trap	101
+	addi	$1, $0, 108	# Load ASCII value
+	add	$4, $1, $0	# printing char
+	trap	101
+	addi	$1, $0, 111	# Load ASCII value
+	add	$4, $1, $0	# printing char
+	trap	101
+	addi	$1, $0, 10	# Load ASCII value
+	add	$4, $1, $0	# printing char
+	trap	101
+	addi	$1, $0, 67	# Load ASCII value
+	add	$4, $1, $0	# printing char
+	trap	101
+	addi	$1, $0, 83	# Load ASCII value
+	add	$4, $1, $0	# printing char
+	trap	101
+	addi	$1, $0, 50	# Load ASCII value
+	add	$4, $1, $0	# printing char
+	trap	101
+	llo	$1, 4		# Load 4
+	lhi	$1, 4
+	add	$4, $1, $0	# printing int
+	trap	1
+	llo	$1, 1		# Load 1
+	lhi	$1, 1
+	add	$4, $1, $0	# printing int
+	trap	1
+	addi	$1, $0, 10	# Load ASCII value
+	add	$4, $1, $0	# printing char
+	trap	101
+	trap	10		# Quit

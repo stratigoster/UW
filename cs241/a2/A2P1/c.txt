@@ -1,0 +1,1 @@
+grep -E '^[aA][^aA]*[aA]$' /usr/dict/words

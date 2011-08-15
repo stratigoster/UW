@@ -1,0 +1,21 @@
+Place your answers within the square brackets "[ ]".
+Two examples are given, and note that your solution must match
+the format of the example exactly (i.e., use C-y not Cntrl-y or
+CTRL-y).
+
+"(Control-x)" would be listed under the menu as [(C-x)].
+If you had "(Control-a) followed by (Control-b)" you would write it
+as [(C-a)(C-b)].
+To undo a command, the keystrokes would be [(C-x)u].
+To move to the first character of a line, the keystrokes would be [(C-a)].
+When you are editing this line, at the bottom should appear (Text)[--L11--]All.
+To quit without saving and without a prompt, the control keystrokes
+would be [(C-x)(C-c)].
+To quit with saving, the control keystrokes would be [(C-x)(C-c)] which
+would be followed by typing in the word [y]
+Once you edit a file, the leftmost 5 characters on the
+Mode-line read [**-F1].
+Emacs saved another (backup) copy of u1p1.emacs.txt with
+filename [u1p1.emacs.txt~].  
+The X windows version of emacs is called [xemacs] and has [15] 
+graphical buttons along the top.

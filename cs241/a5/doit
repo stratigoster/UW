@@ -1,0 +1,6 @@
+#!/bin/sh
+p=`basename $1 .sl`
+java Main $p
+java mips.mak $p $p
+java mips.cpu $p
+rm *.mx *.mo

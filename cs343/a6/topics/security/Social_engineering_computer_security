@@ -1,0 +1,45 @@
+<TITLE>Social engineering (computer security)</TITLE>
+<TOPIC>Social engineering</TOPIC>
+<TOPIC>security</TOPIC>
+<TOPIC>computer security</TOPIC>
+<TOPIC>computer</TOPIC>
+<TOPIC>computers</TOPIC>
+<TEXT>
+In the field of computer security, social engineering is the practice of conning
+people into revealing sensitive data on a computer system, often on the Internet.
+With the profusion of poorly-secured computers with known security holes 
+connected to the Internet, the majority of security compromises are now done by 
+exploiting such; however, social engineering attacks remain extremely common and
+area way to attack systems protected against other methods---for instance, 
+computers which are not connected to the Internet. It is an article of faith 
+amongst experts in the field that "users are the weak link."
+
+A contemporary example of a social engineering attack is the use of e-mail 
+attachments that contain malicious payloads (that, for instance, use the 
+victim's machine to send massive quantities of spam). After earlier malicious 
+e-mails led software vendors to disable automatic execution of attachments, 
+users now have to explicitly activate attachments for this to occur. Many users,
+however,will blindly click on any attachments they receive, thus allowing the 
+attack to work.
+
+Another approach is dumpster-diving for a piece of paper with a username and 
+password on it.
+
+Perhaps the simplest, but still effective attack is tricking a user into 
+thinking one is an administrator and requesting a password for debugging 
+purposes. Users of Internet systems frequently receive messages that request 
+password or credit card information in order to "set up their account" 
+or "reactivate settings" or some other benign operation in what are called 
+phishing<LINK>security:pages/security/Phishing</LINK> attacks. Users of these
+systems must be warned early and frequently to not divulge sensitive information,
+passwords or otherwise, to people claiming to be administrators. In reality,
+administrators of computer systems rarely, if ever, need to know the user's
+password to perform administrative tasks. However, even this might not be
+necessary--in an Infosecurity survey, 90% of office workers gave away their
+password in exchange for a cheap pen.
+
+Training users about security policies and ensuring that they are followed is 
+the primary defence against social engineering.
+
+One of the most famous social engineers in recent history is Kevin Mitnick.
+</TEXT>

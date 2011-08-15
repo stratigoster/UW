@@ -1,0 +1,551 @@
+/*********************************************************
+CS241 
+Assignment #3
+Yylex.1
+
+A sample scanner that recognizes keywords, identifiers,
+comments, and boolean operations == and |.
+
+*********************************************************/
+
+%%
+
+%cup
+
+%state I, F, C, H, A, R, SLASH, EQUAL1, EQUAL2, PIPE, IDENT, COMMENT, UNDERSCORE, ERROR
+
+WHITESPACE=[\ \t\r]
+NEWLINE=[\n\012]
+
+%{
+
+public static class Util {
+	public static String s = "";
+	public static int numLines = 1;
+
+	public static void err() {
+		System.out.println();
+		System.out.println("Illegal character at line " + numLines);
+		System.exit(-1);
+	}
+}
+
+%}
+
+%eof{
+	System.out.println();
+	System.exit(0);
+%eof}
+
+%% 
+
+<YYINITIAL> [i]	{ 
+	yybegin (I);
+	Util.s=yytext();
+}
+
+<YYINITIAL> [/] {
+	yybegin (SLASH);
+}
+
+<YYINITIAL> [c] {
+	yybegin (C);
+	Util.s=yytext();
+}
+
+<YYINITIAL> [=] {
+	yybegin (EQUAL1);
+}
+
+<YYINITIAL> [|] {
+	yybegin (PIPE);
+}
+
+<YYINITIAL> {NEWLINE} {
+	yybegin (YYINITIAL);
+	Util.numLines++;
+}
+
+<YYINITIAL> {WHITESPACE} {
+	yybegin (YYINITIAL);
+}
+
+<YYINITIAL> [_] {
+	yybegin (ERROR);
+	Util.err();
+}
+
+<YYINITIAL> [a-zA-Z0-9] {
+	yybegin (IDENT);
+	Util.s=yytext();
+}
+
+<YYINITIAL> . {
+	yybegin (ERROR);
+	Util.err();
+}
+
+<I> [f] {
+	yybegin (F);
+	Util.s+=yytext();
+}
+
+<I> [a-zA-Z0-9] {
+	yybegin (IDENT);
+	Util.s+=yytext();
+}
+
+<I> [_] {
+	yybegin (UNDERSCORE);
+	Util.s+=yytext();
+}
+
+<I> [/] {
+	yybegin (SLASH);
+	return new SLToken.Identifier(Util.s);
+}
+
+<I> {WHITESPACE} {
+	yybegin (YYINITIAL);
+	return new SLToken.Identifier(Util.s);
+}
+
+<I> {NEWLINE} {
+	Util.numLines++;
+	yybegin (YYINITIAL);
+	return new SLToken.Identifier(Util.s);
+}
+
+<I> [=] {
+	yybegin (EQUAL1);
+	return new SLToken.Identifier(Util.s);
+}
+
+<I> [|] {
+	yybegin (PIPE);
+	return new SLToken.Identifier(Util.s);
+}
+
+<I> . {
+	yybegin (ERROR);
+	Util.err();
+}
+
+<F> {WHITESPACE} {
+	yybegin (YYINITIAL);
+	return (new SLToken.IF());
+}
+
+<F> {NEWLINE} {
+	yybegin (YYINITIAL);
+	Util.numLines++;
+	return new SLToken.IF();
+}
+
+<F> [/] {
+	yybegin (SLASH);
+	return new SLToken.IF();
+}
+
+<F> [a-zA-Z0-9] {
+	yybegin (IDENT);
+	Util.s+=yytext();
+}
+
+<F> [_] {
+	yybegin (UNDERSCORE);
+	Util.s+=yytext();
+}
+
+<F> [=] {
+	yybegin (EQUAL1);
+	return new SLToken.IF();
+}
+
+<F> [|] {
+	yybegin (PIPE);
+	return new SLToken.IF();
+}
+
+<F> . {
+	yybegin (ERROR);
+	Util.err();
+}
+
+<C> [h] {
+	yybegin (H);
+	Util.s+=yytext();
+}
+
+<C> [a-zA-Z0-9] {
+	yybegin (IDENT);
+	Util.s+=yytext();
+}
+
+<C> [_] {
+	yybegin (UNDERSCORE);
+	Util.s+=yytext();
+}
+
+<C> [/] {
+	yybegin (SLASH);
+}
+
+<C> {WHITESPACE} {
+	yybegin (YYINITIAL);
+	return new SLToken.Identifier(Util.s);
+}
+
+<C> {NEWLINE} {
+	Util.numLines++;
+	yybegin (YYINITIAL);
+	return new SLToken.Identifier(Util.s);
+}
+
+<C> [=] {
+	yybegin (EQUAL1);
+	return new SLToken.Identifier(Util.s);
+}
+
+<C> [|] {
+	yybegin (PIPE);
+	return new SLToken.Identifier(Util.s);
+}
+
+<C> . {
+	yybegin (ERROR);
+	Util.err();
+}
+
+<H> [a] {
+	yybegin (A);
+	Util.s+=yytext();
+}
+
+<H> [a-zA-Z0-9] {
+	yybegin (IDENT);
+	Util.s+=yytext();
+}
+
+<H> [_] {
+	yybegin (UNDERSCORE);
+	Util.s+=yytext();
+}
+
+<H> [/] {
+	yybegin (SLASH);
+	return new SLToken.Identifier(Util.s);
+}
+
+<H> {WHITESPACE} {
+	yybegin (YYINITIAL);
+	return new SLToken.Identifier(Util.s);
+}
+
+<H> {NEWLINE} {
+	Util.numLines++;
+	yybegin (YYINITIAL);
+	return new SLToken.Identifier(Util.s);
+}
+
+<H> [=] {
+	yybegin (EQUAL1);
+	return new SLToken.Identifier(Util.s);
+}
+
+<H> [|] {
+	yybegin (PIPE);
+	return new SLToken.Identifier(Util.s);
+}
+
+<H> . {
+	yybegin (ERROR);
+	Util.err();
+}
+
+<A> [r] {
+	yybegin (R);
+	Util.s+=yytext();
+}
+
+<A> [a-zA-Z0-9] {
+	yybegin (IDENT);
+	Util.s+=yytext();
+}
+
+<A> [_] {
+	yybegin (UNDERSCORE);
+	Util.s+=yytext();
+}
+
+<A> [/] {
+	yybegin (SLASH);
+	return new SLToken.Identifier(Util.s);
+}
+
+<A> {WHITESPACE} {
+	yybegin (YYINITIAL);
+	return new SLToken.Identifier(Util.s);
+}
+
+<A> {NEWLINE} {
+	Util.numLines++;
+	yybegin (YYINITIAL);
+	return new SLToken.Identifier(Util.s);
+}
+
+<A> [=] {
+	yybegin (EQUAL1);
+	return new SLToken.Identifier(Util.s);
+}
+
+<A> [|] {
+	yybegin (PIPE);
+	return new SLToken.Identifier(Util.s);
+}
+
+<A> . {
+	yybegin (ERROR);
+	Util.err();
+}
+
+<R> {NEWLINE} {
+	yybegin (YYINITIAL);
+	Util.numLines++;
+	return new SLToken.Type("char");
+}
+
+<R> [a-zA-Z0-9] {
+	yybegin (IDENT);
+	Util.s+=yytext();
+}
+
+<R> [_] {
+	yybegin (UNDERSCORE);
+	Util.s+=yytext();
+}
+
+<R> [/] {
+	yybegin (SLASH);
+	return new SLToken.Type("char");
+}
+
+<R> {WHITESPACE} {
+	yybegin (YYINITIAL);
+	return new SLToken.Type("char");
+}
+
+<R> [|] {
+	yybegin (PIPE);
+	return new SLToken.Type("char");
+}
+
+<R> [=] {
+	yybegin (EQUAL1);
+	return new SLToken.Type("char");
+}
+
+<R> . {
+	yybegin (ERROR);
+	Util.err();
+}
+
+<SLASH> [/] {
+	yybegin (COMMENT);
+}
+
+<SLASH> {WHITESPACE} {
+	yybegin (ERROR);
+	Util.err();
+}
+
+<SLASH> {NEWLINE} {
+	yybegin (ERROR);
+	Util.err();
+}
+
+<SLASH> . {
+	yybegin (ERROR);
+	Util.err();
+}
+
+<IDENT> [_] {
+	yybegin (UNDERSCORE);
+	Util.s+=yytext();
+}
+
+<IDENT> [a-zA-Z0-9] {
+	yybegin (IDENT);
+	Util.s+=yytext();
+}
+
+<IDENT> {WHITESPACE} {
+	yybegin (YYINITIAL);
+	return new SLToken.Identifier(Util.s);
+}
+
+<IDENT> {NEWLINE} {
+	yybegin (YYINITIAL);
+	Util.numLines++;
+	return new SLToken.Identifier(Util.s);
+}
+
+<IDENT> [=] {
+	yybegin (EQUAL1);
+	return new SLToken.Identifier(Util.s);
+}
+
+<IDENT> [|] {
+	yybegin (PIPE);
+	return new SLToken.Identifier(Util.s);
+}
+
+<IDENT> . {
+	yybegin (ERROR);
+	Util.err();
+}
+
+<UNDERSCORE> [a-zA-Z0-9] {
+	yybegin (IDENT);
+	Util.s+=yytext();
+}
+
+<UNDERSCORE> [_] {
+	yybegin (UNDERSCORE);
+	Util.s+=yytext();
+}
+
+<UNDERSCORE> [/] {
+	yybegin (ERROR);
+	Util.err();
+}
+
+<UNDERSCORE> {WHITESPACE} {
+	yybegin (ERROR);
+	Util.err();
+}
+
+<UNDERSCORE> . {
+	yybegin (ERROR);
+	Util.err();
+}
+
+<UNDERSCORE> {NEWLINE} {
+	yybegin (ERROR);
+	Util.err();
+}
+
+<COMMENT> {NEWLINE} {
+	Util.numLines++;
+	yybegin (YYINITIAL);
+}
+
+<COMMENT> {WHITESPACE} {
+	yybegin (COMMENT);
+}
+
+<COMMENT> . {
+	yybegin (COMMENT);
+}
+
+<PIPE> {WHITESPACE} {
+	yybegin (YYINITIAL);
+	return new SLToken.OR();
+}
+
+<PIPE> {NEWLINE} {
+	yybegin (YYINITIAL);
+	Util.numLines++;
+	return new SLToken.OR();
+}
+
+<PIPE> [=] {
+	yybegin (EQUAL1);
+	return new SLToken.OR();
+}
+
+<PIPE> [c] {
+	yybegin (C);
+	Util.s=yytext();
+	return new SLToken.OR();
+}
+
+<PIPE> [i] {
+	yybegin (I);
+	Util.s=yytext();
+	return new SLToken.OR();
+}
+
+<PIPE> [a-zA-Z0-9] {
+	yybegin (IDENT);
+	Util.s=yytext();
+	return new SLToken.OR();
+}
+
+<PIPE> [/] {
+	yybegin (SLASH);
+	return new SLToken.OR();
+}
+
+<PIPE> . {
+	yybegin (ERROR);
+	Util.err();
+}
+
+<EQUAL1> [=] {
+	yybegin (EQUAL2);
+}
+
+<EQUAL1> {NEWLINE} {
+	yybegin (ERROR);
+	Util.err();
+}
+
+<EQUAL1> . {
+	yybegin (ERROR);
+	Util.err();
+}
+
+<EQUAL2> {NEWLINE} {
+	yybegin (YYINITIAL);
+	Util.numLines++;
+	return new SLToken.EqOp("==");
+}
+
+<EQUAL2> {WHITESPACE} {
+	yybegin (YYINITIAL);
+	return new SLToken.EqOp("==");
+}
+
+<EQUAL2> [/] {
+	yybegin (SLASH);
+	return new SLToken.EqOp("==");
+}
+
+<EQUAL2> [i] {
+	yybegin (I);
+	Util.s=yytext();
+	return new SLToken.EqOp("==");
+}
+
+<EQUAL2> [c] {
+	yybegin (C);
+	Util.s=yytext();
+	return new SLToken.EqOp("==");
+}
+
+<EQUAL2> [a-zA-Z0-9] {
+	yybegin (IDENT);
+	Util.s=yytext();
+	return new SLToken.EqOp("==");
+}
+
+<EQUAL2> [|] {
+	yybegin (PIPE);
+	return new SLToken.EqOp("==");
+}
+
+<EQUAL2> . {
+	yybegin (ERROR);
+	Util.err();
+}

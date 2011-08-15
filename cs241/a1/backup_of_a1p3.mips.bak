@@ -1,0 +1,39 @@
+# Course Number: CS241
+# Problem: #3
+# Name: Nissan Pow
+# UserName: npow
+#
+# takes an array and swaps the first element with the largest in the array
+#
+
+.globl a1p3
+
+a1p3:   addi $30, $30, -20
+	sw $2, 0($30)
+	sw $3, 4($30)
+	sw $4, 8($30)
+	sw $5, 12($30)
+	sw $6, 16($30)	
+	add $1, $0, $0		# initialise $1 to 0
+ 	lw $2, 0($30)		# get number of elements in array
+	lw $3, 4($30)		# get address of array
+	add $4, $0, $0		# initialise current array index
+	sll $6, $4, 2		# calculate next array index
+	slt $1, $1, $6		# if $1 < $6 { $1 = $6 }
+loop:	sub $5, $2, $4		# array size minus current index
+	blez $5, done		# exit loop if at end of array
+	slt $1, $1, $6		# if $1 < $6 { $1 = $6 }
+	sll $6, $4, 2		# calculate next array index
+	add $6, $6, $2
+	lw $6, 0($6)		# read next number from array
+	addi $4, $4, 1		# increment current array index
+	j loop
+
+done:   lw $2, 0($30)
+	lw $3, 4($30)
+	lw $4, 8($30)
+	lw $5, 12($30)
+	lw $6, 16($30)
+	addi $30, $30, 20
+	jr $31			# return to caller			
+

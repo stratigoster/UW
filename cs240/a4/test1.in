@@ -1,0 +1,28 @@
+remote procedure call (RPC)
+A message-passing facility that allows a distributed application to call services that are available on various computers on a network. Used during remote administration of computers.
+
+See also: service
+Remote Storage
+A data management service used to migrate infrequently accessed files from local storage to remote storage. Migrated files are recalled automatically and transparently upon user request when the file is opened.
+
+Removable Storage
+A service used for managing removable media (such as tapes and discs) and storage devices (libraries). Removable Storage allows applications to access and share the same media resources.
+
+See also: library; service
+rendering intent
+In color management, the approach used to map the colors specified in an image file to the color gamut of your monitor or printer. The color gamut is the range of color that a device can produce.
+
+See also: color gamut
+replica
+A folder within a replica set.
+
+See also: replica set; replication topology
+replica set
+One or more shared folders that participates in replication.
+
+See also: replication
+replication
+The process of copying data from a data store or file system to multiple computers to synchronize the data. Active Directory provides multimaster replication of the directory between domain controllers within a given domain. The replicas of the directory on each domain controller are writable. This allows updates to be applied to any replica of a given domain. The replication service automatically copies the changes from a given replica to all other replicas.
+
+See also: Active Directory; replica; replication policy; topology
+replication policy

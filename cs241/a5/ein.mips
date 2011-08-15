@@ -1,0 +1,14 @@
+endl:
+	sw	$31, -8($30)
+	addi	$1, $0, 10	# Load ASCII value
+	add	$4, $1, $0	# printing char
+	trap	101
+	lw	$31, -8($30)
+	jr	$31
+.globl main
+main:
+	addi	$1, $0, 99	# Load ASCII value
+	add	$4, $1, $0	# printing char
+	trap	101
+	jal	endl
+	trap	10		# Quit

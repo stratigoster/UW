@@ -1,0 +1,5 @@
+***ERROR***:4:26:	Declaration `color:light' conflicts with `color:enumeration of (red orange green blue indigo violet white black)'
+
+------
+Compilation error
+------

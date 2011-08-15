@@ -1,0 +1,166 @@
+\documentclass[onecolumn,11pt]{article}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\usepackage{amsfonts}
+\usepackage{alltt}
+\usepackage[latin1]{inputenc}
+\usepackage{moreverb}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{fullpage}
+\usepackage{alltt}
+
+\title{CS442 Assignment 2}
+\author{Nissan Pow\\20187246\\npow}
+\date{\today}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newcommand{\nonterm}[1]{\ensuremath{\langle\mbox{\emph{#1}}\rangle}}
+\newcommand{\post}[2]{\ensuremath{\frac{\begin{array}{c}#1\end{array}}{\begin{array}{c}#2\end{array}}}}
+\newcommand{\sem}[1]{\ensuremath{[\![#1]\!]}}
+
+\begin{document}
+\maketitle
+
+\section*{Part A}
+
+\section*{Parts B and D}
+\begin{alltt}
+\verbatimtabinput[2]{a2qbd.scm}
+\end{alltt}
+
+\section*{Part C}
+
+\begin{alltt}
+  \verbatimtabinput[2]{transcript}
+\end{alltt}
+
+\section*{Part D}
+\begin{itemize}
+\item I did not need to make any modifications to the unification algorithm.
+\item I chose to implement letex and handle by extending W:
+ \[\post
+    { \{ \langle \text{var,exception} \rangle \} + A \vdash \text{E:}\ \tau} 
+    { A \vdash \text{(letex\ var E):}\ \tau }
+    \text{\ [letex]}
+\]
+
+\[\post
+    { \text{A} \vdash \text{E:}\ exception \qquad \text{A} \vdash \text{E2:}\ \tau \qquad \text{A} \vdash \text{E3:}\ \tau }
+    { A \vdash \text{(handle E1 E2 E3):}\ \tau }
+    \text{\ [handle]}
+\]
+
+\begin{alltt}
+W (A, (letex var E)) = 
+  let 
+    <S1, tau1> = (W E ((var,exception) + A) 
+  in 
+    <S1, tau1)>
+
+W (A, (handle E1 E2 E3)) =
+  let
+    <S1, tau1> = (W E1 A)
+    S2 = U(exception, tau1)
+    <S3, tau3> = (W E2 A(S2 o S1))
+    <S4, tau4> = (W E3 A(S3 o S2 o S1))
+    S5 = U(tau3 S4, tau4)
+  in
+    (S5 o S4 o S3 o S2 o S1, tau4 S5)
+
+\end{alltt}
+
+\item And raise as a primitive type: \\
+raise: ($\forall \alpha$. exception $\to$ $\alpha$)
+
+\end{itemize}
+
+\section*{Part E}
+
+\begin{enumerate}
+
+\item 
+  f : $\lambda x : \forall \alpha . \forall \beta. \alpha \rightarrow \beta. (\Lambda \beta. \Lambda \alpha ((x\{\alpha\})\{\beta\})) : (\forall \alpha . \forall \beta . \alpha \rightarrow \beta) \rightarrow (\forall \beta. \forall \alpha. \alpha \rightarrow \beta) $ \\
+  g : $\lambda x : \forall \beta . \forall \alpha. \alpha \rightarrow \beta. (\Lambda \alpha. \Lambda \beta ((x\{\beta\})\{\alpha\})): (\forall \beta . \forall \alpha . \alpha \rightarrow \beta) \rightarrow (\forall \alpha. \forall \beta. \alpha \rightarrow \beta) $
+
+\item 
+
+\[
+\post
+{ \post
+  { \post
+    { \post
+      { \post
+        { \post
+          { \{\langle x, \forall \alpha. \forall \beta. \alpha \rightarrow \beta \rangle \}(x)  = \forall \alpha. \forall \beta. \alpha \rightarrow \beta }
+          { \{\langle x, \forall \alpha. \forall \beta. \alpha \rightarrow \beta \rangle \} \vdash x : \forall \alpha. \forall \beta . \alpha \rightarrow \beta } [var]
+        } 
+        { \{\langle x, \forall \alpha. \forall \beta. \alpha \rightarrow \beta \rangle \} \vdash x\{\alpha\} : \forall \beta.\alpha \rightarrow \beta } [spec]
+      }
+      { \{\langle x, \forall \alpha. \forall \beta. \alpha \rightarrow \beta \rangle \} \vdash (x\{\alpha\})\{\beta\} : \alpha \rightarrow \beta } [spec]
+    }
+    { \{\langle x, \forall \alpha. \forall \beta. \alpha \rightarrow \beta \rangle \} \vdash \Lambda \alpha . ((x\{\alpha\})\{\beta\}) : \forall \alpha . \alpha \rightarrow \beta } [gen]
+  }
+ { \{\langle x, \forall \alpha. \forall \beta. \alpha \rightarrow \beta \rangle \} \vdash \Lambda \beta. \Lambda \alpha. ((x\{\alpha\})\{\beta\}) : \forall \beta. \forall \alpha. \alpha \rightarrow \beta } [gen]
+}
+{ \{\} \vdash \lambda x : \forall \alpha . \forall \beta. \alpha \rightarrow \beta. (\Lambda \beta. \Lambda \alpha ((x\{\alpha\})\{\beta\})): (\forall \alpha . \forall \beta . \alpha \rightarrow \beta) \rightarrow (\forall \beta. \forall \alpha. \alpha \rightarrow \beta) } [t-abs]
+\]
+
+\[
+\post
+{ \post
+  { \post
+    { \post
+      { \post
+        { \post
+          { \{\langle x, \forall \beta. \forall \alpha. \alpha \rightarrow \beta \rangle \}(x)  = \forall \beta. \forall \alpha. \alpha \rightarrow \beta }
+          { \{\langle x, \forall \beta. \forall \alpha. \alpha \rightarrow \beta \rangle \} \vdash x : \forall \beta. \forall \alpha . \alpha \rightarrow \beta } [var]
+        } 
+        { \{\langle x, \forall \beta. \forall \alpha. \alpha \rightarrow \beta \rangle \} \vdash x\{\beta\} : \forall \alpha.\alpha \rightarrow \beta } [spec]
+      }
+      { \{\langle x, \forall \beta. \forall \alpha. \alpha \rightarrow \beta \rangle \} \vdash (x\{\beta\})\{\alpha\} : \alpha \rightarrow \beta } [spec]
+    }
+    { \{\langle x, \forall \beta. \forall \alpha. \alpha \rightarrow \beta \rangle \} \vdash \Lambda \beta . ((x\{\beta\})\{\alpha\}) : \forall \beta . \alpha \rightarrow \beta } [gen]
+  }
+ { \{\langle x, \forall \beta. \forall \alpha. \alpha \rightarrow \beta \rangle \} \vdash \Lambda \alpha. \Lambda \beta. ((x\{\beta\})\{\alpha\}) : \forall \alpha. \forall \beta. \alpha \rightarrow \beta } [gen]
+}
+{ \{\} \vdash \lambda x : \forall \beta . \forall \alpha. \alpha \rightarrow \beta. (\Lambda \alpha. \Lambda \beta ((x\{\beta\})\{\alpha\})): (\forall \beta . \forall \alpha . \alpha \rightarrow \beta) \rightarrow (\forall \alpha. \forall \beta. \alpha \rightarrow \beta) } [t-abs]
+\]
+
+\newpage
+
+\item
+
+erase(f) \\
+= erase($\lambda x : \forall \alpha . \forall \beta. \alpha \rightarrow \beta. (\Lambda \beta. \Lambda \alpha ((x\{\alpha\})\{\beta\}))$) \\
+= $\lambda x$ . erase$(\Lambda \beta. \Lambda \alpha ((x\{\alpha\})\{\beta\})$) \\
+= $\lambda x$ . erase$(\Lambda \alpha ((x\{\alpha\})\{\beta\})$) \\
+= $\lambda x$ . erase$((x\{\alpha\})\{\beta\}$) \\
+= $\lambda x$ . erase$(x\{\alpha\})$ \\
+= $\lambda x$ . erase$(x)$ \\
+= $\lambda x$ . x \\
+
+erase(g) \\
+= erase($\lambda x : \forall \beta. \forall \alpha. \alpha \rightarrow \beta. (\Lambda \alpha. \Lambda \beta ((x\{\beta\})\{\alpha\}))$) \\
+= $\lambda x$ . erase$(\Lambda \alpha. \Lambda \beta ((x\{\beta\})\{\alpha\})$) \\
+= $\lambda x$ . erase$(\Lambda \beta ((x\{\beta\})\{\alpha\})$) \\
+= $\lambda x$ . erase$((x\{\beta\})\{\alpha\}$) \\
+= $\lambda x$ . erase$(x\{\beta\})$ \\
+= $\lambda x$ . erase$(x)$ \\
+= $\lambda x$ . x \\
+
+\item Two types f and g are equivalent if erase(f) $=_{\alpha}$ erase(g)
+
+\item
+
+\end{enumerate}
+
+$a\left( \left( hmmm \right) \right)$
+\end{document}

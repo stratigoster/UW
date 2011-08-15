@@ -1,0 +1,29 @@
+
+
+#!/usr/bin/env python
+import math
+def _forwardGen(seq):
+	for i in seq:
+		yield { 'all':i }
+def _reverseGen(seq):
+	i = len(seq)
+	while i>0:
+		i = i - 1
+		yield { 'all':seq[i] }
+class _dummy_(Exception):pass
+class _numeric_error(Exception):pass
+class _constraint_error(Exception):pass
+class main:
+	try:
+		a_beam = { 'all':0 }
+		x_ray = { 'all':3 }
+		is_photon = { 'all':((x_ray['all'] == 2) | (x_ray['all'] == 0)) }
+		def __init__(self):
+			try:
+				pass
+				pass
+			except _dummy_:
+				pass
+	except _dummy_:
+		pass
+main()

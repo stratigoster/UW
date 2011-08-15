@@ -1,0 +1,19 @@
+.globl main
+main:
+	trap	5		# read int
+	sw $2, -12($30)
+	trap	102		# read char
+	sw $2, -16($30)
+	lw	$1, -12($30)	# load int variable
+	add	$4, $1, $0	# printing int
+	trap	1
+	addi	$1, $0, 10	# Load ASCII value
+	add	$4, $1, $0	# printing char
+	trap	101
+	lw	$1, -16($30)	# load char variable
+	add	$4, $1, $0	# printing char
+	trap	101
+	addi	$1, $0, 10	# Load ASCII value
+	add	$4, $1, $0	# printing char
+	trap	101
+	trap	10		# Quit

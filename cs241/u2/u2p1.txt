@@ -1,0 +1,1 @@
+cp .snapshot/hourly.1 a1p1.mips

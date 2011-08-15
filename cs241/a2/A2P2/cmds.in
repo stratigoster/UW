@@ -1,0 +1,7 @@
+dn false
+re ^.*cs241[\S]*[Gg][Ii][Ff].*$
+p access_log temp
+min 2000
+df 2 3 8 5
+p temp
+ 

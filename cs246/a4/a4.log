@@ -1,0 +1,160 @@
+This is pdfTeX, Version 3.14159-1.10b (Web2C 7.4.5) (format=pdflatex 2006.6.19)  20 JUL 2006 17:01
+**a4.tex
+(./a4.tex{/usr/share/texmf/pdftex/config/pdftex.cfg}
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, n
+ohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/tools/verbatim.sty
+Package: verbatim 2001/03/12 v1.5p LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks14
+\verbatim@line=\toks15
+\verbatim@in@stream=\read1
+)
+(/usr/share/texmf/tex/latex/preprint/fullpage.sty
+Package: fullpage 1999/02/23 1.1 (PWD)
+\FP@margin=\skip43
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2001/08/31 v1.1 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/pdftex.def
+File: pdftex.def 2002/06/19 v0.03k graphics/color for pdftex
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+) (./a4.aux)
+\openout1 = `a4.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
+(/usr/share/texmf/tex/context/base/supp-mis.tex
+loading : Context Support Macros / Missing
+\protectiondepth=\count88
+\scratchcounter=\count89
+\scratchtoks=\toks17
+\scratchdimen=\dimen105
+\scratchskip=\skip44
+\scratchmuskip=\muskip10
+\scratchbox=\box26
+\scratchread=\read2
+\scratchwrite=\write3
+\zeropoint=\dimen106
+\minusone=\count90
+\thousandpoint=\dimen107
+\emptytoks=\toks18
+\nextbox=\box27
+\nextdepth=\dimen108
+\everyline=\toks19
+\!!counta=\count91
+\!!countb=\count92
+\recursecounter=\count93
+)
+loading : Context Support Macros / PDF
+\nofMPsegments=\count94
+\nofMParguments=\count95
+\everyMPtoPDFconversion=\toks20
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 10.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 10.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 10.
+ <cs246_a4q1.png, id=1, 1200.485pt x 457.71pt>
+File: cs246_a4q1.png Graphic file (type png)
+ <use cs246_a4q1.png>
+Overfull \hbox (70.45825pt too wide) in paragraph at lines 13--14
+[] 
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 17.
+(/usr/share/texmf/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 17.
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--21
+
+ []
+
+
+Overfull \hbox (64.13501pt too wide) in paragraph at lines 22--27
+/cmr10/Functions: Con-troller-State::print(string,string), Con-troller-State::c
+heckState(string), Log-ger-State::print(string,string),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--27
+
+ []
+
+[1
+
+{/usr/share/texmf/dvips/config/pdftex.map} <./cs246_a4q1.png>]
+<a4q5.png, id=21, 977.77058pt x 361.35pt>
+File: a4q5.png Graphic file (type png)
+ <use a4q5.png> [2 <./a4q5.png>]
+(./a4.aux) ) 
+Here is how much of TeX's memory you used:
+ 963 strings out of 95437
+ 11673 string characters out of 1190233
+ 57623 words of memory out of 1000001
+ 3997 multiletter control sequences out of 10000+50000
+ 7280 words of font info for 26 fonts, out of 500000 for 1000
+ 14 hyphenation exceptions out of 1000
+ 25i,6n,19p,197b,259s stack positions out of 1500i,500n,5000p,200000b,5000s
+ 24 PDF objects out of 300000
+ 0 named destinations out of 131072
+ 10 words of extra memory for PDF output out of 65536
+{/usr/share/texmf/dvips/tetex/f7b6d320.enc}</usr/share/texmf/fonts/
+type1/bluesky/cm/cmr10.pfb>{/usr/share/texmf/dvips/tetex/bbad153f.enc}</usr/sha
+re/texmf/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/bluesk
+y/cm/cmbx12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr12.pfb></usr/share/
+texmf/fonts/type1/bluesky/cm/cmr17.pfb>
+Output written on a4.pdf (2 pages, 78077 bytes).

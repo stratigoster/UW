@@ -1,0 +1,9 @@
+#!/usr/bin/sh
+
+for f in *.in
+do
+   base="`basename $f .in`"
+   echo $base
+   java -classpath . A2P3_Driver $base.in > $base.tst
+   diff $base.out $base.tst
+done

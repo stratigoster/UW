@@ -1,0 +1,25 @@
+<TITLE>Demon dialing</TITLE>
+<TOPIC>Demon dialing</TOPIC>
+<TOPIC>security</TOPIC>
+<TOPIC>computer security</TOPIC>
+<TOPIC>computer</TOPIC>
+<TOPIC>computers</TOPIC>
+<TEXT>
+In the cracking scene of the 1980s, demon dialing was the act of using a modem 
+to dial every telephone number in a local area to find out where computers are 
+available, then attacking them, trying to gain access by guessing passwords.
+
+Demon dialing was made famous in the movie "War Games",
+<LINK>art:pages/art/War_Games</LINK> in which the protagonist sets up his phone
+to call every phone line in another state until he reaches another modem, from
+which he can crack into more systems.  Since the movie's release, demon dialing
+has been popularly known in some circles as war dialing,
+<LINK>security:pages/security/War_dialing</LINK> in tribute to the movie.
+
+Similar to demon dialing is a port scan under TCP/IP, which "dials" every TCP 
+port of every IP address to find out what services are available, then attacking
+them by guessing passwords or by exploiting vulnerabilities in software that runs
+with elevated privileges.
+
+See also: Wardriving <LINK>security:pages/security/War_driving</LINK>
+</TEXT>

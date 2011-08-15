@@ -1,0 +1,370 @@
+import java.util.*;
+
+action code {:
+	private int offset = 0;
+	private int reg = 1;
+	private int max_reg = 31;
+	private String currType = "";
+	private String currProc = "main";
+	private Hashtable<String, VarTable> tables = new Hashtable();
+
+	public class Var{
+		String varName;
+		String type;
+		int address;
+
+		public Var(String n, String t, int a) {
+			varName = n;
+			type = t;
+			address = a;
+		}
+
+		public int getAddress() { return address; }
+
+		public String getType() { return type; }
+
+		public String getName() { return varName; }
+
+		public void setAddress(int s) { address = s; }
+	}
+
+	public class VarTable {
+		private Hashtable<String, Var> hashTable = new Hashtable();
+		
+		public VarTable(int n) {
+			hashTable.put("_", (new Var("_", "_", n)));
+		} 
+
+		public Var getVar(String s) {
+			return (Var)hashTable.get(s);
+		}
+
+		public void addVar(String n, Var v) throws CompileException {
+			if (hashTable.containsKey(n)) {
+				throw new CompileException("Variable '" + n + "' has already been declared in procedure '" + currProc + "'");
+			}
+			else {
+				hashTable.put(n, v);
+			}
+		}
+
+		public boolean containsKey(String s) { return hashTable.containsKey(s); }
+	}
+
+	public class Expr {
+		public String code;
+		public String type;
+		public int reg;
+
+		public Expr(String s, String t, int i) {
+			code = s;
+			type = t;
+			reg = i;
+		}
+	}
+:}
+
+terminal			SEMI;
+terminal			OPENP;
+terminal			CLOSEP;
+terminal			OPENB;
+terminal			CLOSEB;
+terminal			COMMA;
+terminal			AMPERSAND;
+terminal			NOT;
+terminal			OR;
+
+
+terminal			RETURN;
+
+terminal			IF;
+terminal			ELSEIF;
+terminal			ELSE;
+terminal			WHILE;
+
+terminal			IN;
+terminal			OUT;
+terminal			INSIGN;
+terminal			OUTSIGN;
+terminal			ASSIGN;
+
+terminal			STRUCT;
+terminal			PERIOD;
+
+terminal String			TYPE;
+terminal String			MULOP;
+terminal String			ADDOP;
+terminal String			RELOP;
+terminal String			EQOP;
+
+terminal Integer		INT;
+terminal String			CHAR;
+terminal Boolean		BOOL;
+terminal String			ID;
+
+non terminal String		Start, SL;
+non terminal			structures, structure, fieldDefs, fieldDef;
+non terminal String		procedures, procedure;
+non terminal			paramListOpt, paramList, param;
+non terminal Hashtable		varDecl;
+non terminal Hashtable		varDecls;
+non terminal String		block, stmt;
+non terminal			returnStmt, whileLoop;
+non terminal String		assignment;
+non terminal String 		input, output;
+non terminal			procCall, passParamsOpt, passParams, passParam;
+non terminal			ifStmt, optElseIf, optElse;
+non terminal Expr		valueExpr;
+non terminal ArrayList		varList;
+non terminal Var		variableExpr;
+
+precedence left			OR;
+precedence left			AMPERSAND;
+precedence left			EQOP;
+precedence left			RELOP;
+precedence left			ADDOP;
+precedence left			MULOP;
+precedence left			NOT, PERIOD;
+precedence left			OPENP;
+
+Start		::=	SL:prog
+			{:	RESULT = prog;
+			:};
+
+SL		::= 	structures procedures:procs
+			{: RESULT = procs;
+			:};
+
+structures 	::=	structures structure
+		|	;
+
+structure	::=	STRUCT ID OPENB fieldDefs CLOSEB;
+
+fieldDefs	::=	fieldDefs fieldDef
+		|	fieldDef;
+
+fieldDef	::=	TYPE ID SEMI
+		|	ID ID SEMI
+		|	STRUCT OPENB fieldDefs CLOSEB ID SEMI;
+
+procedures	::=	procedures:procs procedure:proc
+			{:	RESULT = procs + proc;
+			:}
+		|	procedure:proc
+			{:	RESULT = proc;
+			:};
+
+procedure	::=	ID:id OPENP paramListOpt:list CLOSEP OPENB varDecls:v block:b CLOSEB
+			{:	
+				if (id.equals("main")) {
+					RESULT = ".globl main\nmain:\n" + b + "\ttrap\t10\t\t# Quit program\n";
+				}
+			:};
+
+
+paramListOpt	::=	paramList 
+		|	{:
+				tables.put(currProc, new VarTable(0));
+			:};
+
+paramList	::=	paramList COMMA param
+		|	param;
+
+param		::=	TYPE ID
+		|	ID ID
+		|	TYPE AMPERSAND ID
+		|	ID AMPERSAND ID;
+
+varDecls	::=	varDecls:vars varDecl:var SEMI
+			/*{:
+				if (vars!=null) {
+                                	for ( Enumeration e = var.keys(); e.hasMoreElements(); ) {
+                                		String s = (String)(e.nextElement());
+                                        	vars.put(s, var.get(s));
+                                	}
+                                	RESULT = vars;
+                                }
+                                else { RESULT = var; }
+			:}*/
+		|	;
+
+varDecl		::=	TYPE:t varList:v
+			{:
+				VarTable varTable = (VarTable)(tables.get(currProc));
+				Var var;
+				String s;
+				for (int i=0; i<v.size(); i++) {
+					s = (String)(v.get(i));
+					var = new Var(s, t, (++offset)*-4); 
+					if (!varTable.containsKey(s)) { varTable.addVar(s, var); }
+					else { throw new CompileException("Variable '" + s + "' has already been declared"); }
+				}
+			:}
+		|	ID:id varList:v
+									/// STRUCTURES, DON'T BLOODY LOOK!!!
+			{:
+				VarTable varTable = (VarTable)(tables.get(currProc));
+				Var var;
+				String s;
+				for (int i=0; i<v.size(); i++) {
+					s = (String)(v.get(i));
+					var = new Var(s, id, (++offset)*-4);
+					varTable.addVar(s, var);
+				}
+			:};
+
+varList		::=	varList:list COMMA ID:id
+			{:
+				list.add(id);
+				RESULT = list; 
+			:} 
+		|	ID:id
+			{:
+				ArrayList aList = new ArrayList();
+				aList.add(id);
+				RESULT = aList;
+			:};
+
+block		::=	block:b stmt:s SEMI
+			{:	RESULT = b + s;
+			:}
+		|	stmt:s SEMI
+			{:	RESULT = s;
+			:};
+		
+stmt		::=	output:s
+			{:	RESULT = s;
+			:}
+		|	input:i
+			{:	RESULT = i;
+			:}
+		|	assignment:a
+			{:	RESULT = a;
+			:}
+		|	returnStmt
+		|	procCall
+		|	whileLoop
+		|	ifStmt;
+
+output		::=	OUT OUTSIGN valueExpr:v
+			{:	
+				if (v.type.equals("char")) {
+					if (reg>1) { reg--; }
+					RESULT = v.code + "\tadd\t$4, $" + reg + ", $0\t# out << <var>\n" +
+					"\ttrap\t101\t\t# Output contents of $4 as ASCII character\n";
+				}
+				else if (v.type.equals("int")) {
+					if (reg>1) { reg--; }
+					RESULT = v.code + "\tadd\t$4, $" + reg + ", $0\t# out << <var>\n" + 
+					"\ttrap\t1\t\t# Output contents of $4 as integer\n";
+				}
+			:};
+
+input		::=	IN INSIGN variableExpr:var
+			{:
+				if (var.getType().equals("char")) {
+					RESULT = "\ttrap\t102\t\t# read integer into $2\n\tsw $2, " + var.getAddress() + "($30)\t# in >> <char_var>\n";
+				}
+				else if (var.getType().equals("int")) {
+					RESULT = "\ttrap\t5\t\t# read integer into $2\n\tsw $2, " + var.getAddress() + "($30)\t# in >> <int_var>\n";
+				}
+			:};
+
+assignment      ::=     variableExpr:varE ASSIGN valueExpr:valueE
+			{: 
+				if (valueE.type.equals(varE.getType())) {
+					if (reg > 1) { reg--; }
+					RESULT = valueE.code + "\tsw\t$1, " + varE.getAddress() + "($30)\t# <var> <- $" + reg + "\n";
+				}
+				else { throw new CompileException("Type mismatch"); }
+			:};
+
+returnStmt      ::=     RETURN;
+
+procCall	::=	ID OPENP passParamsOpt CLOSEP;
+
+passParamsOpt	::=	passParams
+		|	;
+
+passParams	::=	passParams COMMA passParam
+		|	passParam;
+
+passParam	::=	valueExpr;
+
+whileLoop	::=	WHILE valueExpr OPENB block CLOSEB;
+
+ifStmt		::=	IF valueExpr OPENB block CLOSEB optElseIf optElse;
+
+optElseIf	::=	ELSEIF valueExpr OPENB block CLOSEB optElseIf
+		|	;
+
+optElse		::=	ELSE OPENB block CLOSEB
+		|	;
+
+
+valueExpr	::=	variableExpr:v
+			{:
+				if (v.getType().equals("int")) {
+					String code = "\tlw\t$" + reg + ", " + v.getAddress() + "($30)\t# load integer into $" + reg + "\n";
+					RESULT = new Expr(code, v.getType(), reg);
+					if (reg >=1 ) { reg++; }
+				}
+				else if (v.getType().equals("char")) {
+					String code = "\tlw\t$" + reg + ", " + v.getAddress() + "($30)\t# load character into $" + reg + "\n";
+					RESULT = new Expr(code, v.getType(), reg);
+					if (reg >=1 ) { reg++; }
+				}
+			:}
+		|	valueExpr:v1 ADDOP valueExpr:v2
+			{:
+				if ((v1.type.equals(v2.type)) && (v1.type.equals("int"))) {
+                                        String code = v1.code + v2.code + "\tadd\t$" + v1.reg + ", $" + v1.reg + ", $" + v2.reg + "\t# $" + reg + " <- <v1> * <v2>\n";
+					RESULT = new Expr(code, "int", v1.reg);
+					reg--;
+				}
+				else { throw new CompileException("Wrong types specified"); }
+			:}
+		|	valueExpr:v1 MULOP valueExpr:v2
+                        {:
+                                if ((v1.type.equals(v2.type)) && (v1.type.equals("int"))) {
+					String code = v1.code + v2.code + "\tmult\t$" + v1.reg + ", $" + v2.reg + "\t\t# $" + v1.reg + " <- $" + v1.reg + " * $" + v2.reg + "\n"
+						     + "\tmflo\t$" + v1.reg + "\n";
+                                        RESULT = new Expr(code, "int", v1.reg);
+					reg--;
+                                }
+                                else { throw new CompileException("Wrong types specified"); }
+                        :}
+		|	valueExpr EQOP valueExpr
+		|	valueExpr RELOP valueExpr
+		|	OPENP valueExpr CLOSEP
+		|	NOT valueExpr
+		|	valueExpr OR valueExpr
+		|	valueExpr AMPERSAND valueExpr
+		|	INT:i
+			{:
+				String code = "\tllo\t$" + reg + ", " + i.intValue() + "\t\t# Put low 16 bits of integer into $" +
+				reg + "\n\tlhi\t$" + reg + ", " + i.intValue() + "\t\t# Put high 16 bits of integer into $" + reg + "\n";
+				RESULT = new Expr(code, "int", reg);
+				if (reg >=1 ) { reg++; }
+			:}
+		|	CHAR:c
+			{:	String code = "\taddi\t$" + reg + ", $0, " + (int)(c.charAt(0)) + "\t# Put ASCII value of character into $" + reg + "\n";
+				RESULT = new Expr(code, "char", reg);
+				if (reg >=1 ) { reg++; }
+			:}
+		|	BOOL
+		|	ADDOP:addop INT:i
+			{:
+				if (addop.equals("+")) { throw new CompileException("Attempted to perform unary addition"); }
+				String code = "\tllo\t$" + reg + ", -" + i.intValue() + "\t\t# Put low 16 bits of integer into $" + reg +
+						"\n\tlhi\t$" + reg + ", -" + i.intValue() + "\t\t# Put high 16 bits of integer into $" + reg + "\n";
+				RESULT = new Expr(code, "int", reg);
+				if (reg >=1 ) { reg++; }
+			:};
+
+variableExpr	::=	ID:id {:
+				VarTable varTable = (VarTable)(tables.get(currProc));
+				if (varTable.containsKey(id)) { RESULT = varTable.getVar(id); }
+				else { throw new CompileException("Undeclared variable '" + id + "'"); }
+			:}
+		|	variableExpr PERIOD ID;

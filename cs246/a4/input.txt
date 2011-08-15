@@ -1,0 +1,4 @@
+simple sort 9 8 7 6 5
+log sort 8 3 5 1 4
+simple store 8 9 0 1
+log store 7 2 4 1 9

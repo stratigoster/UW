@@ -1,0 +1,6 @@
+***ERROR***:8:5:	Incompatible types in assignment of ` universal boolean ' to ` universal integer '
+***ERROR***:12:25:	Record ` data ' doesn't contain field ` blah '
+
+------
+Compilation error
+------

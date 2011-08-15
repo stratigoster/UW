@@ -1,0 +1,1 @@
+find . -iname '*.mips' -exec echo '{}' >> all.txt \; -exec cat -n '{}' >> all.txt \;

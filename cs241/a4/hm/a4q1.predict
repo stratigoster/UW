@@ -1,0 +1,22 @@
+This file contains the final predictor table.
+Each row contains the results for one particular nonterminal.
+Each column contains the results for one particular terminal.
+The only changes you should make to this file are to change the
+appropriate 'E's to the appropriate rule numbers in the range 1 to 13.
+In particular, if you thought that on input a and b, you should expand
+non-terminal <S> with rule 13 and 7, respectively, you would write
+
+
+	a   b   e   d   t   v   w   x   y   z  EOF
+<S>     13  7   E   E   E   E   E   E   E   E   E
+
+Note the first digit of any two-digit rule number should
+line up with the terminal.
+
+	a   b   e   d   t   v   w   x   y   z  EOF
+<S>     1   E   3   E   2   E   E   E   E   E   E
+<T>     E   E   E   E   4   E   E   E   E   E   E
+<U>     6   E   6   5   6   5   5   E   E   E   6
+<V>     E   E   E   8   E   7   8   E   E   E   E
+<W>     E   E   E   10  E   E   9   E   E   E   E
+<X>     E   E   E   12  E   E   E   11  E   13  E

@@ -1,0 +1,43 @@
+(a)
+
+VEC undefined, no optimizations:
+User: 0m2.480s
+
+VEC undefined, O2 optimizations:
+User: 0m0.380s
+
+VEC defined, no optimizations:
+User: 0m13.120s
+
+VEC defined, O2 optimizations:
+User: 0m0.280s
+
+Without optimizations, we see that using vectors are about 6 times slower 
+than using arrays (13s vs 2s). This is because with vectors (or any STL
+container), it uses the std::allocator, which in turn calls new/delete. Thus
+vectors are allocated on the heap, which is slower than arrays which are on
+the stack. With O2 optimizations, both the runtime for the vector code and
+the array code were improved, and the vector code is even faster than the
+array code by 0.1s.
+
+(b)
+
+VEC + CHECK defined, no optimizations:
+User: 0m30.050s
+
+VEC defined, CHECK undefined, no optimizations:
+User: 0m13.120s
+
+VEC + CHECK defined, O2 optimizations:
+User: 0m0.620s
+
+VEC defined, CHECK undefined, O2 optimizations:
+User: 0m0.280s
+
+With CHECK defined and no optimizations, the vector is accessed with the at()
+function, which does subscript checking, and hence it is much slower than
+simply using the [] indexing.
+With CHECK defined and O2 optimizations, the runtime was improved in both
+cases (0.6s and 0.2s). This is probably because the size of the vector was 
+specified initially, and thus the compiler was able to statically check the
+subscripting. 

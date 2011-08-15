@@ -1,0 +1,309 @@
+<html><head><title>CS 241 - Assignment 3</title></head>
+
+<table width="100%">
+
+<tr>
+<td rowspan=2><h1>CS 241 - Assignment 3</h1><h2>Scanners</h2>
+
+<td ALIGN=RIGHT>Instructors:
+<br>Byron Weber Becker
+<br>J. P. Pretti&nbsp;</td>
+
+<td rowspan=2><img src="//www.uwaterloo.ca/images/UWlogo.GIF" alt="[UW Logo]"> 
+
+<tr>
+<td align=right>Due: 2005 October 28 at 18:00<br>
+Late: 2005 October 30 at 23:59 
+
+</table> 
+<hr>
+
+<H2>Introduction</H2>
+
+<P>This is the first of three assignments devoted to constructing a
+scanner, parser, and MIPS code generator for SL programs.  These
+assignments are heavily tool-dependent.  You will be using the JLex
+scanner generator and the CUP parser generator to build an SL compiler
+written in Java. SL is described by the <A HREF="../sl/index.html">SL
+language specification</A>.
+
+<P> The actual work you need to do for this particular assignment is
+relatively minor.  Most of the work will be in understanding the tools,
+their documentation, how they fit together, and the purpose of the code
+that we provide with this assignment.  Acquiring this understanding is
+definitely a significant amount of work.
+
+<P> The MIPS assembler is written in Java using many of the same
+techniques required in order to complete this and the next two
+assignments, and using the same tools.  The source code for the MIPS
+assembler is therefore a resource that you can use as an example of a
+working solution to a similar problem.
+
+<H3>Some Hints about Directory Structure</H3>
+
+<P>While working on each question, you will find it most convenient if
+your scanner specification file is called simply "<TT>Yylex</TT>".  For
+submission purposes, however, each question requires a file with a
+different name.  Therefore, you should set up a separate directory for
+each question, plus a separate submission directory.  Symlink the actual
+working files in each question directory (all called "<TT>Yylex</TT>")
+into the submission directory under the appropriate name.
+
+<P> Please note that you are responsible for submitting correctly.  There
+are ways for you to determine unambiguously whether or not your submission
+worked as expected; see the <TT>submit</TT> man page for more details.
+
+<H3>Building your Program</H3>
+
+You will need to read the JLex documentation to learn many of the details
+you will need in order to complete this assignment successfully.  To
+reduce confusion, here is a synopsis of the process you need to follow in
+order to turn your source files into Java class files.  You will need to
+go through this process for questions 2 and 3.  Question 1 is simpler;
+there is no CUP file, so step 2 can be omitted.
+
+<OL>
+<LI>Symlink the provided code (see below) into your working directory 
+for the current question.
+<LI>Use Java CUP to convert the parser specification (trivial file
+<TT><A HREF="code/SL.cup">~cs241/pub/a/3/code/SL.cup</A></TT>, 
+provided by us) into a pair of Java source files (<TT>parser.java</TT> 
+and <TT>Sym.java</TT>).  The command line you need is as follows:
+<BLOCKQUOTE><PRE>
+java java_cup.Main -symbols Sym &lt;SL.cup
+</PRE></BLOCKQUOTE>
+    <LI>Use JLex to convert your scanner specification 
+(file <TT>Yylex</TT>) into a Java source file (<TT>Yylex.java</TT>).  
+The command line you need is as follows:
+<BLOCKQUOTE><PRE>
+java JLex.Main Yylex
+</PRE></BLOCKQUOTE>
+    <LI>Use the Java compiler to compile all the Java source files:
+<BLOCKQUOTE><PRE>
+javac *.java
+</PRE></BLOCKQUOTE>
+</OL>
+
+<P>Only the last two steps above need to be repeated as you modify your
+code.  Of course you will want to create a script (or makefile if you're
+looking to learn another useful tool) to automate the above.  Remember
+<B>Your Unix</B> and the tutor(s) are there to help.
+
+<P> You will not use any package declarations in your code.  You may want
+to modify your <TT>CLASSPATH</TT> to include "<TT>.</TT>", the current
+directory.
+
+<P>You may assume that all input files will end with a newline character.
+
+<H3>Where to go for Information</H3>
+
+As mentioned above, most of the work of completing this assignment is
+reading documentation and learning how the provided tools work. Here are
+some links that will be helpful:
+
+<UL>
+<LI><A HREF="/~isg/res/java/jlex/manual.html">JLex 
+Documentation</A> - Documentation for the JLex scanner generator.  
+Most questions about how JLex works can be answered by reading this document.
+You may need to read it more than once and compare it to the provided 
+examples to understand JLex.
+<LI><A HREF="/~isg/res/java/src/mips/">MIPS Source Code</A> - 
+Source code for the MIPS tools.  The assembler is built using JLex and 
+CUP, so the MIPS source code provides sample input files for both tools.  
+There are many files here; you will want to concentrate on the JLex and 
+CUP specification files <TT>Yylex</TT> and <TT>MIPS.cup</TT>.
+    <LI><A HREF="http://java.sun.com/products/j2se/1.3/docs/api">Java 
+2 Platform API</A> - Javadoc documentation for the Java libraries from 
+Sun.  You will need to use a few procedures from these libraries in 
+your programs.
+    <LI><A HREF="/~isg/res/java/">Java Resources</A> - Various 
+resources, including the above, related to Java.  This link is also 
+available off the main CS 241 web page.
+</UL>
+
+<H2>Question 0 - Sample JLex Specification (0% of your final grade)</H2>
+
+You are given the file <TT><A
+HREF="Yylex.0">~cs241/pub/a/3/Yylex.0</A></TT>, which is a simple JLex
+specification somewhat similar to the one you will be creating for
+Question 1.  Compile and run the program; the process is the same as that
+required for Question 1.  Make sure you understand the process, and learn
+from the JLex documentation what each part of <TT>Yylex.0</TT> means. Try
+various valid and invalid inputs. Only then should you proceed to Question
+1.  The same <a href="Main.java">Main.java</a> used in Question 1 should
+be used for Question 0.
+
+<H2>Question 1 - Small Integer Warm-Up (1% of your final grade)</H2>
+
+<H3>Introduction</H3>
+In this and the next question (Questions 1 and 2), you will asked to provide a 
+DFA (with actions) as input to JLex.  You will not be using the 
+full power of JLex.  Each "regular expression" in the JLex specification 
+file will just be a set of individual characters expressed using 
+the '<TT>[</TT>' ... '<TT>]</TT>' feature of regular expressions.  In 
+other words, <TT>yytext()</TT> will always be just one character and 
+each piece of action code you write will be responsible for handling just 
+the single "current" character. It is important to understand that 
+failing to handle the input one character at a time will result in significant 
+marking deductions.
+
+<P>It will be helpful to draw your solution as a DFA on paper before trying 
+to code it in JLex.  Note that in order to work as expected your solution 
+must be a DFA, not an NFA.  If you code an NFA in your JLex specification 
+file (to think about: how would you do that?), it will in fact be 
+interpreted as a DFA in a manner which is indirectly specified in the 
+JLex documentation.
+
+<P>
+<H3>Requirements</H3>
+
+<p>Your main task is to define a DFA in JLex which accepts files with one
+line consisting precisely of a positive integer without leading zeros that
+is divisible by both 3 and 5. (Can you tell that one of your instructors
+is also teaching MATH 135 this term?) Actions cannot be used to complete this main task.
+
+<P>Additionally, for each accepted word (integer), your DFA must use
+actions to compute and output (using <tt>System.out.println</tt>) the
+longest string of consecutive digits in the input. If there is a "tie" then the first (or leftmost) such string should be printed. For each rejected word,
+upon discovery of the error, you must execute
+<tt>System.err.println("Rejected")</tt> and then terminate immediately
+using <tt>System.exit(-1)</tt> (rather than consuming the rest of the
+input as is done with some of the in-class examples).
+ 
+<P>All computations and recognition must be done "on the fly". That is,
+you must solve this problem using the DFA in a meaningful way. You cannot,
+for example, accumulate all the input and then use Java on its own (as a
+final action) to do the recognition.
+
+<h3>Hints</h3> 
+
+<ol> 
+
+<li>For this question, use <TT><A
+HREF="Main.java">~cs241/pub/a/3/Main.java</A></TT> as the main program.
+
+<li>You may want to build your solution gradually, using JLex at each
+stage to see how your scanner file gets transformed into a Java file.</li>
+
+<li>You can use the <tt>.</tt> to match all "other" characters
+in JLex.  That is, if you have: 
+<pre>
+&lt;X&gt; [1-3] {otherstuff}
+&lt;X&gt; . {stuff}
+</pre>
+JLex will do <tt>stuff</tt> if any other character other than 
+1, 2 or 3 is matched.  While this (kind of) creates an NFA (you should
+figure out why), JLex will only do <tt>otherstuff</tt> on input
+1, 2 and 3, and thus, this is truly a DFA.
+
+<li>Newline is not matched by <tt>.</tt>.
+
+<li>Recall that an integer is divisible by 5 iff it ends in 0 or 5.
+
+<li>Recall that an integer is divisible by 3 iff the sum of its digits is
+divisible by 3. Do not sum the digits as you go and check this condition
+at the end of the input. This violates the requirements! Instead, try to
+imagine a finite set of states "you can be in" allowing you to test this
+condition "on the fly".
+
+</ol>
+
+<H3>Documentation</H3>
+
+<P>For this (and subsequent questions), Java documentation is not required
+but you must give your states meaningful names.
+
+<H3>Testing</H3>
+
+<P>Some test cases are available at <TT><A
+HREF="test1/">~cs241/pub/a/3/test1</A></TT>. Passing these test cases is
+necessary but not sufficient in order to obtain correctness marks on this
+question. Many questions about precisely what constitutes correct program
+behavior can also be answered by looking at these examples.
+
+<P>Files to submit: <B>Yylex.1</B>
+
+<H2>Question 2 - Subset of SL (1.5% of your final grade)</H2>
+
+For this question you are still subject to the limitations on use of JLex from Question 1.
+Question 3 will be essentially like this question, but you will be asked to use the full
+power of JLex.
+<P>
+Write a scanner that recognizes tokens in SL.  Your finished program will read an
+SL program from standard input, and print out the tokens contained within on standard output.
+We have already written a main program and other support code.  When your scanner is combined with
+the provided code, the result will be a tokenizer similar to the MIPS tokenizer contained in the
+Java class <TT>mips.tok</TT>.
+<P>
+Provided code, available in <TT><A HREF="code/">~cs241/pub/a/3/code/</A></TT>:
+<UL>
+    <LI><TT><A HREF="code/SLToken.java">SLToken.java</A></TT> - A file which implements the SL
+        tokens.  Your code will call into this file to create SL token objects which are then
+    returned to the main program.
+    <LI><TT><A HREF="code/tok.java">tok.java</A></TT> - A main program which implements a
+        tokenizer, given the scanner you will be creating.
+    <LI><TT><A HREF="code/SL.cup">SL.cup</A></TT> -  A skeletal version of the grammar
+        specification file for SL.  In Assignment 4 you will be filling this in to contain a
+    complete context-free grammar for SL.  For now it is needed only because the token
+    types available in SL must be listed here in order for the compilation process to work.
+</UL>
+<P>
+For this question you are restricted to recognizing one character at a time.  This makes it
+very tedious to build a scanner specification for all of SL.  Therefore, for this question you should assume SL only contains the following features:
+<UL>
+    <LI>Comments
+    <LI>Identifiers
+    <LI>Keywords <TT>char</TT> and <tt>if</tt>
+    <LI>Operators <TT>==</TT> and <TT>|</TT>
+</UL>
+
+<P>Note that this means, for example, that for this question, <TT>while</TT> 
+is scanned as a valid identifier.
+
+<P>
+You should implement the required features in the order listed - first 
+comments, then identifiers, then continue with the keywords and operators.  
+Test each phase thoroughly before proceeding.
+<P>
+If an invalid character sequence is detected, your program should exit 
+and print the error message "<TT>Illegal character at line <I>NN</I></TT>" 
+to standard <B>output</B> (not standard error as might be expected), 
+where <TT><I>NN</I></TT> is replaced by the appropriate line number.  The
+error message must be preceded by a newline (to ensure that it starts at 
+the beginning of a line) and be followed by a single newline.  Some of 
+the provided test cases are an invalid <TT>.sl</TT> file so you can check 
+that your program does <B>exactly</B> the right thing.  Lines are numbered
+starting from 1. Only valid tokens preceding the illegal character should
+be returned as they are scanned.
+
+<P>Some test cases are available at 
+<TT><A HREF="test23/">~cs241/pub/a/3/test23</A></TT>.
+Passing these test cases is necessary but not sufficient in order to 
+obtain correctness marks on this question.  Many questions about what 
+constitutes correct program behaviour can be answered by looking at 
+these test cases.
+<P>
+Note:  You are doing lexical analysis only!  Don't worry about
+syntactic or semantics errors for this assignment.<p>
+
+Files to submit: <B>Yylex.2</B>
+
+<H2>Question 3 - Scanner for SL (1% of your final grade)</H2>
+
+Write a scanner that recognizes all tokens in SL.  Your program will 
+do the exact same thing as
+your program from Question 2, but since you are permitted to use the full power of JLex, it is not
+difficult to handle all tokens.  You must not declare any scanner states for this question, or
+mention any scanner states in your JLex specification; instead, you will be writing regular
+expressions for each token type and the JLex tool will create all the states internally.
+<P>
+You may use the test cases from Question 2 to test your submission to this question.  However,
+you will obviously require many more test cases since in Question 2 most tokens were considered invalid input
+and the provided test cases were not sufficient even for Question 2.
+<P>
+Note:  You are doing lexical analysis only!  Don't worry about
+syntactic or semantics errors for this assignment.<p>
+
+Files to submit: <B>Yylex.3</B>
+
+</html>

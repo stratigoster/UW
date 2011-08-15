@@ -1,0 +1,52 @@
+Starter set of UNIX commands - add commands you find useful or want to
+remember
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+man man         - outlines the UNIX manual pages
+cd              - change to home dir
+cd temp         - change working directory to temp
+cd .snapshot    - change working directory to hidden directory .snapshot 
+cp f1 f2        - copy file f1 to f2
+cp -r d1 d2     - copy tree d1 to tree d2
+mv f1 f2        - move (rename) file f1 to f2
+ls              - list files in current dir
+ls -F           - list files with suffixes at the end of file/dir names 
+ls -R           - list recursively: files and files in subdirs
+lpr f1          - print file f1 
+more, cat, head - view file
+less, tail      - view files
+cat -t, od -a   - view non-printing chars/binary files
+pwd             - print current (working) dir
+chmod u+x f1    - gives executable permission to users in the users group for f1 
+date            - todays date
+mkdir d1        - make a directory d1
+rm f1           - remove (delete) file f1
+rmdir d1        - remove (delete) dir d1 (d1 must be empty)
+wc f1           - show number of characters, words, lines in file f1
+ghostview f1.ps - view postscript file f1
+acroread f1.pdf - view PDF file f1
+rlogin machine  - login to remote computer (for changing computers)
+ps              - report a snapshot of the current processes 
+
+
+lab_fees        - show or pay course lab fees
+submit          - send assignment to course
+diskquota       - show disk use and limits
+lpquota         - show printer use and limits
+
+
+man mfcf-undergrad-home - info about automatic backups and retrieving
+deleted files
+man mfcf-undergrad-environment - list of X terminal rooms
+man mfcf-course-environment - more about user accounts (also see MFCF web
+page)
+read_system_news - daily news
+
+lynx            - text-display web browser
+netscape        - web browser
+mozilla         - web browser
+pico, vi, emacs - editors (also see tutorials for these)
+pine, elm, mail - mail programs
+pine, trn, rn   - news programs
+spell, ispell   - spelling checking programs
+hostselect      - list hostnames
+hostselect attr=cpu +listall   - list all CPU servers

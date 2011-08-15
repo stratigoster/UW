@@ -1,0 +1,174 @@
+Script started on Tue Nov 20 14:03:10 2007
+
+
+[0;36m-== [1;33m1[0;36m ==-[1;32m npow@cpu16 [0;36m-==[1;33m ~/cs343/a5[0;36m ==-[0m
+-->[0m ./vote 1 1
+Voter0  
+S *     
+V 1     
+C       
+F 1     
+=================
+All tours started
+uC++ Runtime warning (UNIX pid:13647) : program terminating with 12544(0x3100) bytes of storage allocated but not freed.
+Possible cause is unfreed storage allocated by the program or system/library routines called from the program.
+
+
+[0;36m-== [1;33m2[0;36m ==-[1;32m npow@cpu16 [0;36m-==[1;33m ~/cs343/a5[0;36m ==-[0m
+-->[0m ./vote 1 1   1 2
+Usage: ./vote N Q, parameter Q must be positive, and odd
+
+
+[0;36m-== [1;33m3[0;36m ==-[1;32m npow@cpu16 [0;36m-==[1;33m ~/cs343/a5[0;36m ==-[0m
+-->[0m ./vote 1 2   1 -1
+Usage: ./vote N Q, parameter Q must be positive, and odd
+
+
+[0;36m-== [1;33m4[0;36m ==-[1;32m npow@cpu16 [0;36m-==[1;33m ~/cs343/a5[0;36m ==-[0m
+-->[0m ./3   vote 3 2
+Usage: ./vote N Q, parameter Q must be positive, and odd
+
+
+[0;36m-== [1;33m5[0;36m ==-[1;32m npow@cpu16 [0;36m-==[1;33m ~/cs343/a5[0;36m ==-[0m
+-->[0m ./vote 3 3
+Voter0  Voter1  Voter2  
+S *     S       S       
+V 0                     
+B 1     V 1*            
+        B 2     V 0*    
+                C       
+U 1*            F 0     
+F 0     U 0*            
+...     F 0     ...     
+=================
+All tours started
+uC++ Runtime warning (UNIX pid:13651) : program terminating with 12544(0x3100) bytes of storage allocated but not freed.
+Possible cause is unfreed storage allocated by the program or system/library routines called from the program.
+
+
+[0;36m-== [1;33m6[0;36m ==-[1;32m npow@cpu16 [0;36m-==[1;33m ~/cs343/a5[0;36m ==-[0m
+-->[0m ./orig_vote 3 3
+Voter0  Voter1  Voter2  
+======= ======= ======= 
+S*      S       S       
+V 1     
+B 1             V 1*    
+        V 1*    B 2     
+        C       
+U 1*    F 1             
+F 1             U 0*    
+...     ...     F 1     
+=================
+All tours started
+uC++ Runtime warning (UNIX pid:13652) : program terminating with 12544(0x3100) bytes of storage allocated but not freed.
+Possible cause is unfreed storage allocated by the program or system/library routines called from the program.
+
+
+[0;36m-== [1;33m7[0;36m ==-[1;32m npow@cpu16 [0;36m-==[1;33m ~/cs343/a5[0;36m ==-[0m
+-->[0m                                                                                  -->[0m                                                                                                     -->[0m ./vote 9 3
+Voter0  Voter1  Voter2  Voter3  Voter4  Voter5  Voter6  Voter7  Voter8  
+S       S       S *                                                     
+                V 0                                                     
+                B 1     S *     S       S       S       S       S       
+                        V 0                                             
+                        B 2                             V 0*            
+                                                        C               
+                U 1*                                    F 0             
+                F 0     U 0*                                            
+...     ...     ...     F 0     ...     ...     ...     ...     ...     
+V 0*                                                                    
+B 1                                     V 0*                            
+                                        B 2     V 0*                    
+                                                C                       
+U 1*                                            F 0                     
+F 0                                     U 0*                            
+...     ...     ...     ...     ...     F 0     ...     ...     ...     
+                                V 0*                                    
+                                B 1                             V 1*    
+        V 0*                                                    B 2     
+        C                                                               
+        F 0                     U 1*                                    
+                                F 0                             U 0*    
+...     ...     ...     ...     ...     ...     ...     ...     F 0     
+=================
+All tours started
+uC++ Runtime warning (UNIX pid:13698) : program terminating with 12544(0x3100) bytes of storage allocated but not freed.
+Possible cause is unfreed storage allocated by the program or system/library routines called from the program.
+
+
+[0;36m-== [1;33m8[0;36m ==-[1;32m npow@cpu16 [0;36m-==[1;33m ~/cs343/a5[0;36m ==-[0m
+-->[0m ./vote 9 9
+Voter0  Voter1  Voter2  Voter3  Voter4  Voter5  Voter6  Voter7  Voter8  
+S       S       S       S *                                             
+                        V 0                                             
+V 0*                    B 1     S       S       S       S       S       
+B 2             V 1*                                                    
+                B 3                     V 0*                            
+                                V 0*    B 4                             
+        V 0*                    B 5                                     
+        B 6                                                     V 0*    
+                                                        V 1*    B 7     
+                                                V 0*    B 8             
+                                                C                       
+                        U 7*                    F 0                     
+U 6*                    F 0                                             
+F 0             U 5*                                                    
+                F 0                     U 4*                            
+                                U 3*    F 0                             
+        U 2*                    F 0                                     
+        F 0                                                     U 1*    
+                                                        U 0*    F 0     
+...     ...     ...     ...     ...     ...     ...     F 0     ...     
+=================
+All tours started
+uC++ Runtime warning (UNIX pid:13718) : program terminating with 12544(0x3100) bytes of storage allocated but not freed.
+Possible cause is unfreed storage allocated by the program or system/library routines called from the program.
+
+
+[0;36m-== [1;33m9[0;36m ==-[1;32m npow@cpu16 [0;36m-==[1;33m ~/cs343/a5[0;36m ==-[0m
+-->[0m ./vote 9 93orig_vote 3 3-->[0m ./vote 9 3      1
+Voter0  Voter1  Voter2  Voter3  Voter4  Voter5  Voter6  Voter7  Voter8  
+S       S       S       S       S       S       S *     S       S       
+                                                V 0                     
+                                                C                       
+...     ...     ...     ...     ...     ...     F 0     ...     ...     
+        V 0*                                                            
+        C                                                               
+...     F 0     ...     ...     ...     ...     ...     ...     ...     
+                V 1*                                                    
+                C                                                       
+...     ...     F 1     ...     ...     ...     ...     ...     ...     
+                                                                V 1*    
+                                                                C       
+...     ...     ...     ...     ...     ...     ...     ...     F 1     
+V 1*                                                                    
+C                                                                       
+F 1     ...     ...     ...     ...     ...     ...     ...     ...     
+                        V 1*                                            
+                        C                                               
+...     ...     ...     F 1     ...     ...     ...     ...     ...     
+                                                        V 0*            
+                                                        C               
+...     ...     ...     ...     ...     ...     ...     F 0     ...     
+                                V 0*                                    
+                                C                                       
+...     ...     ...     ...     F 0     ...     ...     ...     ...     
+                                        V 0*                            
+                                        C                               
+...     ...     ...     ...     ...     F 0     ...     ...     ...     
+=================
+All tours started
+uC++ Runtime warning (UNIX pid:13782) : program terminating with 12544(0x3100) bytes of storage allocated but not freed.
+Possible cause is unfreed storage allocated by the program or system/library routines called from the program.
+
+
+[0;36m-== [1;33m10[0;36m ==-[1;32m npow@cpu16 [0;36m-==[1;33m ~/cs343/a5[0;36m ==-[0m
+-->[0m quit
+sh: quit: command not found
+
+
+[0;36m-== [1;33m11[0;36m ==-[1;32m npow@cpu16 [0;36m-==[1;33m ~/cs343/a5[0;36m ==-[0m
+-->[0m exit
+exit
+
+script done on Tue Nov 20 14:04:42 2007

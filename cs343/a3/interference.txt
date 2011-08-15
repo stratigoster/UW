@@ -1,0 +1,46 @@
+All 10 runs do not necessarily produce the same output, as seen below
+(I had to increase the number of iterations from 5000000 to 10000000):
+
+-== 4 ==- npow@cpu20 -== ~/cs343/a3 ==-
+--> for x in `jot 10`; do ./a3q4; done
+shared:20000000
+shared:20000000
+shared:14112282
+shared:14112154
+shared:14114503
+shared:20000000
+shared:20000000
+shared:15725744
+shared:20000000
+shared:14111581
+
+The following answers are based on the original number of iterations, i.e. 5000000.
+In theory, the largest value printed would be 5000000*2 = 10000000.
+And the smallest value printed would be 2.
+
+On RISC machines, when a value is incremented it needs to be done as a sequence
+of 3 operations:
+
+R <- shared // load shared value into register R
+R <- R + #1 // increment register R by 1
+shared <- R // store register R into variable shared
+
+Consider the following execution path:
+
+Task 1                       | Task 2                       | Shared
+-----------------------------+------------------------------+------------
+R1 <- shared                 |                              | 0
+R1 <- R1 + #1                |                              | 0
+Context Switch               |                              | 
+                             | Task 2 runs till it's        | 
+                             | second-to-last iteration     | 4999999
+                             | Context Switch               | 
+shared <- R1                 |                              | 1
+Context Switch               |                              |
+                             | R2 <- shared (ie R2 <- 1)    |
+                             | Context Switch               |
+Task 1 runs till completion  |                              | 5000000
+                             | R2 <- R2 + #1                |
+                             | shared <- R2                 | 2
+
+This results in a value of 2 printed.

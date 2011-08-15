@@ -1,0 +1,14 @@
+Main> reduce (App to_Int (App (App cn_sub cn_III) cn_II))
+1
+Main> reduce (App to_Int (App (App cn_mult cn_III) cn_III))
+9
+Main> reduce (App to_Int (App (App cn_pow cn_II) cn_III))
+8
+Main> reduce (App (Prim Succ) (INT 0))
+1
+Main> reduce (App (Prim IsZero) (INT 0))
+\x.\y.x
+Main> reduce (App (Prim IsZero) (INT 1))
+\x.\y.y
+Main> reduce (App to_Int (App (App cn_pow (App (App cn_pow cn_II) cn_III)) cn_II))
+64

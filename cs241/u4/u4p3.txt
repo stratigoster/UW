@@ -1,0 +1,1 @@
+comm -13 sort1.txt sort2.txt > sort.result

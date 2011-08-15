@@ -1,0 +1,302 @@
+4 "REAL" 
+#
+37 "STD_OUTPUT" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/io/std_output.e"
+class-name: STD_OUTPUT
+parent-count: 1 parents: 35 
+c-type: T37 reference: yes
+ref-status: live id-field: yes 
+run-time-set-count: 1
+run-time-set:
+	STD_OUTPUT (37)
+#
+30 "DATABASE" 
+class-path: "/u3/npow/cs442/a5/database.e"
+class-name: DATABASE
+parent-count: 0
+c-type: T30 reference: yes
+ref-status: live id-field: yes 
+run-time-set-count: 1
+run-time-set:
+	DATABASE (30)
+#
+18 "ARRAYED_COLLECTION" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/base/arrayed_collection.e"
+class-name: ARRAYED_COLLECTION
+parent-count: 1 parents: 19 
+#
+10 "INTEGER_16" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/integer_16.e"
+class-name: INTEGER_16
+parent-count: 1 parents: 25 
+c-type: T10 reference: no
+#
+45 "NATIVE_ARRAY[INTEGER]" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/native_array.e"
+class-name: NATIVE_ARRAY
+parent-count: 1 parents: 21 
+c-type: T45 reference: no
+#
+2 "INTEGER_32" 
+#
+11 "INTEGER_64" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/integer_64.e"
+class-name: INTEGER_64
+parent-count: 1 parents: 25 
+c-type: T11 reference: no
+#
+12 "A5" 
+class-path: "/u3/npow/cs442/a5/a5.e"
+class-name: A5
+parent-count: 0
+c-type: T12 reference: yes
+ref-status: live id-field: yes 
+run-time-set-count: 1
+run-time-set:
+	A5 (12)
+#
+22 "ARRAY[STRING]" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/array.e"
+class-name: ARRAY
+parent-count: 1 parents: 18 
+c-type: T22 reference: yes
+ref-status: live id-field: yes 
+run-time-set-count: 1
+run-time-set:
+	ARRAY[STRING] (22)
+#
+36 "INPUT_STREAM" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/io/input_stream.e"
+class-name: INPUT_STREAM
+parent-count: 1 parents: 28 
+#
+16 "RULE" 
+class-path: "/u3/npow/cs442/a5/rule.e"
+class-name: RULE
+parent-count: 0
+c-type: T16 reference: yes
+ref-status: live id-field: yes 
+run-time-set-count: 1
+run-time-set:
+	RULE (16)
+#
+35 "OUTPUT_STREAM" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/io/output_stream.e"
+class-name: OUTPUT_STREAM
+parent-count: 0
+#
+5 "DOUBLE" 
+#
+2 "INTEGER" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/integer.e"
+class-name: INTEGER
+parent-count: 1 parents: 25 
+c-type: T2 reference: no
+#
+32 "ARRAYED_COLLECTION[RULE]" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/base/arrayed_collection.e"
+class-name: ARRAYED_COLLECTION
+parent-count: 1 parents: 19 
+c-type: T32 reference: yes
+ref-status: dead 
+run-time-set-count: 0
+#
+14 "PLATFORM" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/platform.e"
+class-name: PLATFORM
+parent-count: 1 parents: 15 
+#
+21 "SAFE_EQUAL" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/safe_equal.e"
+class-name: SAFE_EQUAL
+parent-count: 0
+#
+43 "ARRAYED_COLLECTION[STRING]" 
+#
+9 "NATIVE_ARRAY[CHARACTER]" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/native_array.e"
+class-name: NATIVE_ARRAY
+parent-count: 1 parents: 21 
+c-type: T9 reference: no
+#
+20 "TUPLE" 
+class-path: "TUPLE"
+class-name: TUPLE
+parent-count: 0
+#
+17 "ARRAY" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/array.e"
+class-name: ARRAY
+parent-count: 1 parents: 18 
+#
+26 "NUMERIC" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/numeric.e"
+class-name: NUMERIC
+parent-count: 1 parents: 24 
+#
+7 "STRING" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/string.e"
+class-name: STRING
+parent-count: 2 parents: 24 23 
+c-type: T7 reference: yes
+ref-status: live id-field: yes 
+run-time-set-count: 1
+run-time-set:
+	STRING (7)
+#
+46 "ARRAYED_COLLECTION[INTEGER]" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/base/arrayed_collection.e"
+class-name: ARRAYED_COLLECTION
+parent-count: 1 parents: 19 
+c-type: T46 reference: yes
+ref-status: dead 
+run-time-set-count: 0
+#
+29 "NATIVE_ARRAY[STRING]" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/native_array.e"
+class-name: NATIVE_ARRAY
+parent-count: 1 parents: 21 
+c-type: T29 reference: no
+#
+39 "TEXT_FILE_READ" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/io/text_file_read.e"
+class-name: TEXT_FILE_READ
+parent-count: 2 parents: 36 40 
+c-type: T39 reference: yes
+ref-status: live id-field: yes 
+run-time-set-count: 1
+run-time-set:
+	TEXT_FILE_READ (39)
+#
+42 "FIXED_ARRAY[STRING]" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/base/fixed_array.e"
+class-name: FIXED_ARRAY
+parent-count: 1 parents: 18 
+c-type: T42 reference: yes
+ref-status: live id-field: yes 
+run-time-set-count: 1
+run-time-set:
+	FIXED_ARRAY[STRING] (42)
+#
+40 "FILE" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/io/file.e"
+class-name: FILE
+parent-count: 0
+#
+27 "NATIVE_ARRAY" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/native_array.e"
+class-name: NATIVE_ARRAY
+parent-count: 1 parents: 21 
+#
+31 "ARRAY[RULE]" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/array.e"
+class-name: ARRAY
+parent-count: 1 parents: 18 
+c-type: T31 reference: yes
+ref-status: live id-field: yes 
+run-time-set-count: 1
+run-time-set:
+	ARRAY[RULE] (31)
+#
+28 "STRING_HANDLER" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/string_handler.e"
+class-name: STRING_HANDLER
+parent-count: 0
+#
+41 "FIXED_ARRAY" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/base/fixed_array.e"
+class-name: FIXED_ARRAY
+parent-count: 1 parents: 18 
+#
+38 "TOKENIZER" 
+class-path: "/u3/npow/cs442/a5/tokenizer.e"
+class-name: TOKENIZER
+parent-count: 0
+c-type: T38 reference: yes
+ref-status: live id-field: yes 
+run-time-set-count: 1
+run-time-set:
+	TOKENIZER (38)
+#
+13 "ANY" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/any.e"
+class-name: ANY
+parent-count: 1 parents: 14 
+#
+33 "NATIVE_ARRAY[RULE]" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/native_array.e"
+class-name: NATIVE_ARRAY
+parent-count: 1 parents: 21 
+c-type: T33 reference: no
+#
+15 "GENERAL" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/general.e"
+class-name: GENERAL
+parent-count: 0
+#
+23 "COMPARABLE" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/comparable.e"
+class-name: COMPARABLE
+parent-count: 1 parents: 13 
+#
+1 "INTEGER_8" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/integer_8.e"
+class-name: INTEGER_8
+parent-count: 1 parents: 25 
+c-type: T1 reference: no
+#
+3 "CHARACTER" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/character.e"
+class-name: CHARACTER
+parent-count: 2 parents: 24 23 
+c-type: T3 reference: no
+#
+44 "ARRAY[INTEGER]" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/array.e"
+class-name: ARRAY
+parent-count: 1 parents: 18 
+c-type: T44 reference: yes
+ref-status: live id-field: yes 
+run-time-set-count: 1
+run-time-set:
+	ARRAY[INTEGER] (44)
+#
+24 "HASHABLE" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/hashable.e"
+class-name: HASHABLE
+parent-count: 0
+#
+6 "BOOLEAN" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/boolean.e"
+class-name: BOOLEAN
+parent-count: 1 parents: 13 
+c-type: T6 reference: no
+#
+25 "INTEGER_GENERAL" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/integer_general.e"
+class-name: INTEGER_GENERAL
+parent-count: 2 parents: 26 23 
+#
+0 "NONE" 
+#
+8 "POINTER" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/pointer.e"
+class-name: POINTER
+parent-count: 2 parents: 24 28 
+c-type: T8 reference: no
+#
+19 "COLLECTION" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/kernel/collection.e"
+class-name: COLLECTION
+parent-count: 1 parents: 21 
+#
+34 "STD_INPUT_OUTPUT" 
+class-path: "/software/smarteiffel-1.1/distribution/lib/io/std_input_output.e"
+class-name: STD_INPUT_OUTPUT
+parent-count: 2 parents: 36 35 
+c-type: T34 reference: yes
+ref-status: live id-field: yes 
+run-time-set-count: 1
+run-time-set:
+	STD_INPUT_OUTPUT (34)
+#

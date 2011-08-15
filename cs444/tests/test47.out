@@ -1,0 +1,9 @@
+***ERROR***:26:17:	Return type of the current function doesn't match
+before (5 -> (("a" IN "integer" #f) ("b" IN "integer" #f) ("z" IN "integer" #f)) int)
+overwriting foo
+after (5 -> (("a" IN "integer" #f) ("b" IN "integer" #f) ("z" IN "integer" #f)) int)
+***ERROR***:34:24:	No compatible function found
+
+------
+Compilation error
+------

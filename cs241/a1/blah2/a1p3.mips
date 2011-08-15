@@ -1,0 +1,67 @@
+# Name: Nissan Pow
+# UserName: npow
+# Question: 1c
+# CS241
+#
+# Register usage:
+# $1 - result
+# $2 - address of array
+# $3 - number of elements in array 
+# $4 - current array index
+# $5 - used to test condition
+# $6 - array element address/data
+# $7 - temp 
+# $8 - largest element
+
+.globl a1p3	
+
+a1p3:
+	addi $30, $30, -36
+	sw $2, 8($30)
+	sw $3, 12($30)
+	sw $4, 16($30)
+	sw $5, 20($30)
+	sw $6, 24($30)
+	sw $7, 28($30)
+	sw $8, 32($30)
+
+	add $1, $0, $0		# initialise offset of largest element
+	add $4, $0, $0		# initialise current array index
+	lw $2, 40($30)		# get address of beginning of array
+	lw $3, 36($30)		# get number of elements in array	
+	sub $5, $3, $4		# array size - current index
+	sll $6, $4, 2		# calculate next array index
+	add $6, $6, $2
+	lw $6, 0($6)		# read next number from array
+	add $8, $6, $0		# set largest element to first element
+	addi $4, $4, 1		# increment current array index
+loop:	sub $5, $3, $4		# array size - current index
+	blez $5, done		# exit loop if at end of array
+	sll $6, $4, 2		# calculate next array index
+	add $6, $6, $2
+	lw $6, 0($6)		# read next number from array
+	sub $7, $6, $8		# current element - largest element
+	blez $7, mark1		# if largest element >= current element
+	add $8, $6, $0		# else set current element as largest element
+	add $1, $0, $4		# set offset of largest element
+	sll $1, $1, 2		# multiply offset by 4
+mark1:	addi $4, $4, 1		# increment current array index
+	j loop
+
+done:				# --- swap biggest element to first position ---
+	
+	add $6, $2, $0		# first element of array
+	lw $3, 0($6)		# put first element of array in $3
+	sw $8, 0($6)		# change first element of array to largest element - $8 
+	add $7, $2, $1		# set array position of largest element in $7
+	sw $3, 0($7)		# swap first element
+
+	lw $2, 8($30)
+	lw $3, 12($30)
+	lw $4, 16($30)
+	lw $5, 20($30)
+	lw $6, 24($30)
+	lw $7, 28($30)
+	lw $8, 32($30)
+
+	jr $31			# return to caller

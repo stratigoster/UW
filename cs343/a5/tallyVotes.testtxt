@@ -1,0 +1,175 @@
+NOTE: These tests were done on the INT version. Similar tests were performed
+on the other versions, but not included in this document for the sake of 
+brevity, as the output is similar in all versions.
+
+Test #1: Basic test with one voter. This test checks that the basic
+functionality in the program is present. Since there is only one
+voter, whatever this voter votes for will be the result of the vote.
+We see that Voter0 voted for 1, and then the voting was completed,
+and the result was 1. 
+
+--> ./vote 1 1
+Voter0  
+S *     
+V 1     
+C       
+F 1     
+=================
+All tours started
+
+
+Test #2: Commandline parameter test - Q must be odd. We see that
+an appropriate error message was printed since Q is even.
+
+--> ./vote 1 2
+Usage: ./vote N Q, parameter Q must be positive, and odd
+
+
+Test #3: Commandline parameter test - Q must be positive.
+An appropriate error message was printed since Q is negative.
+--> ./vote 1 -1
+Usage: ./vote N Q, parameter Q must be positive, and odd
+
+
+Test #4: Commandline parameter test - Q must be a multiple of N.
+An appropriate error message was printed since Q is not a multiple of N
+
+--> ./vote 3 2
+Usage: ./vote N Q, parameter Q must be positive, and odd
+
+
+Test #5: 3 voters, quorum = 3
+This is a relatively simple testcase to test that the voters block until
+all Q voters have finished voting. We see that Voter0 votes first for 0,
+and then blocks (the number of blocked voters is 1, since Voter0 was the
+only person that voted so far, and the quorum is 3). Then Voter1 votes next
+for 1 and blocks, and the number blocked is now 2. Finally, Voter2 votes
+for 0 and the voting is complete. The result of the vote is 0 since we had
+2 votes for 0 and only 1 vote for 1. Then Voter0 unblocks and the number
+of blocked tasks is properly decremented to 1. Finally, Voter1 unblocks
+and there are no more blocked tasks. This illustrates a proper execution
+sequence for 3 voters and quorum = 3. We also note that the output is
+properly formatted.
+
+--> ./vote 3 3
+Voter0  Voter1  Voter2  
+S *     S       S       
+V 0                     
+B 1     V 1*            
+        B 2     V 0*    
+                C       
+U 1*            F 0     
+F 0     U 0*            
+...     F 0     ...     
+=================
+All tours started
+
+
+Test #6: 9 voters, quorum = 3
+Same as above, but now with more voters. This tests that there are only
+3 voters voting at once. Indeed, we see that first voters 2,3,7 vote
+and result in tour 0, and then voters 0,5,6 vote resulting in tour 0,
+and finally voters 1,4,8 vote also resulting in tour 0. We also note that
+the number of blocked tasks are being properly incremented/decremented,
+and that the output is formatted properly.
+
+--> ./vote 9 3
+Voter0  Voter1  Voter2  Voter3  Voter4  Voter5  Voter6  Voter7  Voter8  
+S       S       S *                                                     
+                V 0                                                     
+                B 1     S *     S       S       S       S       S       
+                        V 0                                             
+                        B 2                             V 0*            
+                                                        C               
+                U 1*                                    F 0             
+                F 0     U 0*                                            
+...     ...     ...     F 0     ...     ...     ...     ...     ...     
+V 0*                                                                    
+B 1                                     V 0*                            
+                                        B 2     V 0*                    
+                                                C                       
+U 1*                                            F 0                     
+F 0                                     U 0*                            
+...     ...     ...     ...     ...     F 0     ...     ...     ...     
+                                V 0*                                    
+                                B 1                             V 1*    
+        V 0*                                                    B 2     
+        C                                                               
+        F 0                     U 1*                                    
+                                F 0                             U 0*    
+...     ...     ...     ...     ...     ...     ...     ...     F 0     
+=================
+All tours started
+
+
+Test #7: 9 voters, quorum = 9
+This test checks that the program can handle large quorum sizes. We see
+that the number of blocked tasks are properly incremented from 1-8, and
+then decremented from 7-0. We have 7 votes for tour 0, and 2 votes for
+tour 1, thus the result of the vote was properly determined to be tour 0.
+
+--> ./vote 9 9
+Voter0  Voter1  Voter2  Voter3  Voter4  Voter5  Voter6  Voter7  Voter8  
+S       S       S       S *                                             
+                        V 0                                             
+V 0*                    B 1     S       S       S       S       S       
+B 2             V 1*                                                    
+                B 3                     V 0*                            
+                                V 0*    B 4                             
+        V 0*                    B 5                                     
+        B 6                                                     V 0*    
+                                                        V 1*    B 7     
+                                                V 0*    B 8             
+                                                C                       
+                        U 7*                    F 0                     
+U 6*                    F 0                                             
+F 0             U 5*                                                    
+                F 0                     U 4*                            
+                                U 3*    F 0                             
+        U 2*                    F 0                                     
+        F 0                                                     U 1*    
+                                                        U 0*    F 0     
+...     ...     ...     ...     ...     ...     ...     F 0     ...     
+=================
+All tours started
+
+
+Test #8:
+Tests that the program works with a relatively large number of voters,
+and a quorum of 1. So each voter basically goes on the tour of his
+choice by himself. We see that each voter takes turns voting, and that
+none of the voters are ever blocked. ALso the results of the vote
+are properly tallied up.
+
+--> ./vote 9 1
+Voter0  Voter1  Voter2  Voter3  Voter4  Voter5  Voter6  Voter7  Voter8  
+S       S       S       S       S       S       S *     S       S       
+                                                V 0                     
+                                                C                       
+...     ...     ...     ...     ...     ...     F 0     ...     ...     
+        V 0*                                                            
+        C                                                               
+...     F 0     ...     ...     ...     ...     ...     ...     ...     
+                V 1*                                                    
+                C                                                       
+...     ...     F 1     ...     ...     ...     ...     ...     ...     
+                                                                V 1*    
+                                                                C       
+...     ...     ...     ...     ...     ...     ...     ...     F 1     
+V 1*                                                                    
+C                                                                       
+F 1     ...     ...     ...     ...     ...     ...     ...     ...     
+                        V 1*                                            
+                        C                                               
+...     ...     ...     F 1     ...     ...     ...     ...     ...     
+                                                        V 0*            
+                                                        C               
+...     ...     ...     ...     ...     ...     ...     F 0     ...     
+                                V 0*                                    
+                                C                                       
+...     ...     ...     ...     F 0     ...     ...     ...     ...     
+                                        V 0*                            
+                                        C                               
+...     ...     ...     ...     ...     F 0     ...     ...     ...     
+=================
+All tours started

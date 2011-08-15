@@ -1,0 +1,17 @@
+This file contains the First Set results from running calcFirst.
+Each row will contain one element of the First array.
+Each column indicates, for a particular terminal symbol,
+whether or not it is in the calcFirst result for each nonterminal.
+The only changes you should make to this file are to change the
+appropriate 'N's to 'Y's.  For example, if you calculated that the
+calcFirst result for <S> contains y and z, you would change the
+last two 'N's on the <S> row to 'Y'.
+
+	a   b   e   d   t   v   w   x   y   z
+<S>     Y   N   Y   N   Y   N   N   N   N   N
+<T>     N   N   N   N   Y   N   N   N   N   N
+<U>     N   N   N   Y   N   Y   Y   N   N   N
+<V>     N   N   N   N   N   Y   N   N   N   N
+<W>     N   N   N   N   N   N   Y   N   N   N
+<X>     N   N   N   Y   N   N   N   Y   N   Y
+

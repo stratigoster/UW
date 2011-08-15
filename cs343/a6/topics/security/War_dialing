@@ -1,0 +1,29 @@
+<TITLE>War dialing</TITLE>
+<TOPIC>War dialing</TOPIC>
+<TOPIC>security</TOPIC>
+<TOPIC>computer security</TOPIC>
+<TOPIC>computer</TOPIC>
+<TOPIC>computers</TOPIC>
+<TEXT>
+War dialing was a technique in the 1980s and '90s by which a computer would 
+repeatedly dial a number (usually to a crowded modem pool) in an attempt to gain
+access immediately after another user had hung up.
+
+The term (and the technique) pre-date the movie "War Games"
+<LINK>art:pages/art/War_Games</LINK> by several years. However, the popularity of
+the film among computer enthusiasts led to the term being commonly used for what
+is more precisely known as demon dialing,
+<LINK>security:pages/security/Demon_dialing</LINK> which figures prominently in
+the movie. The expansion of accessible ISP connectivity since that time more or
+less rendered the practice obsolete, and today "war dialing" much more frequently
+refers to demon dialing.
+
+An identical technique was sometimes used to get the first call for prizes in 
+radio "call-in" shows, thus leading to the adoption of random "fifth 
+caller," "seventeenth caller" etc. by radio stations to circumvent this practice.
+
+Toneloc was a famous war dialing software for MS-DOS.
+
+See also: war driving, <LINK>security:pages/security/War_driving</LINK>
+demon dialing<LINK>security:pages/security/Demon_dialing</LINK>
+</TEXT>

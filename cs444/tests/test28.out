@@ -1,0 +1,6 @@
+***ERROR***:4:12:	Missing full type declaration for ` data ' before use
+***ERROR***:11:16:	Uninitialized type ` grades '
+
+------
+Compilation error
+------

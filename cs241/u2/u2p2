@@ -1,0 +1,3 @@
+#!/bin/bash
+echo a1p1
+java mips.lst a1p1 > a1p1.lst

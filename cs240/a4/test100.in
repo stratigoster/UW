@@ -1,0 +1,1239 @@
+DO NOT TRANSLATE OR LOCALIZE.
+
+@@ JAXB
+%% The following software may be included in this product: iso-relax.jar v2002/07/07. Use of any of this software is governed by the terms of the license below: 
+The MIT License
+Copyright (c) 
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
+
+%% The following software may be included in this product: Resolver. Use of any of this software is governed by the terms of the license below: 
+xml-commons/LICENSE.txt $Id: THIRDPARTYLICENSEREADME,v 1.1 2004/05/06 20:06:25 rameshm Exp $
+See README.txt for additional licensing information.
+
+/* ====================================================================
+ * The Apache Software License, Version 1.1
+ *
+ * Copyright (c) 2001-2002 The Apache Software Foundation.  All rights
+ * reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in
+ *    the documentation and/or other materials provided with the
+ *    distribution.
+ *
+ * 3. The end-user documentation included with the redistribution,
+ *    if any, must include the following acknowledgment:
+ *       "This product includes software developed by the
+ *        Apache Software Foundation (http://www.apache.org/)."
+ *    Alternately, this acknowledgment may appear in the software itself,
+ *    if and wherever such third-party acknowledgments normally appear.
+ *
+ * 4. The names "Apache" and "Apache Software Foundation" must
+ *    not be used to endorse or promote products derived from this
+ *    software without prior written permission. For written
+ *    permission, please contact apache@apache.org.
+ *
+ * 5. Products derived from this software may not be called "Apache",
+ *    nor may "Apache" appear in their name, without prior written
+ *    permission of the Apache Software Foundation.
+ *
+ * THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED.  IN NO EVENT SHALL THE APACHE SOFTWARE FOUNDATION OR
+ * ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
+ * USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+ * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ * ====================================================================
+ *
+ * This software consists of voluntary contributions made by many
+ * individuals on behalf of the Apache Software Foundation.  For more
+ * information on the Apache Software Foundation, please see
+ * http://www.apache.org/.
+ 
+@@ JAXP
+%% The following software may be included in this product: DOM Level 2. Use of any of this software is governed by the terms of the license below: 
+W3C? SOFTWARE NOTICE AND LICENSE
+Copyright ? 1994-2002 World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de Recherche en Informatique et en Automatique, Keio University). All Rights Reserved. http://www.w3.org/Consortium/Legal/
+This W3C work (including software, documents, or other related items) is being provided by the copyright holders under the following license. By obtaining, using and/or copying this work, you (the licensee) agree that you have read, understood, and will comply with the following terms and conditions:
+Permission to use, copy, modify, and distribute this software and its documentation, with or without modification, for any purpose and without fee or royalty is hereby granted, provided that you include the following on ALL copies of the software and documentation or portions thereof, including modifications, that you make:
+1.The full text of this NOTICE in a location viewable to users of the redistributed or derivative work. 
+2.Any pre-existing intellectual property disclaimers, notices, or terms and conditions. If none exist, a short notice of the following form (hypertext is preferred, text is permitted) should be used within the body of any redistributed or derivative code: "Copyright ? [$date-of-software] World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de Recherche en Informatique et en Automatique, Keio University). All Rights Reserved. http://www.w3.org/Consortium/Legal/" 
+3.Notice of any changes or modifications to the W3C files, including the date changes were made. (We recommend you provide URIs to the location from which the code is derived.) 
+THIS SOFTWARE AND DOCUMENTATION IS PROVIDED "AS IS," AND COPYRIGHT HOLDERS MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE SOFTWARE OR DOCUMENTATION WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS. COPYRIGHT HOLDERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THE SOFTWARE OR DOCUMENTATION.
+The name and trademarks of copyright holders may NOT be used in advertising or publicity pertaining to the software without specific, written prior permission. Title to copyright in this software and any associated documentation will at all times remain with copyright holders.
+
+%% The following software may be included in this product: Xalan 2.x. Use of any of this software is governed by the terms of the license below: 
+
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
+
+      "You" (or "Your") shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
+
+      "Source" form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
+
+      "Object" form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
+
+      "Work" shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
+
+      "Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
+
+      "Contribution" shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, "submitted"
+      means any form of electronic, verbal, or written communication sent
+      to the Licensor or its representatives, including but not limited to
+      communication on electronic mailing lists, source code control systems,
+      and issue tracking systems that are managed by, or on behalf of, the
+      Licensor for the purpose of discussing and improving the Work, but
+      excluding communication that is conspicuously marked or otherwise
+      designated in writing by the copyright owner as "Not a Contribution."
+
+      "Contributor" shall mean Licensor and any individual or Legal Entity
+      on behalf of whom a Contribution has been received by Licensor and
+      subsequently incorporated within the Work.
+
+   2. Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
+
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      (except as stated in this section) patent license to make, have made,
+      use, offer to sell, sell, import, and otherwise transfer the Work,
+      where such license applies only to those patent claims licensable
+      by such Contributor that are necessarily infringed by their
+      Contribution(s) alone or by combination of their Contribution(s)
+      with the Work to which such Contribution(s) was submitted. If You
+      institute patent litigation against any entity (including a
+      cross-claim or counterclaim in a lawsuit) alleging that the Work
+      or a Contribution incorporated within the Work constitutes direct
+      or contributory patent infringement, then any patent licenses
+      granted to You under this License for that Work shall terminate
+      as of the date such litigation is filed.
+
+   4. Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+
+      (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
+
+      (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
+
+      (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
+
+      (d) If the Work includes a "NOTICE" text file as part of its
+          distribution, then any Derivative Works that You distribute must
+          include a readable copy of the attribution notices contained
+          within such NOTICE file, excluding those notices that do not
+          pertain to any part of the Derivative Works, in at least one
+          of the following places: within a NOTICE text file distributed
+          as part of the Derivative Works; within the Source form or
+          documentation, if provided along with the Derivative Works; or,
+          within a display generated by the Derivative Works, if and
+          wherever such third-party notices normally appear. The contents
+          of the NOTICE file are for informational purposes only and
+          do not modify the License. You may add Your own attribution
+          notices within Derivative Works that You distribute, alongside
+          or as an addendum to the NOTICE text from the Work, provided
+          that such additional attribution notices cannot be construed
+          as modifying the License.
+
+      You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
+
+   5. Submission of Contributions. Unless You explicitly state otherwise,
+      any Contribution intentionally submitted for inclusion in the Work
+      by You to the Licensor shall be under the terms and conditions of
+      this License, without any additional terms or conditions.
+      Notwithstanding the above, nothing herein shall supersede or modify
+      the terms of any separate license agreement you may have executed
+      with Licensor regarding such Contributions.
+
+   6. Trademarks. This License does not grant permission to use the trade
+      names, trademarks, service marks, or product names of the Licensor,
+      except as required for reasonable and customary use in describing the
+      origin of the Work and reproducing the content of the NOTICE file.
+
+   7. Disclaimer of Warranty. Unless required by applicable law or
+      agreed to in writing, Licensor provides the Work (and each
+      Contributor provides its Contributions) on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied, including, without limitation, any warranties or conditions
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+      PARTICULAR PURPOSE. You are solely responsible for determining the
+      appropriateness of using or redistributing the Work and assume any
+      risks associated with Your exercise of permissions under this License.
+
+   8. Limitation of Liability. In no event and under no legal theory,
+      whether in tort (including negligence), contract, or otherwise,
+      unless required by applicable law (such as deliberate and grossly
+      negligent acts) or agreed to in writing, shall any Contributor be
+      liable to You for damages, including any direct, indirect, special,
+      incidental, or consequential damages of any character arising as a
+      result of this License or out of the use or inability to use the
+      Work (including but not limited to damages for loss of goodwill,
+      work stoppage, computer failure or malfunction, or any and all
+      other commercial damages or losses), even if such Contributor
+      has been advised of the possibility of such damages.
+
+   9. Accepting Warranty or Additional Liability. While redistributing
+      the Work or Derivative Works thereof, You may choose to offer,
+      and charge a fee for, acceptance of support, warranty, indemnity,
+      or other liability obligations and/or rights consistent with this
+      License. However, in accepting such obligations, You may act only
+      on Your own behalf and on Your sole responsibility, not on behalf
+      of any other Contributor, and only if You agree to indemnify,
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by reason
+      of your accepting any such warranty or additional liability.
+
+   END OF TERMS AND CONDITIONS
+
+   APPENDIX: How to apply the Apache License to your work.
+
+      To apply the Apache License to your work, attach the following
+      boilerplate notice, with the fields enclosed by brackets "[]"
+      replaced with your own identifying information. (Don't include
+      the brackets!)  The text should be enclosed in the appropriate
+      comment syntax for the file format. We also recommend that a
+      file or class name and description of purpose be included on the
+      same "printed page" as the copyright notice for easier
+      identification within third-party archives.
+
+   Copyright [yyyy] [name of copyright owner]
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+   
+%% The following software may be included in this product: BCEL 5.x. Use of any of this software is governed by the terms of the license below: 
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: Redistribution of source code must retain the above copyright notice, this list of conditions and the following disclaimer. Redistribution in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. All advertising materials mentioning features or use of this software must display the following acknowledgment: This product includes software developed by the Java Apache Project for use in the Apache JServ servlet engine project (http://java.apache.org/).
+The names "Apache JServ", "Apache JServ Servlet Engine" and "Java Apache Project" must not be used to endorse or promote products derived from this software without prior written permission. Products derived from this software may not be called "Apache JServ" nor may "Apache" nor "Apache JServ" appear in their names without prior written permission of the Java Apache Project. Redistribution of any form whatsoever must retain the following acknowledgment: This product includes software developed by the Java Apache Project for use in the Apache JServ servlet engine project (http://java.apache.org/).
+THIS SOFTWARE IS PROVIDED BY THE JAVA APACHE PROJECT "AS IS" AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE JAVA APACHE PROJECT OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+%% The following software may be included in this product: RegExp v1.x. Use of any of this software is governed by the terms of the license below: 
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: Redistribution of source code must retain the above copyright notice, this list of conditions and the following disclaimer. Redistribution in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. All advertising materials mentioning features or use of this software must display the following acknowledgment: This product includes software developed by the Java Apache Project for use in the Apache JServ servlet engine project (http://java.apache.org/).
+The names "Apache JServ", "Apache JServ Servlet Engine" and "Java Apache Project" must not be used to endorse or promote products derived from this software without prior written permission. Products derived from this software may not be called "Apache JServ" nor may "Apache" nor "Apache JServ" appear in their names without prior written permission of the Java Apache Project. Redistribution of any form whatsoever must retain the following acknowledgment: This product includes software developed by the Java Apache Project for use in the Apache JServ servlet engine project (http://java.apache.org/).
+THIS SOFTWARE IS PROVIDED BY THE JAVA APACHE PROJECT "AS IS" AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE JAVA APACHE PROJECT OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+%% The following software may be included in this product: Jcup. Use of any of this software is governed by the terms of the license below: 
+CUP Parser Generator Copyright Notice, License, and Disclaimer
+
+Copyright 1996-1999 by Scott Hudson, Frank Flannery, C. Scott Ananian 
+
+Permission to use, copy, modify, and distribute this software and its documentation for any purpose and without fee is hereby granted, provided that the above copyright notice appear in all
+copies and that both the copyright notice and this permission notice and warranty disclaimer appear in supporting documentation, and that the names of the authors or their employers not be
+used in advertising or publicity pertaining to distribution of the software without specific, written prior permission. 
+
+The authors and their employers disclaim all warranties with regard to this software, including all implied warranties of merchantability and fitness. In no event shall the authors or their
+employers be liable for any special, indirect or consequential damages or any damages whatsoever resulting from loss of use, data or profits, whether in an action of contract, negligence or other
+tortious action, arising out of or in connection with the use or performance of this software. 
+
+%% The following software may be included in this product: Jlex. Use of any of this software is governed by the terms of the license below: 
+JLEX COPYRIGHT NOTICE, LICENSE AND DISCLAIMER.
+
+%% The following software may be included in this product: Xerces v2.6.x. Use of any of this software is governed by the terms of the license below: 
+Copyright 1996-2003 by Elliot Joel Berk and C. Scott Ananian 
+
+Permission to use, copy, modify, and distribute this software and its documentation for any purpose and without fee is hereby granted, provided that the above copyright notice appear in all
+copies and that both the copyright notice and this permission notice and warranty disclaimer appear in supporting documentation, and that the name of the authors or their employers not be
+used in advertising or publicity pertaining to distribution of the software without specific, written prior permission. 
+
+The authors and their employers disclaim all warranties with regard to this software, including all implied warranties of merchantability and fitness. In no event shall the authors or their
+employers be liable for any special, indirect or consequential damages or any damages whatsoever resulting from loss of use, data or profits, whether in an action of contract, negligence or other
+tortious action, arising out of or in connection with the use or performance of this software. 
+
+Java is a trademark of Sun Microsystems, Inc. References to the Java programming language in relation to JLex are not meant to imply that Sun endorses this product. 
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: Redistribution of source code must retain the above copyright notice, this list of conditions and the following disclaimer. Redistribution in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. All advertising materials mentioning features or use of this software must display the following acknowledgment: This product includes software developed by the Java Apache Project for use in the Apache JServ servlet engine project (http://java.apache.org/).
+The names "Apache JServ", "Apache JServ Servlet Engine" and "Java Apache Project" must not be used to endorse or promote products derived from this software without prior written permission. Products derived from this software may not be called "Apache JServ" nor may "Apache" nor "Apache JServ" appear in their names without prior written permission of the Java Apache Project. Redistribution of any form whatsoever must retain the following acknowledgment: This product includes software developed by the Java Apache Project for use in the Apache JServ servlet engine project (http://java.apache.org/).
+THIS SOFTWARE IS PROVIDED BY THE JAVA APACHE PROJECT "AS IS" AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE JAVA APACHE PROJECT OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+@@ SAAJ
+%% The following software may be included in this product: Jakarta Commons. Use of any of this software is governed by the terms of the license below: 
+
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
+
+      "You" (or "Your") shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
+
+      "Source" form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
+
+      "Object" form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
+
+      "Work" shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
+
+      "Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
+
+      "Contribution" shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, "submitted"
+      means any form of electronic, verbal, or written communication sent
+      to the Licensor or its representatives, including but not limited to
+      communication on electronic mailing lists, source code control systems,
+      and issue tracking systems that are managed by, or on behalf of, the
+      Licensor for the purpose of discussing and improving the Work, but
+      excluding communication that is conspicuously marked or otherwise
+      designated in writing by the copyright owner as "Not a Contribution."
+
+      "Contributor" shall mean Licensor and any individual or Legal Entity
+      on behalf of whom a Contribution has been received by Licensor and
+      subsequently incorporated within the Work.
+
+   2. Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
+
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      (except as stated in this section) patent license to make, have made,
+      use, offer to sell, sell, import, and otherwise transfer the Work,
+      where such license applies only to those patent claims licensable
+      by such Contributor that are necessarily infringed by their
+      Contribution(s) alone or by combination of their Contribution(s)
+      with the Work to which such Contribution(s) was submitted. If You
+      institute patent litigation against any entity (including a
+      cross-claim or counterclaim in a lawsuit) alleging that the Work
+      or a Contribution incorporated within the Work constitutes direct
+      or contributory patent infringement, then any patent licenses
+      granted to You under this License for that Work shall terminate
+      as of the date such litigation is filed.
+
+   4. Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+
+      (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
+
+      (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
+
+      (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
+
+      (d) If the Work includes a "NOTICE" text file as part of its
+          distribution, then any Derivative Works that You distribute must
+          include a readable copy of the attribution notices contained
+          within such NOTICE file, excluding those notices that do not
+          pertain to any part of the Derivative Works, in at least one
+          of the following places: within a NOTICE text file distributed
+          as part of the Derivative Works; within the Source form or
+          documentation, if provided along with the Derivative Works; or,
+          within a display generated by the Derivative Works, if and
+          wherever such third-party notices normally appear. The contents
+          of the NOTICE file are for informational purposes only and
+          do not modify the License. You may add Your own attribution
+          notices within Derivative Works that You distribute, alongside
+          or as an addendum to the NOTICE text from the Work, provided
+          that such additional attribution notices cannot be construed
+          as modifying the License.
+
+      You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
+
+   5. Submission of Contributions. Unless You explicitly state otherwise,
+      any Contribution intentionally submitted for inclusion in the Work
+      by You to the Licensor shall be under the terms and conditions of
+      this License, without any additional terms or conditions.
+      Notwithstanding the above, nothing herein shall supersede or modify
+      the terms of any separate license agreement you may have executed
+      with Licensor regarding such Contributions.
+
+   6. Trademarks. This License does not grant permission to use the trade
+      names, trademarks, service marks, or product names of the Licensor,
+      except as required for reasonable and customary use in describing the
+      origin of the Work and reproducing the content of the NOTICE file.
+
+   7. Disclaimer of Warranty. Unless required by applicable law or
+      agreed to in writing, Licensor provides the Work (and each
+      Contributor provides its Contributions) on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied, including, without limitation, any warranties or conditions
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+      PARTICULAR PURPOSE. You are solely responsible for determining the
+      appropriateness of using or redistributing the Work and assume any
+      risks associated with Your exercise of permissions under this License.
+
+   8. Limitation of Liability. In no event and under no legal theory,
+      whether in tort (including negligence), contract, or otherwise,
+      unless required by applicable law (such as deliberate and grossly
+      negligent acts) or agreed to in writing, shall any Contributor be
+      liable to You for damages, including any direct, indirect, special,
+      incidental, or consequential damages of any character arising as a
+      result of this License or out of the use or inability to use the
+      Work (including but not limited to damages for loss of goodwill,
+      work stoppage, computer failure or malfunction, or any and all
+      other commercial damages or losses), even if such Contributor
+      has been advised of the possibility of such damages.
+
+   9. Accepting Warranty or Additional Liability. While redistributing
+      the Work or Derivative Works thereof, You may choose to offer,
+      and charge a fee for, acceptance of support, warranty, indemnity,
+      or other liability obligations and/or rights consistent with this
+      License. However, in accepting such obligations, You may act only
+      on Your own behalf and on Your sole responsibility, not on behalf
+      of any other Contributor, and only if You agree to indemnify,
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by reason
+      of your accepting any such warranty or additional liability.
+
+   END OF TERMS AND CONDITIONS
+
+   APPENDIX: How to apply the Apache License to your work.
+
+      To apply the Apache License to your work, attach the following
+      boilerplate notice, with the fields enclosed by brackets "[]"
+      replaced with your own identifying information. (Don't include
+      the brackets!)  The text should be enclosed in the appropriate
+      comment syntax for the file format. We also recommend that a
+      file or class name and description of purpose be included on the
+      same "printed page" as the copyright notice for easier
+      identification within third-party archives.
+
+   Copyright [yyyy] [name of copyright owner]
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+    
+@@ Java WSDP Registry Server
+%% The following software may be included in this product: Xindice 1.x. Use of any of this software is governed by the terms of the license below: 
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: Redistribution of source code must retain the above copyright notice, this list of conditions and the following disclaimer. Redistribution in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. All advertising materials mentioning features or use of this software must display the following acknowledgment: This product includes software developed by the Java Apache Project for use in the Apache JServ servlet engine project (http://java.apache.org/).
+The names "Apache JServ", "Apache JServ Servlet Engine" and "Java Apache Project" must not be used to endorse or promote products derived from this software without prior written permission. Products derived from this software may not be called "Apache JServ" nor may "Apache" nor "Apache JServ" appear in their names without prior written permission of the Java Apache Project. Redistribution of any form whatsoever must retain the following acknowledgment: This product includes software developed by the Java Apache Project for use in the Apache JServ servlet engine project (http://java.apache.org/).
+THIS SOFTWARE IS PROVIDED BY THE JAVA APACHE PROJECT "AS IS" AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE JAVA APACHE PROJECT OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+@@ XML Digital Signatures
+%% The following software may be included in this product: Apache XML Security. Use of any of this software is governed by the terms of the license below: 
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: Redistribution of source code must retain the above copyright notice, this list of conditions and the following disclaimer. Redistribution in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. All advertising materials mentioning features or use of this software must display the following acknowledgment: This product includes software developed by the Java Apache Project for use in the Apache JServ servlet engine project (http://java.apache.org/).
+The names "Apache JServ", "Apache JServ Servlet Engine" and "Java Apache Project" must not be used to endorse or promote products derived from this software without prior written permission. Products derived from this software may not be called "Apache JServ" nor may "Apache" nor "Apache JServ" appear in their names without prior written permission of the Java Apache Project. Redistribution of any form whatsoever must retain the following acknowledgment: This product includes software developed by the Java Apache Project for use in the Apache JServ servlet engine project (http://java.apache.org/).
+THIS SOFTWARE IS PROVIDED BY THE JAVA APACHE PROJECT "AS IS" AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE JAVA APACHE PROJECT OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+%% The following software may be included in this product: DOM Level 2. Use of any of this software is governed by the terms of the license below: 
+W3C? SOFTWARE NOTICE AND LICENSE
+Copyright ? 1994-2002 World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de Recherche en Informatique et en Automatique, Keio University). All Rights Reserved. http://www.w3.org/Consortium/Legal/
+This W3C work (including software, documents, or other related items) is being provided by the copyright holders under the following license. By obtaining, using and/or copying this work, you (the licensee) agree that you have read, understood, and will comply with the following terms and conditions:
+Permission to use, copy, modify, and distribute this software and its documentation, with or without modification, for any purpose and without fee or royalty is hereby granted, provided that you include the following on ALL copies of the software and documentation or portions thereof, including modifications, that you make:
+1.The full text of this NOTICE in a location viewable to users of the redistributed or derivative work. 
+2.Any pre-existing intellectual property disclaimers, notices, or terms and conditions. If none exist, a short notice of the following form (hypertext is preferred, text is permitted) should be used within the body of any redistributed or derivative code: "Copyright ? [$date-of-software] World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de Recherche en Informatique et en Automatique, Keio University). All Rights Reserved. http://www.w3.org/Consortium/Legal/" 
+3.Notice of any changes or modifications to the W3C files, including the date changes were made. (We recommend you provide URIs to the location from which the code is derived.) 
+THIS SOFTWARE AND DOCUMENTATION IS PROVIDED "AS IS," AND COPYRIGHT HOLDERS MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE SOFTWARE OR DOCUMENTATION WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS. COPYRIGHT HOLDERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THE SOFTWARE OR DOCUMENTATION.
+The name and trademarks of copyright holders may NOT be used in advertising or publicity pertaining to the software without specific, written prior permission. Title to copyright in this software and any associated documentation will at all times remain with copyright holders.
+
+
+@@ XML Web Services Security
+%% The following software may be included in this product: Apache XML Security. Use of any of this software is governed by the terms of the license below: 
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: Redistribution of source code must retain the above copyright notice, this list of conditions and the following disclaimer. Redistribution in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. All advertising materials mentioning features or use of this software must display the following acknowledgment: This product includes software developed by the Java Apache Project for use in the Apache JServ servlet engine project (http://java.apache.org/).
+The names "Apache JServ", "Apache JServ Servlet Engine" and "Java Apache Project" must not be used to endorse or promote products derived from this software without prior written permission. Products derived from this software may not be called "Apache JServ" nor may "Apache" nor "Apache JServ" appear in their names without prior written permission of the Java Apache Project. Redistribution of any form whatsoever must retain the following acknowledgment: This product includes software developed by the Java Apache Project for use in the Apache JServ servlet engine project (http://java.apache.org/).
+THIS SOFTWARE IS PROVIDED BY THE JAVA APACHE PROJECT "AS IS" AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE JAVA APACHE PROJECT OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+
+gateway
+A device connected to multiple physical TCP/IP networks capable of routing or delivering IP packets between them. A gateway translates between different transport protocols or data formats (for example, IPX and IP) and is generally added to a network primarily for its translation ability. 
+
+In the context of interoperating with Novell NetWare networks, a gateway acts as a bridge between the server message block (SMB) protocol used by Windows networks and the NetWare core protocol (NCP) used by NetWare networks. A gateway is also called an IP router.
+
+
+GDI objects
+Objects from the Graphics Device Interface (GDI) library of application programming interfaces (APIs) for graphics output devices. In Task Manager, the number of GDI objects currently used by a process.
+
+See also: Task Manager
+Generic Service resource
+A Windows service that is supported as a cluster resource by a Resource DLL.
+
+See also: Resource DLL
+gigabyte (GB)
+1,024 megabytes, though often interpreted as approximately one billion bytes.
+
+global account
+In an Active Directory network, a normal user account in a user's domain. Most user accounts are global accounts. If there are multiple domains in the network, it is best if each user in the network has only one user account in only one domain, and each user's access to other domains is accomplished through the establishment of domain trust relationships.
+
+See also: Active Directory; domain
+global catalog
+A domain controller that contains a partial replica of every domain in Active Directory. In other words, a global catalog holds a replica of every object in Active Directory, but with a limited number of each object's attributes. The global catalog stores those attributes most frequently used in search operations (such as a user's first and last names) and those attributes required to locate a full replica of the object. 
+
+The Active Directory replication system builds the global catalog automatically. The attributes replicated into the global catalog include a base set defined by Microsoft. Administrators can specify additional properties to meet the needs of their installation.
+
+
+See also: Active Directory; attribute; domain controller; replication
+global group
+A security or distribution group that can have users, groups, and computers from its own domain as members. Global security groups can be granted rights and permissions on resources in any domain in the forest. Global groups cannot be created or maintained on computers running Windows XP Professional. However, for Windows XP Professional computers that participate in a domain, domain global groups can be granted rights and permissions at those workstations and can become members of local groups at those workstations.
+
+See also: permission; group; local group; user account
+glue chasing
+The follow-up queries or successive lookups that are made to resolve glue records in a zone to other remote DNS servers that are authoritative for a derivative zone. When glue chasing is performed, name server (NS) resource records for delegated DNS servers are chased, or followed, by using successive queries to resolve the servers named in NS records to their host address (A) resource records and to obtain server IP addresses.
+
+See also: A (address) resource record; delegation; DNS Server; glue record; name server (NS) resource record; zone
+glue record
+A resource record for out-of-zone information used to provide helpful pointer information for locating DNS servers that have been delegated authority for specific subdomains derived from a zone's domain of origin. These records are used to glue zones together and provide an effective delegation and referral path for other DNS servers to follow when performing a recursive lookup to fully resolve a name.
+
+See also: delegation; DNS Server; domain of origin; glue chasing; resource record (RR); zone
+graphics mode
+A display mode in which lines and characters on the screen are drawn pixel by pixel. Graphics mode displays images by grouping individual dots into shapes, such as the arrowhead of a mouse pointer. It can also preview character formatting, such as boldface and italics, as it will appear in print.
+
+group
+A collection of users, computers, contacts, and other groups. Groups can be used as security or as e-mail distribution collections. Distribution groups are used only for e-mail. Security groups are used both to grant access to resources and as e-mail distribution lists.
+
+See also: domain; global group; local group
+group account
+A collection of user accounts. By making a user account a member of a group, you give the related user all the rights and permissions granted to the group.
+
+See also: group; user account
+group memberships
+The groups to which a user account belongs. Permissions and rights granted to a group are also provided to its members. In most cases, the actions a user can perform in Windows are determined by the group memberships of the user account to which the user is logged on.
+
+See also: group; user account
+group name
+A unique name identifying a local group or a global group to Windows. A group's name cannot be identical to any other group name or user name in its own domain or computer.
+
+See also: global group; local group
+Group Policy
+The Microsoft Management Console (MMC) snap-in that is used to edit Group Policy objects.
+
+See also: Group Policy object; Microsoft Management Console (MMC); policy; snap-in
+Group Policy object
+A collection of Group Policy settings. Group Policy objects are essentially the documents created by the Group Policy snap-in, a Windows utility. Group Policy objects are stored at the domain level, and they affect users and computers contained in sites, domains, and organizational units. In addition, each Windows computer has exactly one group of settings stored locally, called the local Group Policy object.
+
+See also: Group Policy; object; policy
+guest account
+A built-in account used to log on to a computer running Windows when a user does not have an account on the computer or domain, or in any of the domains trusted by the computer's domain.
+
+See also: domain
+GUID partition table (GPT)
+A disk-partitioning scheme that is used by the Extensible Firmware Interface (EFI) in Itanium-based computers. GPT offers more advantages than master boot record (MBR) partitioning because it allows up to 128 partitions per disk, provides support for volumes up to 18 exabytes in size, allows primary and backup partition tables for redundancy, and supports unique disk and partition IDs (GUIDs).
+
+See also: Itanium; Extensible Firmware Interface (EFI); master boot record (MBR)
+Hhalf-duplex
+A system capable of transmitting information in only one direction at a time over a communications channel.
+
+See also: duplex; full-duplex
+handle
+In the user interface, an interface added to an object that facilitates moving, sizing, reshaping, or other functions pertaining to an object. In programming, a pointer to a pointer, that is, a token that lets a program access an identified resource.
+
+handle count
+In Task Manager, the number of object handles in a process's object table.
+
+See also: Task Manager
+handshaking
+A series of signals acknowledging that communication can take place between computers or other devices. A hardware handshake is an exchange of signals over specific wires (other than the data wires), in which each device indicates its readiness to send or receive data. A software handshake consists of signals transmitted over the same wires used to transfer data, as in modem-to-modem communications over telephone lines.
+
+handwriting input device
+A tool, such as a digital pen and tablet, used to enter text by writing instead of typing. Along with writing tablets, you can use 3-D drawing or Computer Aided Drafting (CAD) tablets, or a tablet-PC. You can also write by moving your mouse on the mouse pad.
+
+handwriting recognition
+The ability to interpret handwritten text and convert it into computer-readable text. Handwriting recognition programs allow you to enter text using a pen stylus or other handwriting input device, rather than a keyboard.
+
+hard disk
+A device, also called hard disk drive, that contains one or more inflexible platters coated with material in which data can be recorded magnetically with read/write heads. The hard disk exists in a sealed case that protects it and allows the head to fly 10 millionths to 25 millionths of an inch above the surface of a platter. Data can both be stored and accessed much more quickly than on a floppy disk.
+
+hardware
+The physical components of a computer system, including any peripheral equipment such as printers, modems, and mouse devices.
+
+hardware compression
+A feature available on some tape devices that automatically compresses the data that is being stored on the device. This is usually an option that is turned on or off in a backup program.
+
+hardware configuration
+Resource settings that have been allocated for a specific device. Each device on your computer has a hardware configuration, which may consist of IRQ lines, DMA, an I/O port, or memory address settings.
+
+See also: device; direct memory access (DMA); input/output (I/O) port; interrupt request (IRQ) lines; memory address
+hardware decoder
+A type of digital video disc (DVD) decoder that allows a DVD drive to display movies on your computer screen. A hardware decoder uses both software and hardware to display movies.
+
+See also: DVD decoder; DVD drive; software decoder
+hardware profile
+Data that describes the configuration and characteristics of specific computer equipment. This information can be used to configure computers for using peripheral devices.
+
+See also: device
+hardware type
+A classification for similar devices. For example, Imaging Device is a hardware type for digital cameras and scanners.
+
+See also: device
+hash
+A fixed-size result that is obtained by applying a one-way mathematical function (sometimes called a hash algorithm) to an arbitrary amount of data. If there is a change in the input data, the hash changes. The hash can be used in many operations, including authentication and digital signing. A hash is also called a message digest.
+
+See also: authentication; hash algorithm
+hash algorithm
+An algorithm used to produce a hash value of some piece of data, such as a message or session key. A good hash algorithm has a quality where changes in the input data can change every bit in the resulting hash value; for this reason, hashes are useful in detecting any modification in a large data object, such as a message. Furthermore, a good hash algorithm makes it computationally infeasible to construct two independent inputs that have the same hash. Typical hash algorithms include MD2, MD4, MD5, and SHA-1. Hash algorithm is also called a hash function.
+
+See also: Hash-based Message Authentication Mode (HMAC); MD2; MD4; MD5; message digest; Secure Hash Algorithm (SHA-1)
+Hash-based Message Authentication Mode (HMAC)
+A mechanism for message authentication using cryptographic hash functions. HMAC can be used with any iterative cryptographic hash function (for example, MD5 and SHA-1) in combination with a secret shared key. The cryptographic strength of HMAC depends on the properties of the underlying hash function.
+
+See also: hash algorithm; MD5; Secure Hash Algorithm (SHA-1)
+hexadecimal
+A base-16 number system represented by the digits 0 through 9 and the uppercase or lowercase letters A (equivalent to decimal 10) through F (equivalent to decimal 15).
+
+hibernation
+A state in which your computer shuts down after saving everything in memory on your hard disk. When you bring your computer out of hibernation, all programs and documents that were open are restored to your desktop.
+
+See also: standby
+High Contrast
+A display feature that instructs programs to change the color scheme to a high-contrast scheme and to increase legibility whenever possible.
+
+histogram
+A chart consisting of horizontal or vertical bars, the widths or heights of which represent the values of certain data.
+
+hive
+A section of the registry that appears as a file on your hard disk. The registry subtree is divided into hives (named for their resemblance to the cellular structure of a beehive). A hive is a discrete body of keys, subkeys, and values that is rooted at the top of the registry hierarchy. A hive is backed by a single file and a .log file, which are in the systemroot\System32\Config or the systemroot\Profiles\username folders. 
+
+By default, most hive files (Default, SAM, Security, and System) are stored in the systemroot\System32\Config folder. The systemroot\Profiles folder contains the user profile for each user of the computer. Because a hive is a file, it can be moved from one system to another. However, you must use the Registry Editor to edit the file.
+
+
+See also: registry; key; systemroot
+home folder
+A folder (usually on a file server) that administrators can assign to individual users or groups. Administrators use home folders to consolidate user files onto specific file servers for easy backup. Home folders are used by some programs as the default folder for the Open and Save As dialog boxes. Home folders are sometimes referred to as home directories.
+
+See also: administrator; group
+host
+A Windows computer that runs a server program or service used by network or remote clients. For Network Load Balancing, a cluster consists of multiple hosts connected over a local area network (LAN).
+
+See also: client; cluster; local area network (LAN); server; service
+host name
+The DNS name of a device on a network. These names are used to locate computers on the network. To find another computer, its host name must either appear in the Hosts file or be known by a DNS server. For most Windows computers, the host name and the computer name are the same.
+
+See also: DNS Server; Domain Name System (DNS)
+host priority
+For Network Load Balancing, a host's precedence for handling default network traffic for TCP and UDP ports. It is used if a host within the cluster goes offline, and it determines which host within the cluster will assume responsibility for the traffic previously handled by the offline host.
+
+See also: cluster; host; User Datagram Protocol (UDP)
+Hosts file
+A local text file in the same format as the 4.3 Berkeley Software Distribution (BSD) UNIX /etc/hosts file. This file maps host names to IP addresses, and it is stored in the \%Systemroot%\System32\Drivers\Etc folder.
+
+See also: systemroot
+hot docking
+The process of attaching a laptop computer to a docking station while the computer is running, and automatically activating the docking station's video display and other functions.
+
+See also: dock; docking station; undock
+HTTP
+
+See definition for: Hypertext Transfer Protocol (HTTP)
+hub
+A common connection point for devices in a network. Typically used to connect segments of a local area network (LAN), a hub contains multiple ports. When data arrives at one port, it is copied to the other ports so that all segments of the LAN can see the data.
+
+See also: local area network (LAN); port; switching hub
+hubbed mode
+A mode in which the ARP/MARS provides ATM addresses to requesting clients in the form of a multicast server (MCS) list value. In this mode, the ARP/MARS acts as a multicast server, providing active forwarding of all multicast and broadcast traffic destined for IP addresses contained within the ranges specified in the list.
+
+See also: Address Resolution Protocol (ARP); Asynchronous Transfer Mode (ATM); multicast address resolution service (MARS); multicast server (MCS); nonhubbed mode; IP address
+hue
+The position of a color along the color spectrum. For example, green is between yellow and blue. This attribute can be set using Display in Control Panel.
+
+See also: saturation
+hyperlink
+Colored and underlined text or a graphic that you click to go to a file, a location in a file, an HTML page on the World Wide Web, or an HTML page on an intranet. Hyperlinks can also go to newsgroups and to Gopher, Telnet, and FTP sites. 
+
+In Windows folders, hyperlinks are text links that appear in the folder's left pane. You can click these links to perform tasks, such as moving or copying a file, or to go to other places on your computer, such as the My Documents folder or Control Panel.
+
+
+Hypertext Markup Language (HTML)
+A simple markup language used to create hypertext documents that are portable from one platform to another. HTML files are simple ASCII text files with codes embedded (indicated by markup tags) to denote formatting and hypertext links.
+
+See also: American Standard Code for Information Interchange (ASCII)
+Hypertext Transfer Protocol (HTTP)
+The protocol used to transfer information on the World Wide Web. An HTTP address (one kind of Uniform Resource Locator [URL]) takes the form: http://www.microsoft.com.
+
+Iicon
+A small image displayed on the screen to represent an object that can be manipulated by the user. Icons serve as visual mnemonics and allow the user to control certain computer actions without having to remember commands or type them at the keyboard.
+
+IEEE 1394
+A standard for high-speed serial devices such as digital video and digital audio editing equipment.
+
+See also: device
+IEEE 1394 connector
+A type of connector that enables you to connect and disconnect high-speed serial devices. An IEEE 1394 connector is usually on the back of your computer near the serial port or the parallel port. 
+
+If a device is IEEE 1394 compatible, you can connect the device to the IEEE 1394 connector while the computer is running and Windows will detect the device and inform you when it is ready for use. Similarly, you can unplug the device while the computer is running, but you should use the Add Hardware Wizard to inform Windows that you are unplugging the device. Windows will then inform you when the device can be unplugged from the computer. 
+
+The IEEE 1394 bus is used primarily to connect high-end digital video and digital audio devices to your computer; however, some hard disks, printers, scanners, and DVD drives can also be connected to your computer using the IEEE 1394 connector.
+
+
+IIS Server Instance resource
+A server-instance designation used with Internet Information Services (IIS) that supports the WWW and FTP services. IIS server instances are supported as cluster resources by a Resource DLL. IIS Server Instance resources may have dependencies on IP Address resources, Network Name resources, and Physical Disk resources. Access information for server instances does not fail over.
+
+See also: dependency; failover; Resource DLL
+Image Name
+The name of a process as displayed in Task Manager.
+
+See also: Task Manager
+import media pool
+A logical collection of data-storage media that has not been cataloged by Removable Storage. Media in an import media pool should be cataloged as soon as possible so that they can be used by an application.
+
+See also: media pool; Removable Storage
+in-addr.arpa domain
+A special top-level DNS domain reserved for reverse mapping of IP addresses to DNS host names.
+
+See also: Domain Name System (DNS); reverse lookup; top-level domains
+incremental backup
+A backup that copies only those files created or changed since the last normal or incremental backup. It marks files as having been backed up (in other words, the archive attribute is cleared). If you use a combination of normal and incremental backups to restore your data, you will need to have the last normal backup and all incremental backup sets.
+
+See also: copy backup; daily backup; differential backup; normal backup
+incremental zone transfer (IXFR)
+An alternate query type that can be used by some DNS servers to update and synchronize zone data when a zone is changed. When incremental zone transfer is supported between DNS servers, servers can keep track of and transfer only those incremental resource record changes between each version of the zone.
+
+See also: DNS Server; secondary master; zone; zone transfer
+independent client
+A computer with Message Queuing installed that can host queues and store messages locally. Independent clients do not require synchronous access to a Message Queuing server to send and receive messages, but they can use Message Queuing servers with routing enabled for efficient message routing.
+
+See also: dependent client; Message Queuing server; routing services
+infrared (IR)
+Light that is beyond red in the color spectrum. While the light is not visible to the human eye, infrared transmitters and receivers can send and receive infrared signals.
+
+See also: Infrared Data Association (IrDA); infrared device; infrared port
+Infrared Data Association (IrDA)
+The industry organization of computer, component, and telecommunications vendors who establish the standards for infrared communication between computers and peripheral devices, such as printers.
+
+See also: infrared (IR)
+infrared device
+A computer, or a computer peripheral such as a printer, that can communicate using infrared light.
+
+See also: infrared (IR)
+infrared file transfer
+Wireless file transfer between a computer and another computer or device using infrared light.
+
+See also: infrared (IR)
+infrared network connection
+A direct or incoming network connection to a remote access server using an infrared port.
+
+See also: infrared port
+infrared port
+An optical port on a computer that enables communication with other computers or devices by using infrared light, without cables. Infrared ports can be found on some portable computers, printers, and cameras.
+
+See also: infrared (IR); infrared device; port
+infrastructure master
+The domain controller assigned to update group-to-user references whenever group memberships are changed, and to replicate these changes to any other domain controllers in the domain. At any time, there can be only one infrastructure master in a particular domain.
+
+See also: domain controller; multimaster replication; operations master
+inheritance
+A mechanism that allows a given access control entry (ACE) to be copied from the container where it was applied to all children of the container. Inheritance can be combined with delegation to grant administrative rights to a whole subtree of the directory in a single update operation.
+
+See also: access control entry (ACE); delegation
+inherited permissions
+Permissions on an object that are automatically inherited from its parent object. Inherited permissions cannot be modified.
+
+See also: permission; object; parent object
+Initial master
+A shared folder whose existing files and folders are replicated to other shared folders when replication is initially configured. After replication is complete, there is no initial master, since any of the replicas can accept changes and propagate them to the other replicas. The initial master then becomes another replica.
+
+See also: shared folder; replica; replication
+initialize
+In Disk Management, the process of detecting a disk or volume and assigning it a status (for example, healthy) and a type (for example, dynamic).
+
+See also: basic disk; basic volume; dynamic disk; dynamic volume
+Initiate to Application Enable
+When checked, new connections to the DDE share are allowed. When cleared, only current DDE conversations are allowed.
+
+Ink
+An option that allows you to enter text in handwritten form. Instead of converting your handwritten text to typed text, the text is converted to an object and displayed exactly as you wrote it. For example: .
+
+input language
+The specification of the language you want to type in. Some programs that are designed for Windows recognize this setting. When you add a new input language, a keyboard layout for that language is also added.
+
+Input Method Editor (IME)
+Programs used to enter the thousands of different characters in written Asian languages with a standard 101-key keyboard. An IME consists of both an engine that converts keystrokes into phonetic and ideographic characters and a dictionary of commonly used ideographic words. As the user enters keystrokes, the IME engine attempts to identify which character or characters the keystrokes should be converted into.
+
+input/output (I/O) port
+A channel through which data is transferred between a device and the microprocessor. The port appears to the microprocessor as one or more memory addresses that it can use to send or receive data.
+
+See also: device; memory address; port
+insertion point
+The place where text will be inserted when typed. The insertion point usually appears as a flashing vertical bar in an application's window or in a dialog box.
+
+install
+When referring to software, to add program files and folders to your hard disk and related data to your registry so that the software runs properly. Installing contrasts with upgrading, where existing program files, folders, and registry entries are updated to a more recent version. 
+
+When referring to hardware, to physically connect the device to your computer, to load device drivers onto your computer, and to configure device properties and settings.
+
+
+See also: device driver; registry; uninstall
+integrated device electronics (IDE)
+A type of disk-drive interface in which the controller electronics reside on the drive itself, eliminating the need for a separate adapter card. IDE offers advantages such as look-ahead caching to increase overall performance.
+
+Integrated Services Digital Network (ISDN)
+A digital phone line used to provide higher bandwidth. ISDN in North America is typically available in two forms: Basic Rate Interface (BRI) consists of 2 B-channels at 64 kilobits per second (Kbps) and a D-channel at 16 Kbps; Primary Rate Interface (PRI) consists of 23 B-channels at 64 Kbps and a D-channel at 64 Kbps. An ISDN line must be installed by the phone company at both the calling site and the called site.
+
+See also: B-channel; D-channel; multilink dialing; Service Profile Identifier (SPID); switch type
+interactive dialog box
+A dialog box that requires a response from the user. Intermediary devices such as a security host require such a dialog box as an added layer of security between the client and the remote access server. In such dialog boxes, the user types an access code or a user name and password on the remote access terminal screen.
+
+See also: dialog box; intermediary device; remote access server; static dialog box
+interactive logon
+A network logon from a computer keyboard, when the user types information in the Logon Information dialog box displayed by the computer's operating system.
+
+interconnect
+A private network that connects nodes in a cluster.
+
+See also: cluster
+intermediary device
+A device other than a modem or X.25 PAD, located between a network connection and the remote access server. This device is typically a modem-pool switch or security host and requires either a static or interactive dialog box between the client and itself.
+
+See also: remote access server; static dialog box; interactive dialog box; PAD (packet assembler/disassembler)
+internal network number
+A 4-byte hexadecimal number used for addressing and routing purposes. The internal network number identifies a virtual network inside a computer. The internal network number must be unique to the IPX internetwork. Internal network number is also called virtual network number.
+
+See also: external network number; Internetwork Packet Exchange (IPX)
+international prefix
+Digits dialed before the country code to access the international phone service. The actual digits depend on the country or region in which you are dialing an international number. For example, in the United States of America, the prefix for international dialing is 011. To dial from the United States of America to Honduras, which has the country code 504, you would dial: (011) (504) (000) 000-0000
+
+International Telecommunication Union - Telecommunication [Standardization Sector] (ITU-T)
+The sector of the International Telecommunication Union (ITU) responsible for telecommunication standards. ITU-T replaces the Comite Consultatif International Telegraphique et Telephonique (CCITT). Its responsibilities include standardizing modem design and operations, and standardizing protocols for networks and facsimile transmission. ITU is an international organization within which governments and the private sector coordinate global telecom networks and services.
+
+internet
+internet. Two or more network segments connected by routers. Another term for internetwork. 
+
+Internet. A worldwide network of computers. If you have access to the Internet, you can retrieve information from millions of sources, including schools, governments, businesses, and individuals.
+
+
+See also: World Wide Web
+Internet address
+An address for a resource on the Internet that is used by Web browsers to locate Internet resources. An Internet address typically starts with a protocol name, followed by the name of the organization that maintains the site; the suffix identifies the kind of organization it is. For example, the address http://www.yale.edu/ provides the following information: 
+
+http: This Web server uses the Hypertext Transfer Protocol. 
+www: This site is on the World Wide Web. 
+edu: This is an educational institution.
+Internet address is also called Uniform Resource Locator (URL).
+
+See also: Web server; protocol
+Internet Control Message Protocol (ICMP)
+A required maintenance protocol in the TCP/IP suite that reports errors and allows simple connectivity. ICMP is used by the Ping tool to perform TCP/IP troubleshooting.
+
+See also: Internet Protocol (IP); protocol; Transmission Control Protocol/Internet Protocol (TCP/IP)
+Internet Engineering Task Force (IETF)
+An open community of network designers, operators, vendors, and researchers concerned with the evolution of Internet architecture and the smooth operation of the Internet. Technical work is performed by working groups organized by topic areas (such as routing, transport, and security) and through mailing lists. Internet standards are developed in IETF Requests for Comments (RFCs), which are a series of notes that discuss many aspects of computing and computer communication, focusing on networking protocols, programs, and concepts.
+
+See also: subnet bandwidth management (SBM); Session Description Protocol (SDP)
+Internet Group Management Protocol (IGMP)
+A protocol used by IP hosts to report their multicast group memberships to any immediately neighboring multicast routers.
+
+See also: Internet Protocol multicasting; protocol
+Internet Information Services (IIS)
+Software services that support Web site creation, configuration, and management, along with other Internet functions. Internet Information Services include Network News Transfer Protocol (NNTP), File Transfer Protocol (FTP), and Simple Mail Transfer Protocol (SMTP).
+
+See also: Simple Mail Transfer Protocol (SMTP); File Transfer Protocol (FTP); Network News Transfer Protocol (NNTP)
+Internet Protocol (IP)
+A routable protocol in the TCP/IP protocol suite that is responsible for IP addressing, routing, and the fragmentation and reassembly of IP packets.
+
+See also: Compression Control Protocol (CCP); packet; Transmission Control Protocol/Internet Protocol (TCP/IP); voluntary tunnel
+Internet Protocol multicasting
+The extension of local area network multicasting technology to a TCP/IP network. Hosts send and receive multicast datagrams, the destination fields of which specify IP host group addresses rather than individual IP addresses. A host indicates that it is a member of a group by means of the Internet Group Management Protocol (IGMP).
+
+See also: Internet Group Management Protocol (IGMP); Transmission Control Protocol/Internet Protocol (TCP/IP)
+Internet Protocol security (IPSec)
+A set of industry-standard, cryptography-based protection services and protocols. IPSec protects all protocols in the TCP/IP protocol suite and Internet communications using L2TP.
+
+Internet service provider (ISP)
+A company that provides individuals or companies access to the Internet and the World Wide Web. An ISP provides a telephone number, a user name, a password, and other connection information so users can connect their computers to the ISP's computers. An ISP typically charges a monthly or hourly connection fee.
+
+See also: Web server
+Internetwork Packet Exchange (IPX)
+A network protocol native to NetWare that controls addressing and routing of packets within and between LANs. IPX does not guarantee that a message will be complete (no lost packets).
+
+See also: Compression Control Protocol (CCP); IPX/SPX; local area network (LAN); Routing Information Protocol over IPX (RIPX)
+interrupt
+A request for attention from the processor. When the processor receives an interrupt, it suspends its current operations, saves the status of its work, and transfers control to a special routine known as an interrupt handler, which contains the instructions for dealing with the particular situation that caused the interrupt.
+
+interrupt request (IRQ) lines
+Hardware lines over which devices can send signals to get the attention of the processor when the device is ready to accept or send information. Each device must have a unique IRQ line.
+
+See also: device
+intersite messaging service (ISM)
+A service that supports transports for asynchronous, site-to-site messaging. Each transport serves two major roles: send/receive and topology queries (such as, what are the various sites connected by this transport, and at what cost?). The intersite messaging services shipped in Windows are RPC and SMTP (mail).
+
+See also: remote procedure call (RPC); service; Simple Mail Transfer Protocol (SMTP)
+intranet
+A network within an organization that uses Internet technologies and protocols, but is available only to certain people, such as employees of a company. An intranet is also called a private network.
+
+IP address
+A 32-bit address used to identify a node on an IP internetwork. Each node on the IP internetwork must be assigned a unique IP address, which is made up of the network ID, plus a unique host ID. This address is typically represented with the decimal value of each octet separated by a period (for example, 192.168.7.27). In this version of Windows, you can configure the IP address statically or dynamically through DHCP.
+
+See also: Dynamic Host Configuration Protocol (DHCP); IP Address resource; scope
+IP Address resource
+A 32-bit number in dotted decimal format that represents an Internet Protocol (IP) address and is supported as a cluster resource by a Resource DLL provided with Windows.
+
+See also: IP address; Resource DLL
+IPX/SPX
+Transport protocols used in Novell NetWare networks, which together correspond to the combination of TCP and IP in the TCP/IP protocol suite. Windows implements IPX through NWLink.
+
+See also: NWLink; Transmission Control Protocol/Internet Protocol (TCP/IP); Internetwork Packet Exchange (IPX)
+ISA expansion slot
+A connection socket for a peripheral designed to the Industry Standard Architecture (ISA) on a computer motherboard.
+
+ISDN (Integrated Services Digital Network)
+A high-speed digital telephone service that can dramatically increase the speed at which you connect to the Internet or to your corporate LAN (local area network). ISDN can operate at 128 kilobytes per second (Kbps), which is five or more times faster than many analog modems.
+
+ISP (Internet service provider)
+
+See definition for: Internet service provider (ISP)
+Itanium
+An Intel microprocessor that uses explicitly parallel instruction set computing and 64-bit memory addressing.
+
+Jjob object
+A system-level structure that allows processes to be grouped together and managed as a single unit.
+
+See also: process
+journal queue
+For Message Queuing, a queue where journal messages are stored.
+
+See also: journal quota; Message Queuing; source journaling; target journaling
+journal quota
+For Message Queuing, a property that specifies the cumulative limit for journal messages in a journal queue. The limit is based on cumulative journal message size. When a journal queue's quota is reached, messages are no longer stored.
+
+See also: journal queue; Message Queuing
+junction point
+A physical location on a hard disk that points to data located at another location on your hard disk or another storage device. Junction points are created when you create a mounted drive. You can also create a junction point using the linkd command.
+
+See also: mounted drive
+KKerberos V5 authentication protocol
+An authentication mechanism used to verify user or host identity. The Kerberos V5 authentication protocol is the default authentication service for Windows 2000. Internet Protocol security (IPSec) and the QoS Admission Control Service use the Kerberos protocol for authentication.
+
+See also: Key Distribution Center (KDC); realm; service ticket; ticket-granting service (TGS); ticket-granting ticket (TGT)
+kernel
+The core of layered architecture that manages the most basic operations of the operating system and the computer's processor. The kernel schedules different blocks of executing code, called threads, for the processor to keep it as busy as possible and coordinates multiple processors to optimize performance. The kernel also synchronizes activities among Executive-level subcomponents, such as I/O Manager and Process Manager, and handles hardware exceptions and other hardware-dependent functions. The kernel works closely with the hardware abstraction layer.
+
+key
+In Registry Editor, a folder that appears in the left pane of the Registry Editor window. A key can contain subkeys and value entries. For example, Environment is a key of HKEY_CURRENT_USER. 
+
+In IP security (IPSec), a value used in combination with an algorithm to encrypt or decrypt data. Key settings for IP security are configurable to provide greater security.
+
+
+See also: registry; subkey
+Key Distribution Center (KDC)
+A network service that supplies session tickets and temporary session keys used in the Kerberos V5 authentication protocol. In Windows 2000 and Windows XP, the KDC runs as a privileged process on all domain controllers.
+
+See also: ticket-granting ticket (TGT); Kerberos V5 authentication protocol; ticket-granting service (TGS)
+keyboard language
+The language you want to use when you type. Some programs that are designed for the Windows platform recognize this setting. When you add a new keyboard language, a keyboard layout for that language is also added.
+
+keyboard layout
+The arrangement that accommodates the special characters and symbols used in different languages. Keyboard layouts affect which characters appear when you press the keys on your keyboard. After you change your keyboard layout, the characters that appear on your screen may no longer correspond to the characters that are printed on your keyboard keys.
+
+LL2TP (Layer 2 Tunneling Protocol)
+An industry-standard Internet tunneling protocol. Unlike Point-to-Point Tunneling Protocol (PPTP), L2TP does not require IP connectivity between the client workstation and the server. L2TP requires only that the tunnel medium provide packet-oriented point-to-point connectivity. The protocol can be used over media such as ATM, Frame Relay, and X.25. L2TP provides the same functionality as PPTP. Based on Layer 2 Forwarding (L2F) and PPTP specifications, L2TP allows clients to set up tunnels across intervening networks.
+
+See also: Asynchronous Transfer Mode (ATM); Internet Protocol (IP); Point-to-Point Tunneling Protocol (PPTP); tunnel
+label
+Each part of a full DNS domain name that represents a node in the domain namespace tree. Domain names are made up of a sequence of labels, such as the three labels (example, microsoft, and com) that make up the DNS domain name example.microsoft.com. Each label used in a DNS name must be 63 bytes or less in character length.
+
+See also: domain name; Domain Name System (DNS)
+LAN emulation (LANE)
+A set of protocols that allow existing Ethernet and Token Ring LAN services to overlie an ATM network. LANE allows connectivity among LAN- and ATM-attached stations.
+
+See also: Asynchronous Transfer Mode (ATM); local area network (LAN); protocol
+LAN emulation client (LEC)
+The client on an ELAN that performs data forwarding, address resolution, and other control functions. The LEC resides on end stations in an ELAN.
+
+See also: client; emulated local area network (ELAN); LAN emulation (LANE)
+LAN emulation configuration server
+The service that assigns individual local area network emulation (LANE) clients to particular emulated local area networks (ELANs) by directing them to the LAN emulation server (LES).
+
+See also: emulated local area network (ELAN); LAN emulation (LANE); LAN emulation server (LES); service
+LAN emulation server (LES)
+The central control point for an emulated local area network (ELAN). Enables LAN emulation clients to join the ELAN and resolves LAN addresses to ATM addresses.
+
+See also: Asynchronous Transfer Mode (ATM); emulated local area network (ELAN); LAN emulation (LANE)
+latency
+In Active Directory replication, the delay between the time an update is applied to a given replica and the time it is applied to some other replica. Latency is sometimes referred to as propagation delay.
+
+See also: replication; Active Directory; replica
+LCD (Liquid Crystal Display)
+
+See definition for: liquid crystal display (LCD)
+LDAP Data Interchange Format (LDIF)
+Files that contain LDAP instructions that manipulate directory information. Before the LDAP commands in an LDIF file are carried out, they can be read or modified, providing an opportunity for fine-tuning.
+
+See also: Lightweight Directory Access Protocol (LDAP)
+lease
+The length of time for which a DHCP client can use a dynamically assigned IP address configuration. Before the lease time expires, the client must either renew or obtain a new lease with DHCP.
+
+See also: Dynamic Host Configuration Protocol (DHCP); IP address
+library
+A data-storage system, usually managed by Removable Storage. A library consists of removable media (such as tapes or discs) and a hardware device that can read from or write to the media. There are two major types of libraries: robotic libraries (automated multiple-media, multidrive devices) and stand-alone drive libraries (manually operated, single-drive devices). A robotic library is also called a jukebox or changer.
+
+See also: Removable Storage
+Lightweight Directory Access Protocol (LDAP)
+The primary access protocol for Active Directory. Lightweight Directory Access Protocol (LDAP) version 3 is defined by a set of Proposed Standard documents in Internet Engineering Task Force (IETF) RFC 2251.
+
+See also: Active Directory; Internet Engineering Task Force (IETF); protocol
+Line Printer Daemon (LPD)
+A service on the print server that receives documents (print jobs) from Line Printer Remote (LPR) utilities running on client systems.
+
+See also: Line Printer Remote (LPR); print job; print server; service
+Line Printer Remote (LPR)
+A connectivity utility that runs on client systems and is used to print files to a computer running an LPD server.
+
+See also: Line Printer Daemon (LPD)
+Link Control Protocol (LCP)
+A PPP control protocol that negotiates link and PPP parameters to dynamically configure the data-link layer of a PPP connection.
+
+linked object
+An object that is inserted into a document but still exists in the source file. When information is linked, the new document is updated automatically if the information in the original document changes. If you want to edit the linked information, double-click it. The toolbars and menus from the original program will appear. If the original document is on your computer, changes that you make to the linked information will also appear in the original document.
+
+See also: embedded object; OLE; package; source document
+liquid crystal display (LCD)
+A type of display used in digital watches and many portable computers. LCD displays utilize two sheets of polarizing material with a liquid crystal solution between them. An electric current passed through the liquid causes the crystals to align so that light cannot pass through them. Each crystal, therefore, is like a shutter, either allowing light to pass through or blocking the light.
+
+Lmhosts file
+A local text file that maps NetBIOS names (commonly used for computer names) to IP addresses for hosts that are not located on the local subnet. In this version of Windows, the file is stored in the systemroot\System32\Drivers\Etc folder.
+
+See also: systemroot; IP address
+load balancing
+A technique used by Windows Clustering to scale the performance of a server-based program (such as a Web server) by distributing its client requests across multiple servers within the cluster. Each host can specify the load percentage that it will handle, or the load can be equally distributed across all the hosts. If a host fails, Windows Clustering dynamically redistributes the load among the remaining hosts.
+
+See also: cluster; host
+local area network (LAN)
+A communications network connecting a group of computers, printers, and other devices located within a relatively limited area (for example, a building). A LAN allows any connected device to interact with any other on the network.
+
+See also: NetBIOS Extended User Interface (NetBEUI); network basic input/output system (NetBIOS); virtual local area network (VLAN); workgroup
+local computer
+The computer that you are currently logged on to as a user. More generally, a local computer is a computer that you can access directly without using a communications line or a communications device, such as a network adapter or a modem.
+
+local group
+For computers running Windows and member servers, a group that can be granted permissions and rights from its own computer and (if the computer participates in a domain) user accounts and global groups both from its own domain and from trusted domains.
+
+See also: global group; user account
+local printer
+A printer that is directly connected to one of the ports on your computer.
+
+local user
+A person who uses a computer that is not connected to a network. A local user is most likely someone using a computer at home.
+
+local user profile
+A computer-based record about an authorized user that is created automatically on the computer the first time a user logs on to a workstation or server computer.
+
+log file
+A file that stores messages generated by an application, service, or operating system. These messages are used to track the operations performed. For example, Web servers maintain log files listing every request made to the server. Log files are usually plain text (ASCII) files and often have a .log extension. 
+
+In Backup, a file that contains a record of the date the tapes were created and the names of files and directories successfully backed up and restored. The Performance Logs and Alerts service also creates log files.
+
+
+See also: American Standard Code for Information Interchange (ASCII); service
+log on
+To begin using a network by providing a user name and password that identifies a user to the network.
+
+logical drive
+A volume that you create within an extended partition on a basic master boot record (MBR) disk. Logical drives are similar to primary partitions, except that you are limited to four primary partitions per disk, whereas you can create an unlimited number of logical drives per disk. A logical drive can be formatted and assigned a drive letter.
+
+See also: basic disk; basic volume; drive letter; extended partition; master boot record (MBR); primary partition; volume
+logical printer
+The software interface between the operating system and the printer in Windows. While a printer is the device that does the actual printing, a logical printer is its software interface on the print server. This software interface determines how a print job is processed and how it is routed to its destination (to a local or network port, to a file, or to a remote print share). When you print a document, it is spooled (or stored) on the logical printer before it is sent to the printer itself.
+
+See also: printer; spooling
+logon right
+A user right that is assigned to a user and that specifies the ways in which a user can log on to a system. An example of a logon right is the right to log on to a system remotely.
+
+logon script
+Files that can be assigned to user accounts. Typically a batch file, a logon script runs automatically every time the user logs on. It can be used to configure a user's working environment at every logon, and it allows an administrator to influence a user's environment without managing all aspects of it. A logon script can be assigned to one or more user accounts.
+
+See also: logon script path; user account
+logon script path
+A sequence of directory names that specifies the location of the logon script. When a user logs on, the authenticating computer locates the specified logon script (if one has been assigned to that user account) by following that computer's local logon script path (usually systemroot\System32\Repl\Import\Scripts).
+
+See also: logon script; systemroot; user account
+long distance operator
+Digits dialed before the area or city code to access a long distance phone service. For example, in the United States of America, you dial a 1 before the area or city code: (1) (206) 000-0000. The actual digits depend on the country/region or phone service. Area codes and long distance operators are not used in all countries/regions.
+
+long name
+A folder name or file name longer than the 8.3 file name standard (up to eight characters followed by a period and an extension of up to three characters) of the FAT file system. This version of Windows supports long file names up to 255 characters. 
+
+In a Macintosh environment, users can assign long names to files and folders on the server and, using AppleTalk network integration, you can assign long names to Macintosh-accessible volumes when you create them. This version of Windows automatically translates long names of files and folders to 8.3 names for MS-DOS and Windows 3.x users.
+
+
+See also: file allocation table (FAT); MS-DOS (Microsoft Disk Operating System)
+loopback address
+The address of the local computer used for routing outgoing packets back to the source computer. This address is used primarily for testing.
+
+loose name checking
+A form of domain name checking DNS uses that examines characters in DNS names for valid ANSI character compliance. However, loose name checking does not check for compliance with DNS naming requirements and valid character usage for Internet host names, as specified in RFC 1123, Requirements for Internet Hosts - Applications and Support. 
+
+For RFC compliance, DNS domain names will use name labels made up only of valid uppercase and lowercase letters, number characters, and hyphens (A through Z, a through z, 0 through 9, and -) separated by periods.
+
+
+See also: domain name; Domain Name System (DNS); label
+luminosity
+The brightness of a color based on a scale from black to white on your monitor.
+
+MMake Changes
+The Macintosh-style permission that gives users the right to make changes to a folder's contents; for example, modifying, renaming, moving, creating, and deleting files. When AppleTalk network integration translates access privileges into permissions, a user who has the Make Changes privilege is given Write and Delete permissions.
+
+See also: permission
+Management and Monitoring Tools
+Software components that include utilities for network management and monitoring, along with services that support client dialing and the updating of client phone books. Also included is the Simple Network Management Protocol (SNMP).
+
+See also: Simple Network Management Protocol (SNMP)
+Management Information Base (MIB)
+A set of objects that represent various types of information about a device, used by Simple Network Management Protocol (SNMP) to manage the device. Because different network management services are used for different types of devices and protocols, each service has its own set of objects.
+
+See also: Simple Network Management Protocol (SNMP); service
+management system
+A network-enabled host running Simple Network Management Protocol (SNMP) management software. This software requests information from SNMP agents. Management system is also called a management console.
+
+mandatory user profile
+A user profile that is not updated when the user logs off. It is downloaded to the user's desktop each time the user logs on, and is created by an administrator and assigned to one or more users to create consistent or job-specific user profiles. Only members of the Administrators group can change profiles.
+
+See also: roaming user profile; user profile
+map
+To translate one value into another. In virtual memory systems, a computer might map a virtual address into a physical address.
+
+master boot record (MBR)
+The first sector on a hard disk, which starts the process of booting the computer. The MBR contains the partition table for the disk and a small amount of executable code called the master boot code.
+
+See also: Recovery Console; partition boot sector
+master domain
+A Windows NT 4.0 domain that is used for managing user and group accounts in a multidomain network.
+
+See also: domain; group account; user account
+Master File Table (MFT)
+An NTFS system file on NTFS-formatted volumes that contains information about each file and folder on the volume. The MFT is the first file on an NTFS volume.
+
+See also: file allocation table (FAT); NTFS file system; volume
+master server
+An authoritative DNS server for a zone. Master servers can vary and are one of two types (either primary or secondary masters), depending on how the server obtains its zone data.
+
+See also: DNS Server; primary master; secondary master; zone; zone transfer
+maximize
+To enlarge a window to its largest size by clicking the Maximize button (at the right of the title bar), or by pressing ALT+SPACEBAR and then pressing X.
+
+See also: minimize; title bar
+MD2
+A hash algorithm that creates a 128-bit hash value and was developed by RSA Data Security, Inc.
+
+See also: hash algorithm
+MD4
+A hash algorithm that creates a 128-bit hash value and was developed by RSA Data Security, Inc.
+
+See also: hash algorithm
+MD5
+An industry-standard one-way, 128-bit hashing scheme, developed by RSA Data Security, Inc., and used by various Point-to-Point Protocol (PPP) vendors for encrypted authentication. A hashing scheme is a method for transforming data (for example, a password) in such a way that the result is unique and cannot be changed back to its original form. The CHAP authentication protocol uses challenge-response

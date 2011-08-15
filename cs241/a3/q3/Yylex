@@ -1,0 +1,115 @@
+/*********************************************************
+CS241 
+Assignment #3
+Yylex.3
+
+A sample scanner that recognizes all tokens in SL
+
+*********************************************************/
+
+%%
+
+%cup
+%notunix
+%line
+
+WS=[\n\ \t\b\012]
+
+%{
+	// Here is where any extra Java methods, etc. would go, if needed.
+%}
+
+%eof{
+	System.out.println();
+        System.exit(0);
+%eof}
+
+%% 
+
+== { return new SLToken.EqOp("=="); }
+
+[,] { return new SLToken.COMMA(); }
+
+[(] { return new SLToken.OPENP(); }
+
+[)] { return new SLToken.CLOSEP(); }
+
+[=] { return new SLToken.ASSIGN(); }
+
+[|] {	return new SLToken.OR(); }
+
+[&] { return new SLToken.AMPERSAND(); }
+
+[+] { return new SLToken.AddOp("+"); }
+
+[-] { return new SLToken.AddOp("-"); }
+
+[*] { return new SLToken.MulOp("*"); }
+
+[%] {	return new SLToken.MulOp("%"); }
+
+[/] {	return new SLToken.MulOp("/"); }
+
+[!] {	return new SLToken.NOT(); }
+
+in { return new SLToken.IN(); }
+
+out { return new SLToken.OUT(); }
+
+">>" { return new SLToken.INSIGN(); }
+
+"<<" { return new SLToken.OUTSIGN(); }
+
+">" { return new SLToken.RelOp(">"); }
+
+"<" {	return new SLToken.RelOp("<"); }
+
+"." {	return new SLToken.PERIOD(); }
+
+"{" {	return new SLToken.OPENB(); }
+
+"}" {	return new SLToken.CLOSEB(); }
+
+";" {	return new SLToken.SEMI(); }
+
+//.*$ { }
+
+"while" { return new SLToken.WHILE(); }
+
+"return" { return new SLToken.RETURN(); }
+
+"elseif" { return new SLToken.ELSEIF(); }
+
+"if" { return new SLToken.IF(); }
+
+"else" { return new SLToken.ELSE(); }
+
+(int{WS}) { return new SLToken.Type("int"); }
+
+(bool{WS}) { return new SLToken.Type("bool"); }
+
+(true{WS}) { return new SLToken.BoolLiteral(true); }
+
+false{WS} { return new SLToken.BoolLiteral(false); }
+
+\'[01][0-7][0-7]' {
+	int x = Integer.parseInt(yytext().substring(1,yytext().length()-1), 8);
+	char c = (char)x;
+	return new SLToken.CharLiteral(c+"");
+}
+
+\'.\' { return new SLToken.CharLiteral(yytext().substring(1,yytext().length()-1)); }
+
+struct { return new SLToken.STRUCT(); }
+
+[0-9][0-9]* { return new SLToken.IntLiteral(yytext()); }
+
+[a-zA-Z](_*[a-zA-Z0-9]+)*[a-zA-Z]* { return new SLToken.Identifier(yytext()); }
+
+{WS} { }
+
+ . {
+	System.out.println();
+	System.out.println("Illegal character at line " + (yyline + 1));
+	System.exit(0);
+}

@@ -1,0 +1,340 @@
+\documentclass{article}[12pt]
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{qtree}
+
+\title{CS240 Assignment 2}
+\author{Nissan Pow}
+
+\begin{document}
+\maketitle
+
+
+
+\section*{Problem 1}
+\subsection*{(a)}
+\indent DFS(Vertex v, int level, Vertex start) \\
+\indent \indent Mark v \\
+\indent \indent level = level + 1 \\
+\indent \indent for each vertex, w, adjacent to v do \\
+\indent \indent \indent if (w = start) and (level $>$ 2) \\
+\indent \indent \indent \indent return false \\
+\indent \indent \indent endif \\
+\indent \indent \indent if w is unmarked then \\
+\indent \indent \indent \indent DFS(w) \\
+\indent \indent \indent endif \\
+\indent \indent endfor \\ \\
+\indent Main() \\
+\indent \indent for each vertex v in graph G do \\
+\indent \indent \indent DFS(v, 0, v) \\
+\indent \indent endfor \\
+\indent \indent return true \\ \\
+
+Assumption: the graph is undirected. \\
+A tree is a connected graph with no cycles. In the algorithm, we perform a DFS on each vertex in the graph to check for cycles. We know when we've hit a cycle if we return to our starting node and the length of the path is greater than 2 (cannot have cycle between only 2 nodes, since we're assuming no multiple edges). So if we find a cycle, we return false; otherwise when we have finished checking each node, we return true.
+
+\subsection*{(b)}
+Yes, the data structure matters. Adjacency lists are more efficient as we can obtain all the neighbours of a node in O(1) time (assuming that all the nodes are unique and we hash them), whereas with an adjacency matrix the same operation will take O(n) time. We need to obtain all the neighbours of a node to perform the algorithm above.
+
+\subsection*{(c)}
+Assumption: the graph is undirected. \\
+The problem would be pretty much the same. We simply run the same algorithm from part (a) for only node $x$ instead of every vertex in G. This is so because a tree rooted at node x can be rearranged to be rooted at another node y, with y $\neq$ x. For example, tree (b) below is tree (a) with new root node $g$: \\
+
+\qtreecenterfalse
+a. \Tree
+  [.{a}
+    [.{b}
+      [.{d}
+      ]
+      [.{e}
+      ]
+    ]
+    [.{c}
+      [.{f}
+      ]
+      [.{g}
+      ]
+    ]
+  ]
+\hfil
+b. \Tree
+  [.{g}
+    [.{c}
+      [.{a}
+        [.{b}
+          [.{d}
+          ]
+          [.{e}
+          ]
+        ]
+      ]
+      [.{f}
+      ]
+    ]
+  ]
+
+\section*{Problem 2}
+\subsection*{(a)}
+Yes the encoding is unambiguous. \\
+
+\subsection*{(b)}
+printDFU(Node n) \{ \\
+  \indent output n \\
+  \indent if n.hasChildren() \{ \\
+  \indent \indent foreach child of n \{ // sorted from left to right \\
+  \indent \indent \indent output n \\
+  \indent \indent \} \\
+  \indent \indent foreach child of n \{ // sorted from left to right \\
+  \indent \indent \indent output n \\
+  \indent \indent \} \\
+  \indent \} \\
+\} \\
+
+\section*{Problem 3}
+\subsection*{(a)}
+\begin{enumerate}
+  \item
+    $\begin{array}{|c|c|c|c|c|c|c|c|c|} \hline 
+      4 & 2 & 7 & 5 & 1 & 8 & 9 & 6 & 3 \\ \hline
+    \end{array}$
+
+  \item Compare 5 with min\{6,3\}. Since 3 $<$ 5, swap 3 and 5. 5 is now a leaf, so nothing more to check. \\
+    $\begin{array}{|c|c|c|c|c|c|c|c|c|} \hline 
+      4 & 2 & 7 & 3 & 1 & 8 & 9 & 6 & 5 \\ \hline
+    \end{array}$
+    
+  \item Compare 7 with min\{8,9\}. Since 7 $<$ 8, nothing to do.
+    
+  \item Compare 2 with min\{3,1\}. Since 1 $<$ 2, swap 1 and 2. 2 is now a leaf, so nothing more to check. \\
+    $\begin{array}{|c|c|c|c|c|c|c|c|c|} \hline 
+      4 & 1 & 7 & 3 & 2 & 8 & 9 & 6 & 5 \\ \hline
+    \end{array}$
+    
+  \item Compare 4 with min\{1,7\}. Since 1 $<$ 4, swap 1 and 4. Next, compare 4 with min\{3,2\}. Since 2 $<$ 4, swap 2 and 4. 4 is now a leaf, so nothing more to check. \\
+    $\begin{array}{|c|c|c|c|c|c|c|c|c|} \hline 
+      1 & 2 & 7 & 3 & 4 & 8 & 9 & 6 & 5 \\ \hline
+    \end{array}$
+
+  \item Done.
+\end{enumerate}
+
+\subsection*{(b)}
+Complexity of heapify is O(n).
+
+\subsection*{(c)}
+\begin{enumerate}
+  \item Remove 1. Move 5 to the top of the heap. Proceed to sift down 5. Compare 5 with min\{2,7\}; since 2 $<$ 5, swap 2 and 5. Compare 5 with min\{3,4\}; since 3 $<$ 5, swap 3 and 5. Compare 5 with 6; 5 is bigger, so we're done. The resulting heap: \\
+  \Tree
+    [.{2}
+      [.{3}
+        [.{5}
+          [.{6}
+          ]
+        ]
+        [.{4}
+        ]
+      ]
+      [.{7}
+        [.{8}
+        ]
+        [.{9}
+        ]
+      ]
+    ]
+
+  \item Remove 2. Move 6 to the top of the heap. Proceed to sift down 6. Compare 6 with min\{3,7\}; since 3 $<$ 6, swap 3 and 6. Compare 3 with min\{5,4\}; since 4 $<$ 6, swap 6 and 4. 6 is now a leaf, so we're done. The resulting heap is: \\
+  \Tree
+    [.{3}
+      [.{4}
+        [.{5}
+        ]
+        [.{6}
+        ]
+      ]
+      [.{7}
+        [.{8}
+        ]
+        [.{9}
+        ]
+      ]
+    ]
+
+  \item Remove 3. Move 9 to the top of the heap. Proceed to sift down 9. Compare 9 with min\{4,7\}; since 4 $<$ 9, swap 4 and 9. Compare 9 with min\{5,6\}; since5 $<$ 9, swap 5 and 9. 9 is now a leaf, so we're done. The resulting heap is: \\
+  \Tree
+    [.{4}
+      [.{5}
+        [.{9}
+        ]
+        [.{6}
+        ]
+      ]
+      [.{7}
+        [.{8}
+        ]
+      ]
+    ]
+
+  \item Remove 4. Move 8 to the top of the heap. Proceed to sift down 8. Compare 8 with min\{5,7\}; since 5 $<$ 8, swap 5 and 8. Compare 8 with min\{9,6\}; since 6 $<$ 8, swap 6 and 8. 8 is now a leaf, so we're done. The resulting heap is: \\
+  \Tree
+  [.{5}
+    [.{6}
+      [.{9}
+      ]
+      [.{8}
+      ]
+    ]
+    [.{7}
+    ]
+  ]
+
+  \item Remove 5. Move 8 to the top of the heap. Proceed to sift down 8. Compare 8 with min\{6,7\}; since 6 $<$ 8, swap 6 and 8. Compare 8 with 9; since 9 $>$ 8, we're done. The resulting heap is: \\
+  \Tree
+    [.{6}
+      [.{8}
+        [.{9}
+        ]
+      ]
+      [.{7}
+      ]
+    ]
+
+\end{enumerate}
+
+\subsection*{(d)}
+The complexity of the algorithm used to remove a single key is $O(\log n)$. \\
+Whenever we remove a key, we will need to ``sift down'' the key as far as possible. This will require checking the node with max\{node.left, node.right\}. If the node is a leaf, there is nothing to check so we're done. Else, if node $>$ max\{node.left, node.right\}, swap node with max\{node.left, node.right\} and repeat the procedure. Thus in the worst case, we will need to do $2\times$(height of tree) comparisons, and the height of the tree is $\log n$. Thus the complexity of the algorithm is $O(\log n)$.
+
+\section*{Problem 4}
+\subsection*{(a)(i)}
+extractMax(Matrix A[m][n]) \\
+  \indent max = A[1][1] \\
+  \indent i = 1 \\
+  \indent j = 1 \\
+  \indent while i $\leq$ m and j $\leq$ n and A[i][j] $\neq$ -$\infty$ do \\
+  \indent \indent if i $\neq$ m and j $\neq$ n then \\
+  \indent \indent \indent if A[i][j+1] $>$ A[i+1][j] then \\
+  \indent \indent \indent \indent A[i][j] = A[i][j+1] \\
+  \indent \indent \indent \indent j = j+1 \\
+  \indent \indent \indent else  \\
+  \indent \indent \indent \indent A[i][j] = A[i+1][j] \\
+  \indent \indent \indent \indent i = i+1 \\
+  \indent \indent \indent endif \\
+  \indent \indent else if i=m then \\
+  \indent \indent \indent A[i][j] = A[i][j+1] \\
+  \indent \indent \indent j = j+1 \\
+  \indent \indent else if j = n then \\
+  \indent \indent \indent A[i][j] = A[i+1][j] \\
+  \indent \indent \indent i = i+1 \\
+  \indent \indent endif \\
+  \indent endwhile \\
+  \indent A[i][j] = -$\infty$ \\
+  \indent return max \\ \\
+
+The maximum element is located at A[1][1], so we store this in some variable for returning later. When we extract the maximum element, we must then choose another element to replace it. By the properties of the 2WOM, we know that the candidate for the next biggest element is either at A[1][2] or A[2][1]. Without loss of generality, let us say the max is A[1][2]. So we move A[1][2] to A[1][1]. So now we must choose another element to fill in A[1][2]. And by the properties of 2WOM, we know that the candidates to move to A[1][2] are either A[1][3] or A[2][2], so we choose the max of those and move it to A[1][2]. This process is repeated until we reach an element that is -$\infty$ or we have reached the last element in the matrix. Then we just fill in our current position with -$\infty$, return the max and we're done.\\
+At each step of the loop, we are either going down or across the matrix. Thus in the worst case, we will need to perform m+n iterations. Hence the complexity of the algorithm is $O(m+n)$.
+
+\subsection*{(a)(ii)}
+insert(x) \\
+\indent for j=n; j$>$0; j=j-1 \\
+\indent \indent if A[m][j] $\neq$ -$\infty$ then \\
+\indent \indent \indent break \\
+\indent \indent endif \\
+\indent endfor \\
+\indent if A[m][j] $\neq$ -$\infty$ then \\
+\indent \indent j=j+1 \\
+\indent endif \\
+\indent for i=m; i$>$0; i=i-1 \\
+\indent \indent if A[i][j] $\neq$ -$\infty$ then \\
+\indent \indent \indent break \\
+\indent \indent endif \\
+\indent endfor \\
+\indent if A[m][j] $\neq$ -$\infty$ then \\
+\indent \indent i=i+1 \\
+\indent \indent A[i][j] = x \\
+\indent \indent while A[i][j] $>$ min\{A[i-1][j], A[i][j-1]\}  \\
+\indent \indent \indent swap (A[i][j], min\{A[i-1][j], A[i][j-1]\}) \\
+\indent \indent \indent if A[i-1][j] $<$ A[i][j-1] then \\
+\indent \indent \indent \indent i = i-1 \\
+\indent \indent \indent else \\
+\indent \indent \indent \indent j = j-1 \\
+\indent \indent \indent endif \\
+\indent \indent endwhile \\
+\indent else // A[i][j] = -$\infty$ // at top of column \\
+\indent \indent if j = 1 then \\
+\indent \indent \indent A[1][1] = x \\
+\indent \indent else \\
+\indent \indent \indent A[1][j] = x \\
+\indent \indent \indent while j$>$1 and A[1][j] $>$ A[1][j-1] \\
+\indent \indent \indent \indent swap (A[1][j], A[1][j-1]) \\
+\indent \indent \indent \indent j = j-1 \\
+\indent \indent \indent endwhile \\
+\indent \indent endif \\
+\indent endif \\ \\
+
+First we search for the leftmost, bottommost element that is not -$\infty$ if it exists. We do this by starting from the bottom row and going left, then up. If we arrive at a position where the element is -$\infty$, then either the matrix is empty and we put x at A[1][1], or we have hit the top of a column and we place our element at this position and proceed to move it across to the left as far as possible. If we find an element that is not -$\infty$, then we place our element below it and compare our element with the one immediately above it and to the left. If the element is greater than the min of those, we swap them and proceed in this fashion until no more swaps can be made. This indicates that our element is in the correct position. Choosing the min of the 2 elements guarantees that the 2WOM constraints are satisfied. This algorithm will run in O(m+n) time, since we only need to go across the length of the matrix once, and up the length of the matrix once. \\ 
+
+\subsection*{(b)}
+Let $m = n = \lceil \sqrt{N} \rceil$. \\
+Using the 2WOM, the asymptotic running time for HeapSort is: \\
+\begin{eqnarray*}
+  & & N(m+n) + N(m+n) \qquad \textrm{// (insert N elements) + (removeMax N times)} \\
+  & = &  2N(2\sqrt{N}) \\
+  & = & 4N^{\frac{3}{2}} \\
+  & \in & O(N^{\frac{3}{2}}) \\
+\end{eqnarray*}
+
+\subsection*{(c)}
+
+findMin() \\
+  \indent min = -$\infty$ \\
+  \indent for (j=n; j$>$0; j=j-1) \textrm{// find leftmost element in last row that's not -$\infty$} \\
+  \indent \indent if A[m][j] $\neq$ -$\infty$ then \\
+  \indent \indent \indent min = A[m][j] \\
+  \indent \indent \indent break \\
+  \indent \indent endif \\ 
+  \indent for (i=m; i$>$0; i=i-1) \textrm{// find bottom-most element in column j that's not -$\infty$} \\
+  \indent \indent if A[i][j] $\neq$ -$\infty$ then \\
+  \indent \indent \indent min = A[i][j] \\
+  \indent \indent \indent break \\
+  \indent \indent endif \\
+  \indent \textrm{// proceed right and then up to find all the ``leaf'' elements} \\
+  \indent for (j=j+1; j$\leq$n; j=j+1) \\
+  \indent \indent for (i=i-1; i$>$0; i=i+1) \\
+  \indent \indent \indent if A[i][j] $\neq$ -$\infty$ and A[i][j] $<$ min \textrm{// found a leaf} \\
+  \indent \indent \indent \indent min = A[i][j] \\
+  \indent \indent \indent \indent break \\
+  \indent \indent \indent else if A[i][j] $\neq$ -$\infty$ then \\
+  \indent \indent \indent \indent break \\
+  \indent \indent \indent else if i=1 then \textrm{// no more elements to the right; this element is -$\infty$} \\
+  \indent \indent \indent \indent return min \\
+  \indent \indent \indent endif \\
+  \indent \indent endfor \\
+  \indent endfor \\
+  \indent return min \\ \\
+
+Note that the minimum element must be a ``leaf'' element ie all the elements under it have value -$\infty$. First we find the column, j, of the leftmost element in the last row that's not -$\infty$ if it exists. Then we find the row, i, of the bottom-most element in column j that's not -$\infty$. We then proceed across and up, going up as much as possible until we find an element that's not -$\infty$. If we reach row 1 without finding any element that's not -$\infty$, we return the min since there are no more elements to the right of the one that we're currently at. Otherwise, we have found a ``leaf'' element so we compare it to the min. If the current element is smaller than the min, the min is now the value of this new element. This algorithm is correct since it finds the smallest elements in each row and then returns the min of those, which is essentially the minimum element of the entire matrix. \\
+
+The complexity of this algorithm is: \\ \\
+  (n+m) to find the leftmost,bottom-most element that's not -$\infty$, and (n+m) for the other leaves. \\
+\begin{eqnarray*}
+  & & (n + m) + (n + m) \\
+  & = & 2n + 2 m \\
+  & = & 2(n+m) \\
+  & \in & O(m+n) \\
+\end{eqnarray*}
+
+
+\section*{Problem 5}
+\subsection*{(b)}
+\verbatiminput{a2q5a.txt}
+
+This algorithm traverses the input string, character by character, \\
+using recursion to output the binary trees. The recursive subroutines \\
+return the index to the element that they have reached, so the main \\
+method is able to jump ahead to that location, ensuring that we only \\
+traverse the input string once. \\
+Therefore the running time is O(n). \\
+\end{document}
+

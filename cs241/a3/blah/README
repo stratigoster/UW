@@ -1,0 +1,13 @@
+To check your program against one of these test cases, say case N:
+
+	java Main <tN.in >&temp
+	diff tN.out temp
+
+If the diff is successful (that is, your program's output is identical
+to the correct output), then your program passes that test case,
+assuming that you used the correct output stream.  Standard output
+is used for normal results, standard error for error messages.
+
+Note that for the provided test cases, the first four should result in
+output going to standard error whereas the last two should result in
+output going to standard output.

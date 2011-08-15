@@ -1,0 +1,675 @@
+import java.util.*;
+
+action code {:
+	private int offset = 1;
+	private int reg = 1;
+	private int myL = 1;
+	private int myE = 1;
+	private int curE = 0;
+	private int max_reg = 31;
+	private int procIndex = 1;
+	private String currProc = "main";
+	private String lastProc = "";
+	private String recStart = "";
+	private ArrayList arrayList;
+	private Hashtable<String, VarTable> tables = new Hashtable();
+
+	public class Var{
+		public String varName;
+		public String type;
+		public int address;
+		public boolean ref;
+
+		public Var(String n, String t, int a, boolean r) {
+			varName = n;
+			type = t;
+			address = a;
+			ref = r;
+		}
+
+		public boolean getRef() { return ref; }
+
+		public int getAddress() { return address; }
+
+		public String getType() { return type; }
+
+		public String getName() { return varName; }
+
+		public void setAddress(int s) { address = s; }
+	}
+
+	public class VarTable {
+		public ArrayList arrayList = new ArrayList();
+		public int num;
+		
+		public VarTable(int n) {
+			arrayList.add(new Var("_", "", n, false));
+			num = 0;
+		} 
+
+		public Var getVar(String s) throws CompileException {
+			Var var;
+			for (int i=0; i<arrayList.size(); i++) {
+				var = (Var)(arrayList.get(i));
+				if (var.getName().equals(s)) {
+					return var;
+				}
+			}
+			throw new CompileException("Variable '" + s + "' has not been declared");
+		}
+
+		public void addVar(String n, Var v) throws CompileException {
+			if (containsKey(n)) {
+				throw new CompileException("Variable '" + n + "' has already been declared in procedure '" + currProc + "'");
+			}
+			else {
+				arrayList.add(v);
+			}
+		}
+
+		public boolean containsKey(String s) {
+			Var var;
+                        for (int i=0; i<arrayList.size(); i++) {
+                                var = (Var)(arrayList.get(i)); 
+                                if (var.getName().equals(s)) {
+                                        return true;
+                                }
+                        }
+			return false;
+		}
+	}
+
+	public class Expr {
+		public String code;
+		public String type;
+		public int reg;
+		public int address;
+		public boolean ref;
+
+		public Expr(String s, String t, int i, int a, boolean r) {
+			code = s;
+			type = t;
+			reg = i;
+			address = a;
+			ref = r;
+		}
+	}
+:}
+
+terminal			SEMI;
+terminal			OPENP;
+terminal			CLOSEP;
+terminal			OPENB;
+terminal			CLOSEB;
+terminal			COMMA;
+terminal			AMPERSAND;
+terminal			NOT;
+terminal			OR;
+
+
+terminal			RETURN;
+
+terminal			IF;
+terminal			ELSEIF;
+terminal			ELSE;
+terminal			WHILE;
+
+terminal			IN;
+terminal			OUT;
+terminal			INSIGN;
+terminal			OUTSIGN;
+terminal			ASSIGN;
+
+terminal			STRUCT;
+terminal			PERIOD;
+
+terminal String			TYPE;
+terminal String			MULOP;
+terminal String			ADDOP;
+terminal String			RELOP;
+terminal String			EQOP;
+
+terminal Integer		INT;
+terminal String			CHAR;
+terminal Boolean		BOOL;
+terminal String			ID;
+
+non terminal String		Start, SL;
+non terminal			structures, structure, fieldDefs, fieldDef;
+non terminal String		procedures, procedure;
+non terminal			paramListOpt, paramList, param;
+non terminal Hashtable		varDecl;
+non terminal Hashtable		varDecls;
+non terminal String		block, stmt;
+non terminal String		returnStmt, whileLoop;
+non terminal String		assignment;
+non terminal String 		input, output;
+non terminal			passParamsOpt, passParams, passParam;
+non terminal String		procCall;
+non terminal String		ifStmt, optElseIf, optElse;
+non terminal Expr		valueExpr,mainExpr;
+non terminal ArrayList		varList;
+non terminal Var		variableExpr;
+
+precedence left			OR;
+precedence left			AMPERSAND;
+precedence left			EQOP;
+precedence left			RELOP;
+precedence left			ADDOP;
+precedence left			MULOP;
+precedence left			NOT, PERIOD;
+precedence left			OPENP;
+
+Start		::=	SL:prog
+			{:	RESULT = prog;
+			:};
+
+SL		::= 	structures procedures:procs
+			{:	
+				if(!tables.containsKey("main")){ throw new CompileException("No main() procedure.");}
+				RESULT = procs;
+			:};
+
+structures 	::=	structures structure
+		|	;
+
+structure	::=	STRUCT ID OPENB fieldDefs CLOSEB;
+
+fieldDefs	::=	fieldDefs fieldDef
+		|	fieldDef;
+
+fieldDef	::=	TYPE ID SEMI
+		|	ID ID SEMI
+		|	STRUCT OPENB fieldDefs CLOSEB ID SEMI;
+
+procedures	::=	procedures:procs procedure:proc
+			{:	RESULT = procs + proc;
+			:}
+		|	procedure:proc
+			{:	RESULT = proc;
+			:};
+
+procedure	::=	ID:id
+			{:
+				currProc = id;
+                                tables.put(currProc, new VarTable(-4*++offset));
+			:}				
+			OPENP paramListOpt:list CLOSEP OPENB varDecls:v block:b CLOSEB
+			{:	
+				if (tables.contains(id)) {
+					throw new CompileException("Procedure '" + id + "' has already been declared");
+				}
+				if (id.equals("main")) {
+					RESULT = ".globl main\nmain:\n" + b + "\ttrap\t10\t\t# Quit\n";
+				}
+				else {
+					VarTable varTable = (VarTable)(tables.get(id));
+					Var var = varTable.getVar("_");
+					int x = var.address;
+					RESULT = id + ":\n"
+					+ "\tsw\t$31, " + x + "($30)\n"
+					+ b
+					+ "\tlw\t$31, " + x + "($30)\n"
+					+ "\tjr\t$31\n";
+				}
+			:};
+
+
+paramListOpt	::=	paramList
+			{:
+				VarTable varTable = (VarTable)(tables.get(currProc));
+				varTable.num = varTable.arrayList.size()-1; // don't count '_'
+			:}
+		|	{:
+				VarTable varTable = (VarTable)(tables.get(currProc));
+				varTable.num = 0;
+			:};
+
+paramList	::=	paramList COMMA param
+		|	param;
+
+param		::=	TYPE:t ID:id
+			{:
+				VarTable varTable = (VarTable)(tables.get(currProc));
+				ArrayList paramList = varTable.arrayList;
+				int x = -4*++offset;
+				Var var = new Var(id, t, x, false);
+				paramList.add(var);
+			:}
+		|	ID ID
+		|	TYPE:t AMPERSAND ID:id
+                        {:
+                                VarTable varTable = (VarTable)(tables.get(currProc));
+                                ArrayList paramList = varTable.arrayList;
+                                Var var = new Var(id, t, -4*++offset, true);
+                        :}
+		|	ID AMPERSAND ID;
+
+varDecls	::=	varDecls:vars varDecl:var SEMI
+			/*{:
+				if (vars!=null) {
+                                	for ( Enumeration e = var.keys(); e.hasMoreElements(); ) {
+                                		String s = (String)(e.nextElement());
+                                        	vars.put(s, var.get(s));
+                                	}
+                                	RESULT = vars;
+                                }
+                                else { RESULT = var; }
+			:}*/
+		|	;
+
+varDecl		::=	TYPE:t varList:v
+			{:
+				VarTable varTable = (VarTable)(tables.get(currProc));
+				Var var;
+				String s;
+				for (int i=0; i<v.size(); i++) {
+					s = (String)(v.get(i));
+					var = new Var(s, t, (++offset)*-4, false); 
+					if (!varTable.containsKey(s)) { varTable.addVar(s, var); }
+					else { throw new CompileException("Variable '" + s + "' has already been declared"); }
+				}
+			:}
+		|	ID:id varList:v
+/// STRUCTURES, DON'T BLOODY LOOK!!!
+			{:
+				VarTable varTable = (VarTable)(tables.get(currProc));
+				Var var;
+				String s;
+				for (int i=0; i<v.size(); i++) {
+					s = (String)(v.get(i));
+					var = new Var(s, id, (++offset)*-4, false);
+					varTable.addVar(s, var);
+				}
+			:};
+/// OK, YOU CAN START LOOKING NOW!!!
+
+varList		::=	varList:list COMMA ID:id
+			{:
+				list.add(id);
+				RESULT = list; 
+			:} 
+		|	ID:id
+			{:
+				ArrayList aList = new ArrayList();
+				aList.add(id);
+				RESULT = aList;
+			:};
+
+block		::=	block:b stmt:s SEMI
+			{:	RESULT = b + s;
+			:}
+		|	stmt:s SEMI
+			{:	RESULT = s;
+			:};
+		
+stmt		::=	output:s
+			{:	RESULT = s;
+			:}
+		|	input:i
+			{:	RESULT = i;
+			:}
+		|	assignment:a
+			{:	RESULT = a;
+			:}
+		|	returnStmt:r
+			{:	RESULT = r;
+			:}
+		|	procCall:pc
+			{:	RESULT = pc;
+				currProc = lastProc;
+			:}
+		|	whileLoop:whilestuff
+			{:	RESULT = whilestuff;
+			:}
+		|	ifStmt:ifstmt
+			{:	RESULT = ifstmt;
+			:};
+
+output		::=	OUT OUTSIGN mainExpr:v
+			{:	
+				if (v.type.equals("char")) {
+					RESULT = v.code + "\tadd\t$4, $" + reg + ", $0\t# printing char\n" +
+					"\ttrap\t101\n";
+				}
+				else if (v.type.equals("int")) {
+					RESULT = v.code + "\tadd\t$4, $" + reg + ", $0\t# printing int\n" + 
+					"\ttrap\t1\n";
+				}
+                                else if (v.type.equals("bool")) {
+                                       	RESULT = v.code
+						+ "\tbne\t$0, $1, _E" + myE + "\t# if 'true', skip\n" 
+						+ "\taddi\t$4, $0, 102\t# print 'f'\n\ttrap\t101\t\t\t\n" 
+						+ "\taddi\t$4, $0, 97\t# print 'a'\n\ttrap\t101\t\t\t\n"
+						+ "\taddi\t$4, $0, 108\t# print 'l'\n\ttrap\t101\t\t\t\n"
+						+ "\taddi\t$4, $0, 115\t# print 's'\n\ttrap\t101\t\t\t\n"
+						+ "\taddi\t$4, $0, 101\t# print 'e'\n\ttrap\t101\t\t\t\n"
+						+ "\tj\t_L" + myL + "\n_E" + myE + ":\n"
+						+ "\taddi\t$4, $0, 116\t# print 't'\n\ttrap\t101\t\t\t\n"
+						+ "\taddi\t$4, $0, 114\t# print 'r'\n\ttrap\t101\t\t\t\n"
+						+ "\taddi\t$4, $0, 117\t# print 'u'\n\ttrap\t101\t\t\t\n"
+						+ "\taddi\t$4, $0, 101\t# print 'e'\n\ttrap\t101\t\t\t\n"
+						+ "_L" + myL + ":\n";
+					myL++;
+					myE++;
+                                }
+				else { throw new CompileException("Printing to stdout error."); }
+			:};
+
+input		::=	IN INSIGN variableExpr:var
+			{:
+				if (var.getType().equals("char")) {
+					RESULT = "\ttrap\t102\t\t# read char\n\tsw $2, " + var.getAddress() + "($30)\n";
+				}
+				else if (var.getType().equals("int")) {
+					RESULT = "\ttrap\t5\t\t# read int\n\tsw $2, " + var.getAddress() + "($30)\n";
+				}
+				else{ throw new CompileException("Can't read booleans"); }
+			:};
+
+assignment      ::=     variableExpr:varE ASSIGN mainExpr:valueE
+			{: 
+				if (valueE.type.equals(varE.getType())) {
+					RESULT = valueE.code + "\tsw\t$" + reg + ", " + varE.getAddress() + "($30)\t# saving variable\n";
+				}
+				else { throw new CompileException("Type mismatch"); }
+			:};
+
+returnStmt      ::=     RETURN
+			{:
+                        	VarTable varTable = (VarTable)(tables.get(currProc));
+                                Var var = varTable.getVar("_");
+                                int x = var.address;
+                                RESULT = "\tlw\t$31, " + x + "($30)\n"
+                                        + "\tjr\t$31\t# return\n";
+			:};
+
+procCall	::=	ID:id
+			{:
+				arrayList = new ArrayList();
+			:}
+			OPENP passParamsOpt:p CLOSEP
+			{:
+				RESULT = "";
+				int x;
+				VarTable varTable;
+				Var var;
+				Expr temp;
+				if (id.equals("main")){ throw new CompileException("Can't call main()."); }
+				if (!currProc.equals(id)) {
+					procIndex=1;
+					lastProc = currProc;
+					currProc = id;
+					varTable = (VarTable)(tables.get(currProc));
+					if (varTable.num != arrayList.size()) {
+						throw new CompileException("Wrong number of parameters");
+					}
+					for (int i=0; i<arrayList.size(); i++) { // copy parameters into table
+						var = (Var)(varTable.arrayList.get(i+1));
+						temp = (Expr)(arrayList.get(i));
+						if (!var.type.equals(temp.type)){ 
+							throw new CompileException("Type mismatch. Expected '" + var.type + "' but found '" + temp.type + "'");
+						}
+						if (var.ref) {
+							var.address = temp.address;
+						}
+						else {
+							RESULT = temp.code + "\tsw\t$" + temp.reg + ", " + var.address + "($30)\t# save parameter\n";
+						}
+					}	
+					//x = 4*++offset;
+					/*RESULT += "\taddi\t$30, $30, -" + x + "\n"
+						+ "\tjal\t" + currProc + "\n"
+						+ "\taddi\t$30, $30, " + x + "\n";*/
+					RESULT += "\tjal\t" + currProc + "\n";
+				}
+				else { // recursion
+					if (procIndex==1) { recStart=currProc; }
+					currProc = "_" + procIndex + currProc;
+					tables.put(currProc, new VarTable(-4*++offset));
+					varTable = (VarTable)(tables.get(recStart)); // original procedure's table
+					VarTable newVarTable = (VarTable)(tables.get(currProc)); // new table
+					ArrayList newList = newVarTable.arrayList; // new paramList
+					ArrayList aList = varTable.arrayList; // original paramList
+					for (int i=0; i<varTable.num; i++) { // set paramList in table
+						newList.add(aList.get(i+1));
+					}	
+					newVarTable.num = varTable.num;
+                                        if (newVarTable.num != arrayList.size()) {
+                                                throw new CompileException("Wrong number of parameters");
+                                        }
+                                        for (int i=0; i<arrayList.size(); i++) { // copy parameters into table
+                                                var = (Var)(varTable.arrayList.get(i+1)); // expected
+                                                temp = (Expr)(arrayList.get(i)); // input param
+                                                if (!var.type.equals(temp.type)){
+                                                        throw new CompileException("Type mismatch. Expected '" + var.type + "' but found '" + temp.type + "'");
+                                                }
+                                                if (var.ref) {
+                                                        var.address = temp.address;
+                                                }
+                                                else {
+                                                        RESULT = temp.code + "\tsw\t$" + temp.reg + ", " + var.address + "($30)\t# save parameter\n";
+                                                }
+                                        }
+					procIndex++;
+					//x = -4*++offset;
+					/*RESULT = "\taddi $30, $30, -" + x + "\n"
+                                                + "\tjal\t" + lastProc + "\n"
+                                                + "\taddi $30, $30, " + x + "\n";*/
+					RESULT = "\tjal\t" + recStart + "\n";
+				}
+			:};
+
+passParamsOpt	::=	passParams
+		|	;
+
+passParams	::=	passParams COMMA passParam
+		|	passParam;
+
+passParam	::=	valueExpr:v
+			{:
+				arrayList.add(v);
+			:};
+
+whileLoop	::=	WHILE mainExpr:v OPENB block:b CLOSEB
+			{:
+				if(!v.type.equals("bool")){throw new CompileException("While statement takes boolean only"); }
+				RESULT = "_E" + myE + ":\t\t\t\t# while\n"
+					+ v.code + "\tblez\t$" + v.reg + ", _L" + myL + "\n"
+					+ b + "\tj\t_E" + myE + "\n_L" + myL + ":\t\t\t\t# while end\n";
+				myL++;
+				myE++;
+			:};
+
+ifStmt		::=	IF mainExpr:v OPENB block:b CLOSEB optElseIf:ei optElse:e
+			{:
+				if(!v.type.equals("bool")){throw new CompileException("If statement takes boolean only"); }
+				RESULT = "\t\t\t\t# if #" + myL + "\n" + v.code + "\tblez\t$" + v.reg + ", _E" + (myE-curE) + "\n"
+					+ b + "\tj\t_L" + myL + "\n" +
+					ei + e + "_L" + myL + ":\n";
+				myL++;
+				curE=0;
+			:};
+
+optElseIf	::=	ELSEIF mainExpr:v OPENB block:b CLOSEB optElseIf:ei
+			{:
+				if (!v.type.equals("bool")){throw new CompileException("Elseif takes boolean only"); }
+				curE++;
+				RESULT = "_E" + myE + ":\t\t\t\t# elseif #" + myE + "\n\t\t"
+					+ v.code + "\tblez\t$" + reg + ", _E" + (myE + 1) + "\n" +
+					b + "\tj\t_L" + myL + "\n" + ei;
+				myE++;
+			:}
+		|	{: RESULT = ""; :};
+
+optElse		::=	ELSE OPENB block:b CLOSEB
+			{: RESULT = "_E" + myE + ":\t\t\t\t# else\n" + b; myE++; curE++; :}
+		|	{: RESULT = "_E" + myE + ":\t\t\t\t# no else\n"; myE++; curE++; :};
+
+mainExpr	::=	valueExpr:e
+			{:	RESULT = e;
+				reg=1;
+			:};
+
+valueExpr	::=	variableExpr:v
+			{:
+				if (v.getType().equals("int")) {
+					String code = "\tlw\t$" + reg + ", " + v.getAddress() + "($30)\t# load int variable\n";
+					RESULT = new Expr(code, v.getType(), reg, v.address, v.ref);
+					reg++;
+				}
+				else if (v.getType().equals("char")) {
+					String code = "\tlw\t$" + reg + ", " + v.getAddress() + "($30)\t# load char variable\n";
+					RESULT = new Expr(code, v.getType(), reg, v.address, v.ref);
+					reg++;
+				}
+                                else if (v.getType().equals("bool")) {
+                                        String code = "\tlw\t$" + reg + ", " + v.getAddress() + "($30)\t# load bool variable\n";
+                                        RESULT = new Expr(code, v.getType(), reg, v.address, v.ref);
+                                        reg++;
+                                }
+				else { throw new CompileException("Type mismatch"); }
+			:}
+		|	valueExpr:v1 ADDOP:o valueExpr:v2
+			{:
+				if ((v1.type.equals(v2.type)) && (v1.type.equals("int"))) {
+					if (o.equals("+")) {
+                                        	String code = v1.code + v2.code + "\tadd\t$" + v1.reg + ", $" + v1.reg + ", $" + v2.reg + "\t# adding\n";
+						RESULT = new Expr(code, "int", v1.reg, 0, false);
+						reg--;
+					}
+					else if (o.equals("-")) {
+                                                String code = v1.code + v2.code + "\tsub\t$" + v1.reg + ", $" + v1.reg + ", $" + v2.reg + "\t# subtracting\n";
+                                                RESULT = new Expr(code, "int", v1.reg, 0, false);
+                                                reg--; 
+                                        }
+
+				}
+				else { throw new CompileException("Wrong types specified"); }
+			:}
+		|	valueExpr:v1 MULOP:o valueExpr:v2
+                        {:
+                                if ((v1.type.equals(v2.type)) && (v1.type.equals("int"))) {
+					if (o.equals("*")) {
+						String code = v1.code + v2.code + "\tmult\t$" + v1.reg + ", $" + v2.reg + 
+								"\t\t# multiply\n" + "\tmflo\t$" + v1.reg + "\n";
+                                        	RESULT = new Expr(code, "int", v1.reg, 0, false);
+						reg--;
+                                	}
+					else if (o.equals("/")) {
+                                                String code = v1.code + v2.code + "\tdiv\t$" + v1.reg + ", $" + v2.reg +
+                                                                "\t\t# divide\n" + "\tmflo\t$" + v1.reg + "\n";
+                                                RESULT = new Expr(code, "int", v1.reg, 0, false);
+                                                reg--;   
+                                        }
+					else if (o.equals("%")) {
+                                                String code = v1.code + v2.code + "\tdiv\t$" + v1.reg + ", $" + v2.reg +
+                                                                "\t\t# mod\n" + "\tmfhi\t$" + v1.reg + "\n";
+                                                RESULT = new Expr(code, "int", v1.reg, 0, false);
+                                                reg--;   
+                                        }
+				}
+                                else { throw new CompileException("Wrong types specified"); }
+                        :}
+		|	valueExpr:v1 EQOP valueExpr:v2
+			{:
+                                if ((v1.type.equals(v2.type))) {
+                                	String code = v1.code + v2.code
+							+ "\tsub\t$" + v1.reg + ", $" + v1.reg + ", $" + v2.reg + "\t# subtracting\n"
+							+ "\tbne\t$0, $" + v1.reg + ", _E" + myE + "\t# if not equal\n"
+							+ "\taddi\t$" + v1.reg + ", $0, 1\t# load 'true'\n"
+							+ "\tj\t_L" + myL + "\n_E" + myE + ":\t\t\t\t# if equal\n"
+							+ "\tadd\t$" + v1.reg + ", $0, $0\t# load 'false'\n"
+							+ "_L" + myL + ":\n"; 
+                                        RESULT = new Expr(code, "bool", v1.reg, 0, false);
+					myL++; myE++;
+                                        reg--;
+                                }
+                                else { throw new CompileException("Types must match: got '" + v1.type + "' and '" + v2.type + "'");}
+			:}
+		|	valueExpr:v1 RELOP:o valueExpr:v2
+			{:
+                                if ((v1.type.equals(v2.type)) && (v1.type.equals("int"))) {
+                                        if (o.equals("<")) {
+                                                String code = v1.code + v2.code
+							+ "\tslt\t$" + v1.reg + ", $" + v1.reg + ", $" + v2.reg + "\t# comparing\n";
+                                                RESULT = new Expr(code, "bool", v1.reg, 0, false);
+                                                reg--;
+                                        }
+                                        else if (o.equals(">")) {
+                                                String code = v1.code + v2.code
+							+ "\tslt\t$" + v1.reg + ", $" + v2.reg + ", $" + v1.reg + "\t# comparing\n";
+                                                RESULT = new Expr(code, "bool", v1.reg, 0, false);
+                                                reg--;
+                                        } 
+				}
+				else { throw new CompileException("Type mismatch: RELOP operates on int values only"); }
+			:}
+		|	OPENP valueExpr:v CLOSEP
+			{: RESULT = v; :}
+		|	NOT valueExpr:v1
+			{:
+				int temp = v1.reg+1;
+                                if (v1.type.equals("bool")) {
+                                        String code = v1.code + "\taddi\t$" + temp + ", $0, 1\t# put 1 into $" + temp + "\n"
+						+ "\txor\t$" + v1.reg + ", $" + v1.reg + ", $" + temp + "\t# OR\n";
+                                        RESULT = new Expr(code, "bool", v1.reg, 0, false);
+                                }
+                                else { throw new CompileException("Type mismatch: NOT operates on boolean values only"); }
+                        :}
+		|	valueExpr:v1 OR valueExpr:v2
+			{:
+				if ((v1.type.equals(v2.type)) && (v1.type.equals("bool"))) {
+                        		String code = v1.code + v2.code
+						+ "\tor\t$" + v1.reg + ", $" + v1.reg + ", $" + v2.reg + "\t# OR\n";
+                                	RESULT = new Expr(code, "bool", v1.reg, 0, false);
+                                	reg--;
+				}
+				else { throw new CompileException("Type mismatch: OR operates on boolean values only"); }
+			:}
+		|	valueExpr:v1 AMPERSAND valueExpr:v2
+                        {:
+                                if ((v1.type.equals(v2.type)) && (v1.type.equals("bool"))) {
+                                        String code = v1.code + v2.code
+						+ "\tand\t$" + v1.reg + ", $" + v1.reg + ", $" + v2.reg + "\t# OR\n";
+                                        RESULT = new Expr(code, "bool", v1.reg, 0, false);
+                                        reg--;
+                                }
+                                else { throw new CompileException("Type mismatch: AND operates on boolean values"); }
+                        :}
+		|	INT:i
+			{:
+				String code = "\tllo\t$" + reg + ", " + i.intValue() + "\t\t# Load " + i.intValue() +
+				"\n\tlhi\t$" + reg + ", " + i.intValue() + "\n";
+				RESULT = new Expr(code, "int", reg, 0, false);
+				reg++;
+			:}
+		|	CHAR:c
+			{:	String code = "\taddi\t$" + reg + ", $0, " + (int)(c.charAt(0)) + "\t# Load ASCII value\n";
+				RESULT = new Expr(code, "char", reg, 0, false);
+				reg++;
+			:}
+		|	BOOL:b
+			{:
+				String value;
+				if (b==true) { value = "1"; } else { value = "0"; }
+	                        String code = "\taddi\t$" + reg + ", $0, " + value + "\t# Load " + b + "\n";
+                                RESULT = new Expr(code, "bool", reg, 0, false);
+                                reg++;
+                        :}
+		|	ADDOP:addop INT:i
+			{:
+				if (addop.equals("+")) { throw new CompileException("Attempted to perform unary addition"); }
+				String code = "\tllo\t$" + reg + ", -" + i.intValue() + "\t\t# Load -" + i.intValue() +
+						"\n\tlhi\t$" + reg + ", -" + i.intValue() + "\n";
+				RESULT = new Expr(code, "int", reg, 0, false);
+				reg++;
+			:};
+
+variableExpr	::=	ID:id {:
+System.out.println("currproc = " + currProc);
+				VarTable varTable = (VarTable)(tables.get(currProc));
+				if (varTable.containsKey(id)) { RESULT = varTable.getVar(id); }
+				else { throw new CompileException("Undeclared variable '" + id + "'"); }
+			:}
+		|	variableExpr PERIOD ID;

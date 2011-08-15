@@ -1,0 +1,200 @@
+\documentclass{article}[12pt]
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{fitch}
+
+\title{CS245 Assignment 2}
+\author{Nissan Pow}
+
+\begin{document}
+\maketitle
+
+\section*{1. (3 points)}
+
+\begin{tabular}{ll}
+  $\lnot(p \land (\lnot (\lnot r \land (s \lor p)) \Rightarrow \lnot (\lnot p \Rightarrow q)))$ \\
+  $\lnot (p \land (\lnot \lnot(\lnot r \land (s \lor p)) \lor \lnot (\lnot \lnot p \lor q)))$ & (Implication $\times$2) \\
+  $\lnot (p \land ((\lnot r \land (s \lor p)) \lor \lnot (p \lor q)))$ & (Double Negation $\times$2) \\
+  $\lnot (p \land ((\lnot r \land (s \lor p)) \lor (\lnot p \land \lnot q)))$ & (De Morgan) \\
+  $\lnot p \lor \lnot ((\lnot r \land (s \lor p)) \lor (\lnot p \land \lnot q))$ & (De Morgan) \\
+  $\lnot p \lor (\lnot (\lnot r \land (s \lor p)) \land \lnot (\lnot p \land \lnot q))$ & (De Morgan) \\
+  $\lnot p \lor ((\lnot \lnot r \lor \lnot (s \lor p)) \land (\lnot \lnot p \lor \lnot \lnot q))$ & (De Morgan $\times$2) \\
+  $\lnot p \lor ((r \lor \lnot (s \lor p)) \land (p \lor q))$ & (Double Negation $\times$3) \\
+  $\lnot p \lor ((r \lor (\lnot s \land \lnot p)) \land (p \lor q))$ & (De Morgan) \\
+  $(\lnot p \lor (r \lor (\lnot s \land \lnot p))) \land (\lnot p \lor (p \lor q))$ & (Distributivity) \\
+  $(\lnot p \lor ((r \lor \lnot s) \land (r \lor \lnot p))) \land (\lnot p \lor (p \lor q))$ & (Distributivity) \\
+  $(\lnot p \lor (r \lor \lnot s)) \land (\lnot p \lor (r \lor \lnot p)) \land (\lnot p \lor (p \lor q))$ & (Distributivity) \\
+  $(\lnot p \lor (r \lor \lnot s)) \land (\lnot p \lor (\lnot p \lor r)) \land (\lnot p \lor (p \lor q))$ & (Commutativity) \\
+  $((\lnot p \lor r) \lor \lnot s) \land ((\lnot p \lor \lnot p) \lor r) \land ((\lnot p \lor p) \lor q)$ & (Associativity $\times$3) \\
+  $((\lnot p \lor r) \lor \lnot s) \land (\lnot p \lor r) \land ((\lnot p \lor p) \lor q)$ & (Idempotence) \\
+  $((\lnot p \lor r) \lor \lnot s) \land (\lnot p \lor r) \land (true \lor q)$ & (Excluded Middle) \\
+  $((\lnot p \lor r) \lor \lnot s) \land (\lnot p \lor r) \land true)$ & (Simplification I) \\
+  $(\lnot p \lor r) \land true$ & (Simplification II) \\
+  $(\lnot p \lor r)$ & (Simplification I) \\
+\end{tabular} \\
+
+\newpage
+\section*{2. (10 points)} 
+
+\begin{tabular}{|l|l|}
+\hline
+(a) Fragment \#1 & (b) Fragment \#2 \\
+\hline
+  P1: $(\lnot a \lor b) \land (\lnot a \land \lnot b)$ & P1: $\lnot (a \land \lnot b) \land (\lnot a \land \lnot b)$ \\
+  P2: $(\lnot a \lor b) \land \lnot (\lnot a \land \lnot b) \land b$ & P2: $\lnot(a \land \lnot b) \land \lnot (\lnot a \land \lnot b)$ \\
+  P3: $(\lnot a \lor b) \land \lnot (\lnot a \land \lnot b) \land \lnot b$ & P3: false \\
+  P4: $\lnot (\lnot a \lor b)$ & P4: $(a \land \lnot b)$ \\
+  P5: $\lnot a \lor b \lor (a \land \lnot b)$ & P5: true \\
+\hline
+\end{tabular}\\ \\ \\
+(c) RTS: Fragment \#1 and Fragment \#2 have the same behaviour. \\ \\
+$P1_{1}$: \\
+\begin{tabular}{ll}
+  $(\lnot a \lor b) \land (\lnot a \land \lnot b)$ \\
+  $\lnot (a \land \lnot b) \land (\lnot a \land \lnot b)$ & (De Morgan) \\
+  $\equiv P1_{2}$ \\
+\end{tabular}\\ \\ \\
+$P2_{1}$: \\
+\begin{tabular}{ll}
+  $(\lnot a \lor b) \land \lnot (\lnot a \land \lnot b) \land b$ \\
+  $(\lnot a \lor b) \land (\lnot \lnot a \lor \lnot \lnot b) \land b$ & (De Morgan) \\
+  $(\lnot a \lor b) \land (a \lor b) \land b$ & (Double Negation $\times$2) \\
+  $(\lnot a \lor b) \land b$ & (Simplification II) \\
+  $b$ & (Simplification II) \\
+\end{tabular}\\ \\ \\
+$P2_{2}$: \\
+\begin{tabular}{ll}
+  $\lnot(a \land \lnot b) \land \lnot (\lnot a \land \lnot b)$ \\
+  $(\lnot a \lor \lnot \lnot b) \land (\lnot \lnot a \lor \lnot \lnot b)$ & (De Morgan $\times$2) \\
+  $(\lnot a \lor b) \land (a \lor b)$ & (Double Negation $\times$2) \\
+  $(b \lor \lnot a) \land (b \lor a)$ & (Commutativity $\times$2) \\
+  $b \lor (\lnot a \land a)$ & (Distributivity) \\
+  $b \lor false$ & (Contradiction) \\
+  $b$ & (Simplification I) \\
+\end{tabular} \\ \\ \\
+  Therefore $P2_{1} \equiv P2_{2}$ \\ \\
+$P3_{1}$: \\
+\begin{tabular}{ll}
+  $(\lnot a \lor b) \land \lnot (\lnot a \land \lnot b) \land \lnot b$ \\
+  $(\lnot a \lor b) \land (\lnot \lnot a \lor \lnot \lnot b) \land \lnot b$ & (De Morgan) \\
+  $(\lnot a \lor b) \land (a \lor b) \land  \lnot b$ & (Double Negation $\times$2) \\
+  $(b \lor \lnot a) \land (b \lor a) \land \lnot b$ & (Commutativity $\times$2) \\
+  $(b \lor (\lnot a \land a)) \land \lnot b$ & (Distributivity) \\
+  $(b \lor false) \land \lnot b$ & (Contradiction) \\
+  $b \land \lnot b$ & (Simplification I) \\
+  $false$ & (Contradiction) \\
+  $\equiv P3_{2}$ \\
+\end{tabular} \\ \\ \\
+$P4_{1}$: \\
+\begin{tabular}{ll}
+  $\lnot(\lnot a \lor b)$ \\
+  $(\lnot \lnot a \land \lnot b)$ & (De Morgan) \\
+  $(a \land \lnot b)$ & (Double Negation) \\
+  $\equiv P4_{2}$ \\
+\end{tabular} \\ \\ \\
+$P5_{1}$: \\
+\begin{tabular}{ll}
+  $\lnot a \lor b \lor (a \land \lnot b)$ \\
+  $\lnot a \lor \lnot \lnot b \lor (a \land \lnot b)$ & (Double Negation) \\
+  $\lnot(a \land \lnot b) \lor (a \land \lnot b)$ & (De Morgan) \\
+  $true$ & (Excluded Middle) \\
+  $\equiv P5_{2}$ \\
+\end{tabular} \\ \\ \\
+
+\newpage
+\section*{3. (12 points)} 
+
+(a) \\
+\begin{equation*}
+  \begin{fitch}
+    \fa p \lor \lnot q                      & Premise                  \\
+    \fa \lnot r \Rightarrow \lnot \lnot q   & Premise                  \\
+    \fa r \Rightarrow \lnot s               & Premise                  \\
+    \fa \lnot \lnot s                       & Premise                  \\
+    \fa s                                   & 4, $\lnot$\_E            \\
+    \fa \fh \lnot p                         & Assumption               \\
+    \fa \fa \lnot q                         & 1, 6, $\lor$\_E          \\
+    \fa \fa \lnot \lnot r                   & 2, 7, $\Rightarrow$\_E   \\
+    \fa \fa r                               & 8, $\lnot$\_E            \\
+    \fa \fa \lnot s                         & 9, 3, $\Rightarrow$\_E   \\
+    \fa \fa false                           & 5, 10, $\lnot$\_E        \\
+    \fa \lnot \lnot p                       & 6-11, $\lnot$\_I         \\
+    \fa p                                   & 12, $\not$\_E            \\
+  \end{fitch}
+\end{equation*} \\ \\
+
+(b) \\
+\begin{equation*}
+  \begin{fitch}
+    \fa (p \lor q) \Rightarrow r              & Premise                   \\
+    \fa \fh q                                 & Assumption                \\
+    \fa \fa p \lor q                          & 2, $\lor$\_I              \\
+    \fa \fa r                                 & 1, 3, $\Rightarrow$\_E    \\
+    \fa q \Rightarrow r                       & 2-4, $\Rightarrow$\_I     \\
+  \end{fitch}
+\end{equation*} \\ \\ 
+
+\newpage
+
+(c) \\
+\begin{equation*}
+  \begin{fitch}
+    \fa p \Rightarrow r                     & Premise                   \\
+    \fa q \Rightarrow s                     & Premise                   \\
+    \fa \fh p \lor q                        & Assumption                \\
+    \fa \fa \fh \lnot(r \lor s)             & Assumption                \\
+    \fa \fa \fa \fh \lnot r                 & Assumption                \\
+    \fa \fa \fa \fa \lnot p                 & 1, 5, $\Rightarrow$\_E    \\
+    \fa \fa \fa \fa q                       & 3, 6, $\lor$\_E           \\
+    \fa \fa \fa \fa s                       & 2, 7, $\Rightarrow$\_E    \\
+    \fa \fa \fa \fa r \lor s                & 8, $\lor$\_I              \\
+    \fa \fa \fa \fa false                   & 4, 9, $\lnot$\_E          \\
+    \fa \fa \fa \lnot \lnot r               & 5-10, $\lnot$\_I          \\
+    \fa \fa \fa r                           & 11, $\lnot$\_E            \\
+    \fa \fa \fa r \lor s                    & 12, $\lor$\_I             \\
+    \fa \fa \fa false                       & 4, 13, $\lnot$\_E         \\
+    \fa \fa \lnot \lnot (r \lor s)          & 4-14. $\lnot$\_I          \\
+    \fa \fa (r \lor s)                      & 15, $\lnot$\_E            \\
+    \fa (p \lor q) \Rightarrow (r \lor s)   & 3-16, $\Rightarrow$\_I    \\
+  \end{fitch}
+\end{equation*} \\ \\
+
+(d) \\ \\
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+  \hline
+  p & q & r & s & $\lnot p \Rightarrow q$ & $\lnot r \Rightarrow s$ & $\lnot q \lor s$ & $p \lor r$ \\
+  \hline
+  F & T & F & T & T & T & T & F \\
+  \hline
+\end{tabular} \\ \\
+
+In the truth table above, all the premises are true but the conclusion is false. Thus the argument is invalid. \\
+
+\newpage
+(e) \\
+\begin{equation*}
+  \begin{fitch}
+    \fa \lnot p \Rightarrow q               & Premise                   \\
+    \fa \lnot r \Rightarrow s               & Premise                   \\
+    \fa \lnot q \lor \lnot s                & Premise                   \\
+    \fa \fh \lnot (p \lor r)                & Assumption                \\
+    \fa \fa \fh p                           & Assumption                \\
+    \fa \fa \fa p \lor r                    & 5, $\lor$\_I              \\
+    \fa \fa \fa false                       & 4, 6, $\lnot$\_E          \\
+    \fa \fa \lnot p                         & 5-7, $\lnot$\_I           \\
+    \fa \fa q                               & 1, 8, $\Rightarrow$\_E    \\
+    \fa \fa \fh \lnot q                     & Assumption                \\
+    \fa \fa \fa false                       & 9, 10, $\lnot$\_E         \\
+    \fa \fa \lnot \lnot q                   & 10-11, $\lnot$\_I         \\
+    \fa \fa \lnot s                         & 3, 12, $\lor$\_E          \\
+    \fa \fa \lnot \lnot r                   & 2, 13, $\Rightarrow$\_E   \\
+    \fa \fa r                               & 14, $\lnot$\_E            \\
+    \fa \fa p \lor r                        & 15, $\lor$\_I             \\
+    \fa \fa false                           & 4, 16, $\lnot$\_E         \\
+    \fa \lnot \lnot (p \lor r)              & 4-17, $\lnot$\_I          \\
+    \fa (p \lor r)                          & 18, $\lnot$\_E            \\
+  \end{fitch}
+\end{equation*} \\ \\ \\
+
+\end{document}
+

@@ -1,0 +1,13 @@
+me: 63k
+pack: 61k
+compress: 43k
+gzip: 25k
+
+My algorithm is clearly worse than pack/compress/gzip. If I had an extra 2
+weeks, I would try to implement adaptive Huffman (where nodes are added to
+the tree on the fly), or look into LZW. 
+
+The reason that the algorithm in the assignment is worse is possibly due to
+the codelengths of the intial 1000 characters, which aren't really
+optimized.
+

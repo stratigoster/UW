@@ -1,0 +1,10 @@
+-== 261 ==- npow@cpu16 -== ~/compilers/docs/correct ==-
+--> ./default_values.exe
+Cows = 2    Pigs = 3    Dogs = 4    and they total 9
+Cows = 3    Pigs = 3    Dogs = 4    and they total 10
+Cows = 0    Pigs = 0    Dogs = 4    and they total 4
+Cows = 5    Pigs = 7    Dogs = 0    and they total 12
+Cows = 0    Pigs = 0    Dogs = 7    and they total 7
+Cows = 2    Pigs = 3    Dogs = 4    and they total 9
+Cows = 0    Pigs = 0    Dogs = 0    and they total 0
+

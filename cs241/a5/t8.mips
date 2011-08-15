@@ -1,0 +1,113 @@
+.globl main
+main:
+	llo	$1, 17		# Load 17
+	lhi	$1, 17
+	sw	$1, -20($30)	# saving variable
+	addi	$1, $0, 0	# Load false
+	sw	$1, -16($30)	# saving variable
+	addi	$1, $0, 1	# Load true
+	sw	$1, -12($30)	# saving variable
+				# if #1
+	lw	$1, -16($30)	# load bool variable
+	lw	$2, -12($30)	# load bool variable
+	addi	$3, $0, 1	# put 1 into $3
+	xor	$2, $2, $3	# OR
+	or	$1, $1, $2	# OR
+	blez	$1, _E1
+	lw	$1, -12($30)	# load bool variable
+	sw	$1, -16($30)	# saving variable
+	j	_L1
+_E1:				# elseif #1
+			lw	$1, -12($30)	# load bool variable
+	lw	$2, -16($30)	# load bool variable
+	addi	$3, $0, 1	# put 1 into $3
+	xor	$2, $2, $3	# OR
+	lw	$3, -16($30)	# load bool variable
+	or	$2, $2, $3	# OR
+	and	$1, $1, $2	# OR
+	blez	$1, _E2
+	lw	$1, -16($30)	# load bool variable
+	sw	$1, -12($30)	# saving variable
+	j	_L1
+_E2:				# else
+	lw	$1, -12($30)	# load bool variable
+	sw	$1, -16($30)	# saving variable
+_L1:
+				# if #5
+	lw	$1, -20($30)	# load int variable
+	llo	$2, 20		# Load 20
+	lhi	$2, 20
+	slt	$1, $2, $1	# comparing
+	blez	$1, _E6
+	addi	$1, $0, 1	# Load true
+	bne	$0, $1, _E3	# if 'true', skip
+	addi	$4, $0, 102	# print 'f'
+	trap	101			
+	addi	$4, $0, 97	# print 'a'
+	trap	101			
+	addi	$4, $0, 108	# print 'l'
+	trap	101			
+	addi	$4, $0, 115	# print 's'
+	trap	101			
+	addi	$4, $0, 101	# print 'e'
+	trap	101			
+	j	_L2
+_E3:
+	addi	$4, $0, 116	# print 't'
+	trap	101			
+	addi	$4, $0, 114	# print 'r'
+	trap	101			
+	addi	$4, $0, 117	# print 'u'
+	trap	101			
+	addi	$4, $0, 101	# print 'e'
+	trap	101			
+_L2:
+	addi	$1, $0, 10	# Load ASCII value
+	add	$4, $1, $0	# printing char
+	trap	101
+	j	_L5
+_E6:				# elseif #6
+			lw	$1, -20($30)	# load int variable
+	llo	$2, 17		# Load 17
+	lhi	$2, 17
+	sub	$1, $1, $2	# subtracting
+	bne	$0, $1, _E4	# if not equal
+	addi	$1, $0, 1	# load 'true'
+	j	_L3
+_E4:				# if equal
+	add	$1, $0, $0	# load 'false'
+_L3:
+	blez	$1, _E7
+	lw	$1, -16($30)	# load bool variable
+	bne	$0, $1, _E5	# if 'true', skip
+	addi	$4, $0, 102	# print 'f'
+	trap	101			
+	addi	$4, $0, 97	# print 'a'
+	trap	101			
+	addi	$4, $0, 108	# print 'l'
+	trap	101			
+	addi	$4, $0, 115	# print 's'
+	trap	101			
+	addi	$4, $0, 101	# print 'e'
+	trap	101			
+	j	_L4
+_E5:
+	addi	$4, $0, 116	# print 't'
+	trap	101			
+	addi	$4, $0, 114	# print 'r'
+	trap	101			
+	addi	$4, $0, 117	# print 'u'
+	trap	101			
+	addi	$4, $0, 101	# print 'e'
+	trap	101			
+_L4:
+	addi	$1, $0, 10	# Load ASCII value
+	add	$4, $1, $0	# printing char
+	trap	101
+	j	_L5
+_E7:				# else
+	lw	$1, -20($30)	# load int variable
+	add	$4, $1, $0	# printing int
+	trap	1
+_L5:
+	trap	10		# Quit

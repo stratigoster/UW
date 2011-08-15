@@ -1,0 +1,133 @@
+\documentclass{article}[12pt]
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{qtree}
+\usepackage{fullpage}
+
+\title{CS240 Assignment 3}
+\author{Nissan Pow}
+
+\begin{document}
+\maketitle
+
+\section*{Problem 1}
+\subsection*{(a)}
+$c_{opt} \le 2c_{opt} = 2\sum_{i=1}^{n} ip_{i} = \frac{2}{n} \sum_{i=1}^{n} i = \frac{2}{n} \frac{n(n+1)}{2} = n+1 \in \Theta(n)$ \\
+
+\subsection*{(b)}
+$c_{mtf} \le 2c_{opt} = 2\sum_{i=1}^{n} ip_{i} \le 2\sum_{i=1}^{\infty} ip_{i} = 2\sum_{i=1}^{\infty} i \frac{1}{2^{i}} = 4 \in \Theta(1)$
+
+\subsection*{(c)}
+$c_{mtf} \le 2c_{opt} = 2\sum_{i=1}^{n} i \frac{1}{iH_{1,n}} = \frac{2}{H_{1,n}} \sum_{i=1}^{n} 1 = \frac{2n}{H_{1,n}}$ \\
+$H_{1,n} = \sum_{j=1}^{n} \frac{1}{j} = 1 + \sum_{j=2}^{n} \frac{1}{j}$ \\ 
+$1 + \int_{2}^{n+1} \frac{dx}{x} < H_{1,n} < 1 + \int_{1}^{n} \frac{dx}{x}$ \\ 
+$1 + [\ln x]{}_{2}^{n+1} < H_{1,n} < 1 + [\ln x]{}_{1}^{n}$ \\
+$1 - \ln 2 + \ln (n+1) < H_{1,n} < 1 + \ln n$ \\
+$=> H_{1,n} \in \Theta(\ln n)$ \\
+$=> c_{mtf} \in \Theta(\frac{n}{\ln n})$ \\
+
+\subsection*{(d)}
+$c_{mtf} \le 2c_{opt} = 2\sum_{i=1}^{n} i \frac{1}{i^{2}H_{2,n}} = \frac{2}{H_{2,n}} \sum_{i=1}^{n} \frac{1}{i} = \frac{2}{H_{2,n}} H_{1,n}$ \\
+$H_{2,n} = \sum_{j=1}^{n} \frac{1}{j^{2}} = 1 + \sum_{j=2}^{n} \frac{1}{j^{2}}$ \\ 
+$1 + \int_{2}^{n+1} \frac{dx}{x^{2}} < H_{2,n} < 1 + \int_{1}^{n} \frac{dx}{x^{2}}$ \\ 
+$1 + [\frac{-1}{x}]{}_{2}^{n+1} < H_{2,n} < 1 + [\frac{-1}{x}]{}_{1}^{n}$ \\
+$1 + \frac{1}{2} - \frac{1}{n+1} < H_{2,n} < 1 - \frac{1}{n} + 1$ \\
+$\frac{3}{2} - \frac{1}{n+1} < H_{2,n} < 2 - \frac{1}{n}$ \\
+$=> H_{2,n} \in \Theta(1)$ \\
+$=> c_{mtf} \in \Theta(\ln n)$ \\
+\section*{Problem 2}
+\subsection*{(a)}
+The following sequence of insertions will produce the tree in Fig 4 from an empty one: \\
+\indent 8,7,6,5,4,3,2,1 \\
+
+\subsection*{(b)}
+\begin{enumerate}
+\item
+\Tree
+  [.{1} [.{$\Box$} ] [.{2} [.{$\Box$} ] [.{3} [.{$\Box$} ] [.{4} [.{$\Box$} ] [.{5} [.{$\Box$} ] [.{6} [.{$\Box$} ] [.{7} [.{$\Box$} ] [.{8} [.{$\Box$} ] [.{$\Box$} ] ] ] ] ] ] ] ] ]
+
+\item
+\Tree
+  [.{2} [.{1} [.$\Box$ ] [.$\Box$ ] ] [.{3} [.$\Box$ ] [.{4} [.$\Box$ ] [.{5} [.$\Box$ ] [.{6} [.$\Box$ ] [.{7} [.$\Box$ ] [.{8} [.$\Box$ ] [.$\Box$ ] ] ] ] ] ] ] ]
+
+\item
+\Tree
+[.{3} [.{2} [.{1} [.$\Box$ ] [.$\Box$ ] ] [.$\Box$ ] ] [.{4} [.$\Box$ ] [.{5} [.$\Box$ ] [.{6} [.$\Box$ ] [.{7} [.$\Box$ ][.{8} [.$\Box$ ] [.$\Box$ ] ] ] ] ] ] ]
+
+\item
+\Tree
+  [.{4} [.{3} [.{2} [.{1} [.$\Box$ ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.{5} [.$\Box$ ] [.{6} [.$\Box$ ] [.{7} [.$\Box$ ] [.{8} [.$\Box$ ] [.$\Box$ ] ] ] ] ] ]
+
+\item
+\Tree
+  [.{5} [.{4} [.{3} [.{2} [.{1} [.$\Box$ ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.{6} [.$\Box$ ] [.{7} [.$\Box$ ] [.{8} [.$\Box$ ] [.$\Box$ ] ] ] ] ]
+
+\item
+\Tree
+  [.{6} [.{5} [.{4} [.{3} [.{2} [.{1} [.$\Box$ ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.{7} [.$\Box$ ] [.{8} [.$\Box$ ] [.$\Box$ ] ] ] ]
+
+\item
+\Tree
+  [.{7} [.{6} [.{5} [.{4} [.{3} [.{2} [.{1} [.$\Box$ ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.{8} [.$\Box$ ] [.$\Box$ ] ] ]
+
+\item
+\Tree
+  [.{8} [.{7} [.{6} [.{5} [.{4} [.{3} [.{2} [.{1} [.$\Box$ ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ]
+
+\item
+\Tree
+  [.{1} [.{$\Box$} ] [.{2} [.{$\Box$} ] [.{3} [.{$\Box$} ] [.{4} [.{$\Box$} ] [.{5} [.{$\Box$} ] [.{6} [.{$\Box$} ] [.{7} [.{$\Box$} ] [.{8} [.{$\Box$} ] [.{$\Box$} ] ] ] ] ] ] ] ] ]
+
+\item
+\Tree
+  [.{2} [.{1} [.$\Box$ ] [.$\Box$ ] ] [.{3} [.$\Box$ ] [.{4} [.$\Box$ ] [.{5} [.$\Box$ ] [.{6} [.$\Box$ ] [.{7} [.$\Box$ ] [.{8} [.$\Box$ ] [.$\Box$ ] ] ] ] ] ] ] ]
+
+\item
+\Tree
+[.{3} [.{2} [.{1} [.$\Box$ ] [.$\Box$ ] ] [.$\Box$ ] ] [.{4} [.$\Box$ ] [.{5} [.$\Box$ ] [.{6} [.$\Box$ ] [.{7} [.$\Box$ ][.{8} [.$\Box$ ] [.$\Box$ ] ] ] ] ] ] ]
+
+\item
+\Tree
+  [.{4} [.{3} [.{2} [.{1} [.$\Box$ ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.{5} [.$\Box$ ] [.{6} [.$\Box$ ] [.{7} [.$\Box$ ] [.{8} [.$\Box$ ] [.$\Box$ ] ] ] ] ] ]
+
+\item
+\Tree
+  [.{5} [.{4} [.{3} [.{2} [.{1} [.$\Box$ ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.{6} [.$\Box$ ] [.{7} [.$\Box$ ] [.{8} [.$\Box$ ] [.$\Box$ ] ] ] ] ]
+
+\item
+\Tree
+  [.{6} [.{5} [.{4} [.{3} [.{2} [.{1} [.$\Box$ ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.{7} [.$\Box$ ] [.{8} [.$\Box$ ] [.$\Box$ ] ] ] ]
+
+\item
+\Tree
+  [.{7} [.{6} [.{5} [.{4} [.{3} [.{2} [.{1} [.$\Box$ ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.{8} [.$\Box$ ] [.$\Box$ ] ] ]
+
+\item
+\Tree
+  [.{8} [.{7} [.{6} [.{5} [.{4} [.{3} [.{2} [.{1} [.$\Box$ ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ] [.$\Box$ ] ]
+\end{enumerate}
+
+\subsection*{(c)}
+\Tree
+  [.{5} [.{3} [.{2} [.{1} [$\Box$ ] [$\Box$ ] ] [$\Box$ ] ] [.{4} [$\Box$ ] [$\Box$ ] ] ] [.{7} [.{6} [$\Box$ ] [$\Box$ ] ] [.{8} [$\Box$ ] [$\Box$ ] ] ] ]
+
+\subsection*{(d)}
+The splay tree performs worse than the static binary search tree on the sequence of searches given. In the following sequence of 5 searches, the splay tree performs better: \\
+\indent 1,1,1,1,1 \\
+
+
+\section*{Problem 3}
+\subsection*{(a)}
+$P(H=h) = \frac{2}{3}(\frac{1}{3})^{h-1}$ \\ 
+so $E(h) = \sum_{h=1}^{\infty}h\frac{2}{3}(\frac{1}{3})^{h-1} = \sum_{h=1}^{\infty}\frac{2h}{3^{h}} = (2)(\frac{3}{4}) = \frac{3}{2}$ \\
+
+\subsection*{(b)}
+Although h decreases when t increases, the cost of the search does not go down because the path is essentially the same, except we have to go across more. \\
+
+\section*{Problem 4}
+The code submitted is an exact implementation of the algorithm in the slides, which works even on lists with duplicate elements (although not efficiently). \\
+
+\end{document}
+

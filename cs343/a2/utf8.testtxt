@@ -1,0 +1,122 @@
+TEST INFORMATION
+~~~~~~~~~~~~~~~~
+
+Test ##: 1
+Line ##: 60
+Purpose: Test that a warning is printed when a blank line is encountered
+Results: `: Warning! Blank line' is printed
+
+Test ##: 2
+Line ##: 61
+Purpose: Test that a leading zero is printed for ASCII values from 0..9
+Results: Leading zero was printed
+
+Test ##: 3,4,6,7,8,11,15,16,20,21
+Line ##: 62,63,65,66,67,70,74,75,79,80
+Purpose: Test generic t1,t2,t3,t4 utf8 encodings, with and without extra bytes
+Results: Encodings were recognized as valid, and extra bytes printed when available
+
+Test ##: 12,17,26-28
+Line ##: 71,76,85-87
+Purpose: Range checks for t2,t3,t4 encodings
+Results: Encodings were recognized as invalid
+
+Test ##: 5,9,10,13,14,18,19,22-25
+Line ##: 64,68,69,72,73,77,78,81-84
+Purpose: Test missing and invalid bytes for t1,t2,t3,t4 encodings
+Results: Encodings were recognized as invalid
+
+     1	Script started on Sun Sep 30 16:57:00 2007
+     2	
+     3	
+     4	-== 1 ==- npow@cpu14 -== ~/cs343/a2/q3 ==-
+     5	--> cat utf8data.cc
+     6	#include <iostream>
+     7	using namespace std;
+     8	
+     9	int main() {
+    10	  char bytes[] = {
+    11	    '\n',                                 // empty line
+    12	    0x01, '\n',                           // valid
+    13	    0x23, '\n',                           // valid
+    14	    0x7f, '\n',                           // valid
+    15	    0xff, '\n',                           // invalid
+    16	    0x23, 0x23, '\n',                     // valid but extra byte
+    17	
+    18	    0xd7, 0x90, '\n',                     // valid
+    19	    0xd7, 0x90, 0x90, '\n',               // valid but extra byte
+    20	    0xd7, '\n',                           // invalid (missing a byte)
+    21	    0xd7, 0xe3, '\n',                     // invalid (second byte wrong)
+    22	    0xc2, 0xA3, '\n',                     // valid
+    23	    0xc0, 0x3f, '\n',                     // invalid (value encoded in wrong range)
+    24	    0xb0, '\n',                           // invalid first byte
+    25	    0xe0, 0xe3, '\n',                     // invalid (second byte wrong, + missing a byte)
+    26	
+    27	    0xe9, 0x80, 0x80, '\n',               // valid
+    28	    0xe9, 0x80, 0x80, 0xff, 0xf8, '\n',   // valid, extra 2 bytes
+    29	    0xe0, 0x93, 0x90, '\n',               // invalid (value encoded in wrong range)
+    30	    0xff, 0x9A, 0x84, '\n',               // invalid first byte, extra 2 bytes 
+    31	    0xe9, 0xe3, 0x80, '\n',               // invalid (second byte wrong)
+    32	
+    33	    0xf0, 0x90, 0x89, 0x80, '\n',         // valid
+    34	    0xf0, 0x90, 0x89, 0x80, 0x80, '\n',   // valid but extra byte
+    35	    0xf0, 0x90, 0x89, '\n',               // invalid (missing a byte)
+    36	    0xf0, 0xe3, 0x89, 0x80, '\n',         // invalid (second byte wrong)
+    37	    0xf0, 0x90, 0xe3, 0x80, '\n',         // invalid (third byte wrong)
+    38	    0xf0, 0x90, 0x89, 0xe3, '\n',         // invalid (fourth byte wrong)
+    39	    0xf0, 0x80, 0x80, 0xbf, '\n',         // invalid (value encoded in wrong range)
+    40	    0xf0, 0x80, 0xbf, 0xbf, '\n',         // invalid (value encoded in wrong range)
+    41	    0xf0, 0x8f, 0xbf, 0xbf, '\n',         // invalid (value encoded in wrong range)
+    42	  };
+    43	  for ( int i = 0; i < sizeof( bytes ); i += 1 ) {
+    44	    cout << bytes[i];
+    45	  }
+    46	}
+    47	
+    48	
+    49	-== 2 ==- npow@cpu14 -== ~/cs343/a2/q3 ==-
+    50	--> make utf8data
+    51	g++     utf8data.cc   -o utf8data
+    52	
+    53	
+    54	-== 3 ==- npow@cpu14 -== ~/cs343/a2/q3 ==-
+    55	--> ./utf8data > myutf8.data
+    56	
+    57	
+    58	-== 4 ==- npow@cpu14 -== ~/cs343/a2/q3 ==-
+    59	--> ./utf8 myutf8.data
+    60	 : Warning! Blank line.
+    61	0x01 : yes
+    62	0x23 : yes
+    63	0x7f : yes
+    64	0xff : no
+    65	0x23 : yes. Extra characters 0x23
+    66	0xd790 : yes
+    67	0xd790 : yes. Extra characters 0x90
+    68	0xd7 : no
+    69	0xd7e3 : no
+    70	0xc2a3 : yes
+    71	0xc03f : no
+    72	0xb0 : no
+    73	0xe0e3 : no
+    74	0xe98080 : yes
+    75	0xe98080 : yes. Extra characters 0xfff8
+    76	0xe09390 : no
+    77	0xff : no. Extra characters 0x9a84
+    78	0xe9e3 : no. Extra characters 0x80
+    79	0xf0908980 : yes
+    80	0xf0908980 : yes. Extra characters 0x80
+    81	0xf09089 : no
+    82	0xf0e3 : no. Extra characters 0x8980
+    83	0xf090e3 : no. Extra characters 0x80
+    84	0xf09089e3 : no
+    85	0xf08080bf : no
+    86	0xf080bfbf : no
+    87	0xf08fbfbf : no
+    88	
+    89	
+    90	-== 5 ==- npow@cpu14 -== ~/cs343/a2/q3 ==-
+    91	--> exit
+    92	exit
+    93	
+    94	script done on Sun Sep 30 16:57:43 2007

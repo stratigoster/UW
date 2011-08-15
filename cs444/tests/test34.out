@@ -1,0 +1,5 @@
+***ERROR***:5:45:	Conflicting declaration `+:function (integer,integer) return universal boolean'
+
+------
+Compilation error
+------

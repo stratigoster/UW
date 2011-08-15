@@ -1,0 +1,217 @@
+Test #1: Number of smokers = 1
+This test checks whether the basic functionality of the program is working or not.
+Since there is only one smoker, the smoker should never be blocked, and the states
+should go from N->S->N->S etc. Looking at the output, we see that this is true.
+Also note that we only print the * once for consecutive state transitions from the
+same smoker.
+
+-== 1 ==- npow@cpu16 -== ~/cs343/a4 ==-
+--> ./smokers 1
+S0      
+N P*    
+
+S       
+N P     
+S       
+N P     
+S       
+N P     
+S       
+N P     
+S       
+N P     
+S       
+N P     
+S       
+N P     
+S       
+successful completion
+
+
+Test #2: Number of smokers = 2, and both are the same type.
+This test checks to see whether the mutual exclusion condition is being observed
+or not (ie smoker of the same type must block if the required ingredient is not
+at the table). Furthermore, we should never see both smokers being blocked at
+the same time (ie a deadlock). Looking at the output, we see that this is true,
+and both smokers transition smoothly between their states.
+
+-== 2 ==- npow@cpu16 -== ~/cs343/a4 ==-
+--> ./smokers 2
+S0      S1      
+N P     N P*    
+
+S       B       
+N P     S       
+        N P     
+S       B       
+N P*    S       
+
+S       N P     
+N P             
+B       S*      
+
+        N P     
+S       B       
+N P*    S       
+
+S       N P*    
+
+N P*    S       
+
+S       N P     
+N P             
+B       S       
+S               
+N P             
+S       N P*    
+
+N P*    S       
+
+S       N P*    
+
+N P*    S       
+
+S       N P*    
+
+N P*    S       
+
+S       N P*    
+
+N P*    S       
+
+S       N P*    
+
+        S       
+N P*    N P     
+
+B       S       
+S               
+N P     N P*    
+
+S*      B       
+
+N P             
+B       S       
+S       N P*    
+
+N P*    S       
+
+S               
+N P             
+S       N P*    
+
+N P*    S       
+
+S               
+successful completion
+
+
+Test #3: Number of smokers unspecified. This test checks whether the default 
+number of smokers is set to 5 if no commandline parameter was specified. It
+also checks what happens if we have 5 smokers of the same type. In this case,
+we should expect to see multiple smokers blocked at the same time, as well
+as multiple smokers smoking at the same time.
+
+-== 5 ==- npow@cpu16 -== ~/cs343/a4 ==-
+--> ./smokers 
+S0      S1      S2      S3      S4      
+N P     N P*                            
+
+        B       N P*                    
+
+                B       N P*            
+
+                        B       N P*    
+
+S*      S                       B       
+
+N P                                     
+B               S       S       S       
+S       N P*            N P             
+
+        B       N P*    S               
+
+                B               N P*    
+
+N P*    S                       B       
+
+B               S*              S       
+
+                N P                     
+        N P*    B                       
+
+        B               N P*            
+
+S               S*      B               
+
+                N P                     
+                B               N P*    
+
+        S*              S       B       
+
+        N P                             
+N P*    B                               
+
+B               S*                      
+
+                N P                     
+                B       N P*            
+
+S       S*              B       S       
+
+        N P                             
+        B       S               N P*    
+
+N P*                    S       B       
+
+B       S       N P*            S       
+
+S*              B                       
+
+N P                                     
+B               S               N P*    
+
+S                               B       
+N P*                            S       
+
+S                                       
+N P                             N P*    
+
+S                               B       
+N P*                            S       
+
+S                                       
+N P                                     
+S                                       
+N P                                     
+S                                       
+N P                                     
+S                                       
+N P                                     
+S                                       
+N P                                     
+S                                       
+successful completion
+
+
+Test #4: Number of smokers = 3, each of a different type. This is another
+simple test to ensure that smokers of different types do not block each
+other. As we can see from the output, none of the smokers were ever blocked.
+
+-== 101 ==- npow@cpu16 -== ~/cs343/a4 ==-
+--> ./smokers 3
+S0      S1      S2      
+N P*                    
+
+S       N M     N T*    
+
+        S       S       
+                N T     
+        N M*    S       
+
+        S               
+        N M             
+        S               
+successful completion
+
+

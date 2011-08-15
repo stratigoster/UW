@@ -1,0 +1,6 @@
+total 16
+drwxr-sr-x   2 npow     cs241        4096 Sep 23 16:06 .
+drwxr-sr-x   3 npow     cs241        4096 Sep 23 00:36 ..
+-rw-r--r--   1 npow     cs241         538 Sep 23 00:36 a1p1.mips
+-rw-r--r--   1 npow     cs241         524 Sep 23 00:36 a1p2.mips
+-rw-r--r--   1 npow     cs241           0 Sep 23 16:06 blah

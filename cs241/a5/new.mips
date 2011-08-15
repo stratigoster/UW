@@ -1,0 +1,32 @@
+.globl main
+main:
+	llo	$1, 0		# Load 0
+	lhi	$1, 0
+	sw	$1, -12($30)	# saving variable
+	addi	$1, $0, 0	# Load false
+	sw	$1, -16($30)	# saving variable
+_E2:				# while
+	lw	$1, -16($30)	# load bool variable
+	addi	$2, $0, 0	# Load false
+	sub	$1, $1, $2	# subtracting
+	bne	$0, $1, _E1	# if not equal
+	addi	$1, $0, 1	# load 'true'
+	j	_L1
+_E1:				# if equal
+	add	$1, $0, $0	# load 'false'
+_L1:
+	blez	$1, _L2
+	lw	$1, -12($30)	# load int variable
+	llo	$2, 1		# Load 1
+	lhi	$2, 1
+	add	$1, $1, $2	# adding
+	sw	$1, -12($30)	# saving variable
+	lw	$1, -12($30)	# load int variable
+	add	$4, $1, $0	# printing int
+	trap	1
+	j	_E2
+_L2:				# while end
+	addi	$1, $0, 10	# Load ASCII value
+	add	$4, $1, $0	# printing char
+	trap	101
+	trap	10		# Quit

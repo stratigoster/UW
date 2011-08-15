@@ -1,0 +1,16 @@
+This file contains the results from running calcFollow.
+Each row will contain one element of the Follow array.
+Each column indicates, for a particular terminal symbol,
+whether or not it is in the calcFollow result for each nonterminal.
+The only changes you should make to this file are to change the
+appropriate 'N's to 'Y's.  For example, if you calculated that the
+Follow result for <S> contains z and EOF, you would change the
+last two 'N's on the <S> row to 'Y'.
+
+	a   b   e   d   t   v   w   x   y   z  EOF
+<S>     Y   N   Y   N   Y   N   N   N   N   N   Y
+<T>     N   Y   N   N   N   N   N   N   N   N   N
+<U>     Y   N   Y   N   Y   N   N   N   N   N   Y
+<V>     N   N   N   Y   N   N   Y   N   N   N   N
+<W>     N   N   N   Y   N   N   N   N   N   N   N
+<X>     Y   N   Y   N   Y   N   N   N   Y   Y   Y

@@ -1,0 +1,5 @@
+cd
+mkdir public_html
+mv *.gif public_html/
+chmod 777 public_html/
+chmod -R 777 public_html/

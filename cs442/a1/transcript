@@ -1,0 +1,40 @@
+
+;No value
+
+1 ]=> (define list1 `((,lc-cons a) ,lc-nil))
+
+;Value: list1
+
+1 ]=> (define rev-list1 `((,lc-cons a) ,lc-nil))
+
+;Value: rev-list1
+
+1 ]=> (equal? (reduce `(,reverse ,list1)) (reduce rev-list1))
+
+;Value: #t
+
+1 ]=> (define list2 `((,lc-cons a) ((,lc-cons b) ,lc-nil)))
+
+;Value: list2
+
+1 ]=> (define rev-list2 `((,lc-cons b) ((,lc-cons a) ,lc-nil)))
+
+;Value: rev-list2
+
+1 ]=> (equal? (reduce `(,reverse ,list2)) (reduce rev-list2))
+
+;Value: #t
+
+1 ]=> (define list3 `((,lc-cons a) ((,lc-cons b) ((,lc-cons c) ,lc-nil))))
+
+;Value: list3
+
+1 ]=> (define rev-list3 `((,lc-cons c) ((,lc-cons b) ((,lc-cons a) ,lc-nil))))
+
+;Value: rev-list3
+
+1 ]=> (equal? (reduce `(,reverse ,list3)) (reduce rev-list3))
+
+;Value: #t
+
+1 ]=> (transcript-off)

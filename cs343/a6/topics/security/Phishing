@@ -1,0 +1,51 @@
+<TITLE>Phishing</TITLE>
+<TOPIC>Phishing</TOPIC>
+<TOPIC>password phishing</TOPIC>
+<TOPIC>security</TOPIC>
+<TOPIC>computer security</TOPIC>
+<TOPIC>computer</TOPIC>
+<TOPIC>computers</TOPIC>
+<TEXT>
+In computing, phishing, or password phishing, is the luring of sensitive 
+information, such as passwords and other personal information, from a victim by
+masqueradingas someone trustworthy with a real need for such information. It is 
+a form of social engineering
+<LINK>security:pages/security/Social_engineering_computer_security</LINK> 
+attack.
+
+The term was coined in the mid nineties by crackers attempting to steal AOL 
+accounts. An attacker would pose as an AOL staff member and send an instant 
+message to a potential victim. The message would ask the victim to reveal his 
+password, for instance to "verify his account" or to "confirm billing 
+information". Once the victim gave over the password, the attacker could access 
+the account and use it for criminal purposes, such as spamming.
+
+Today, online criminals put phishing to more directly profitable uses. Popular 
+targets are users of online banking services, and auction sites such as eBay. 
+Phishers usually work by sending out spam e-mail to large numbers of potential 
+victims. These direct the recipient to a Web page which "appears" to belong to 
+their online bank, for instance, but in fact captures their account information 
+for the phisher's use.
+
+Typically the email will appear to come from a trustworthy company and contain a
+subject and message intended to alarm the recipient into taking action. A common 
+approach is to tell the recipient that their account has been de-activated due 
+to a problem and inform them that they must take action to re-activate their 
+account. The user is provided with a convenient link in the same email that 
+takes the email recipient to a fake webpage appearing to be that of a 
+trustworthy company. Once at that page, the user enters her personal information
+which is then captured by the fraudster.
+
+Checking the URL in the address bar of the browser may not be sufficient, as, in
+some browsers, that can be faked too. The file properties feature of the browser 
+may disclose the real URL of the fake webpage.
+
+If you are contacted about an account needing to be "verified," you should 
+contact the company directly, or type in the address for their webpage.
+
+Be especially concerned about an address containing the "@" symbol, for example 
+http://www.google.com@members.tripod.com/. These addresses will attempt to 
+connect as a user "www.google.com" to the server "members.tripod.com". This will 
+very likely succeed even if the user does not exist, and the first part of the 
+link may look legitimate.
+</TEXT>

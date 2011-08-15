@@ -1,0 +1,9 @@
+-== 265 ==- npow@cpu16 -== ~/compilers/docs/correct ==-
+--> ./exceptions1.exe
+Begin program here.
+Index is 1  and the answer is 8
+Index is 2  and the answer is 12
+Index is 3  and the answer is 25
+Index is 4  and the answer is  Divide by zero error.
+End of program.
+

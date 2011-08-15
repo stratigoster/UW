@@ -1,0 +1,4 @@
+#!/bin/bash
+filename="a1p$1"
+driver="a1p$1_drvr"
+java mips.mak $driver $filename $filename

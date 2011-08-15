@@ -1,0 +1,71 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% InitAmp.m
+
+x = [3.0, 2.5, 2.0, 1.6, 1.2, 1.3, 1.6, 1.9, 1.8, 1.3, 0.8, 0.85, 1.06, 1.7, 2.2, 2.6];
+y = [1.0, 1.5, 2.1, 2.5, 3.1, 3.7, 3.9, 3.5, 3.05, 2.8, 2.0, 1.4, 1.0, 1.1, 1.5, 2.0];
+
+t = zeros(size(x));
+for i = 2:length(x)
+    dt = sqrt((x(i)-x(i-1))^2 + (y(i)-y(i-1))^2);
+    t(i) = t(i-1) + dt;
+end
+
+xpp = spline(t,x);
+ypp = spline(t,y);
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% refine.m
+
+function tt = refine(t, r)
+    n = length(t);
+    tt = zeros(1,r*(n-1)+1);
+    for k = 1:n-1
+        i = r*(k-1)+1;
+        dt = t(k+1) - t(k);
+        for j = 0 : r-1
+            tt(i+j) = t(k) + j*dt/r;
+        end
+    end
+    tt(r*(n-1)+1) = t(n);
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% a2q3a.m
+
+plot(x,y,'X');
+grid on;
+title('Plot of Interpolation Data for Ampersand Character');
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% a2q3b.m
+
+% plot ampersand with refinement factor of 3
+tref = refine(t, 3);
+plot( ppval(xpp, tref), ppval(ypp, tref) )
+title('Plot of ampersand with refinement factor of 3')
+
+% disable grid and axes
+grid off
+axis off
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% a2q3c.m
+
+% plot simple piecewise interpolating curve of original data
+plot( x, y, 'b--' );
+hold on
+
+% plot smooth version of ampersand
+tref = refine(t, 100);
+plot( ppval(xpp, tref), ppval(ypp, tref), 'r' )
+title('Plot of ampersand with refinement factor of 100')
+
+% disable grid and axes
+axis off
+grid off
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,23 @@
+\contentsline {section}{\numberline {1}User Documentation}{1}
+\contentsline {subsection}{\numberline {1.1}Introduction}{1}
+\contentsline {subsection}{\numberline {1.2}Usage}{2}
+\contentsline {subsection}{\numberline {1.3}Language Features}{2}
+\contentsline {subsubsection}{\numberline {1.3.1}Supported Features}{2}
+\contentsline {subsubsection}{\numberline {1.3.2}Unsupported Features}{4}
+\contentsline {subsubsection}{\numberline {1.3.3}Extra Features (not in Ada)}{5}
+\contentsline {section}{\numberline {2}Design Documentation}{6}
+\contentsline {subsection}{\numberline {2.1}Scheme: The Chosen Language}{6}
+\contentsline {subsubsection}{\numberline {2.1.1}Performance Issues with Scheme}{7}
+\contentsline {subsubsection}{\numberline {2.1.2}Journey to Haskell Land (and back)}{7}
+\contentsline {subsection}{\numberline {2.2}Lexer}{8}
+\contentsline {subsection}{\numberline {2.3}Parser}{8}
+\contentsline {subsection}{\numberline {2.4}Error Reporting/Recovery}{10}
+\contentsline {subsubsection}{\numberline {2.4.1}Lexer}{10}
+\contentsline {subsubsection}{\numberline {2.4.2}Parser}{10}
+\contentsline {subsection}{\numberline {2.5}Symbol Table}{11}
+\contentsline {subsection}{\numberline {2.6}Type Checking}{12}
+\contentsline {subsection}{\numberline {2.7}Code Generation}{13}
+\contentsline {subsubsection}{\numberline {2.7.1}Code Generation Specifics}{15}
+\contentsline {subsection}{\numberline {2.8}Testing}{16}
+\contentsline {subsubsection}{\numberline {2.8.1}Sample Programs}{16}
+\contentsline {section}{\numberline {3}Afterword}{40}

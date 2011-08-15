@@ -1,0 +1,6 @@
+float float
+***ERROR***:11:5:	Incompatible types in assignment of ` universal float ' to ` float '
+
+------
+Compilation error
+------

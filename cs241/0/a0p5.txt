@@ -1,0 +1,1 @@
+total 32 drwxr-sr-x 2 npow cs241 4096 Sep 15 22:18 . drwxrws--- 6 npow cs241 4096 Sep 14 19:51 .. -rw-r--r-- 1 npow cs241 9 Sep 14 20:05 a0p1.txt -rw-r--r-- 1 npow cs241 5 Sep 14 20:06 a0p2.txt -rw-r--r-- 1 npow cs241 2134 Sep 14 20:15 a0p3.txt -rw-r--r-- 1 npow cs241 27 Sep 15 12:56 a0p4.txt -rw-r--r-- 1 npow cs241 204 Sep 15 13:05 a0p5.txt

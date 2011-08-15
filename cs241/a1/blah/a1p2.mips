@@ -1,0 +1,18 @@
+# Course Number: CS241
+# Problem: #2
+# Name: Nissan Pow
+# UserName: npow
+#
+# Checks $2<=$3<=$4, and stores result in $1
+
+.globl a1p2
+
+a1p2:	slt $5, $2, $3 		# checks if $2<$3, stores result in $5
+	slt $6, $3, $4 		# checks if $3<$4, stores result in $6
+	bne $2, $3, neq1	# if $2!=$3, goto neq1
+	addi $5, $0, 1		# if $2==$3, set $5 to 1 
+neq1:	bne $3, $4, neq2	# if $3!=$4, gogo neq2
+	addi $6, $0, 1		# if $3==$4, set $6 to 1
+neq2:	add $4, $0, $5		# copy $5 to $4
+	and $1, $5, $6		# $2<=$3<=$4	
+	jr $31 			# return to caller

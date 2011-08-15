@@ -1,0 +1,12 @@
+
+;No value
+
+1 ]=> (define e1 '(let (id (fun x x)) (let (foo (fix s (fun x (if (id ((eq 0) x)) (id 0) (s ((add -1) x)))))) (foo 5))))
+
+;Value: e1
+
+1 ]=> (W e1 initenv)
+
+;Value 1: (((int "t13") (int "t12") ((-> int "t12") "t2") (int "t11") ((-> int int) "t10") (int "t9") (int "t8") (bool "t7") (bool "t4") (bool "t6") (int "t3") ((-> int bool) "t5")) int)
+
+1 ]=> (transcript-off)

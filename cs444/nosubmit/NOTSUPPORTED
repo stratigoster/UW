@@ -1,0 +1,14 @@
+- Variant records (ie type x is record (j: T) case j)
+- subtypes
+- (float)
+- exceptions
+- named functions arguments
+- package declaration is as such:
+	package ID is
+		{type declaration}
+		{use statement}
+		{fun & proc declaration}
+		{pragma}
+		{varible declaration}
+	private
+		{type-declaration}

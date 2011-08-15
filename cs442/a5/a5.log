@@ -1,0 +1,220 @@
+This is pdfTeX, Version 3.14159-13d (Web2C 7.3.1) (format=pdflatex 2004.5.14)  4 APR 2007 14:08
+**a5.tex
+(a5.tex[/software/tetex-1.0/data/texmf/pdftex/config/pdftex.cfg]
+LaTeX2e <1998/12/01> patch level 1
+Babel <v3.6x> and hyphenation patterns for american, french, german, ngerman, n
+ohyphenation, loaded.
+(/software/tetex-1.0/data/texmf/tex/latex/base/article.cls
+Document Class: article 1999/01/07 v1.4a Standard LaTeX document class
+(/software/tetex-1.0/data/texmf/tex/latex/base/size11.clo
+File: size11.clo 1999/01/07 v1.4a Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/software/tetex-1.0/data/texmf/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 1997/09/17 v2.2e
+\@emptytoks=\toks14
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 133.
+)
+(/software/tetex-1.0/data/texmf/tex/latex/base/alltt.sty
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+)
+(/software/tetex-1.0/data/texmf/tex/latex/base/inputenc.sty beta test version
+Package: inputenc 1998/03/05 v0.97 Input encoding file (test version: still lia
+ble to change)
+
+(/software/tetex-1.0/data/texmf/tex/latex/base/latin1.def
+File: latin1.def 1998/03/05 v0.97 Input encoding file (test version: still liab
+le to change)
+))
+(/software/tetex-1.0/data/texmf/tex/latex/misc/moreverb.sty
+Package: moreverb 1997/12/07 v2.2d.2 `more' verbatim facilities
+
+(/software/tetex-1.0/data/texmf/tex/latex/tools/verbatim.sty
+Package: verbatim 1997/04/30 v1.5k LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks15
+\verbatim@line=\toks16
+\verbatim@in@stream=\read1
+)
+\verbatim@out=\write3
+\tab@position=\count87
+\tab@size=\count88
+\listing@line=\count89
+)
+(/software/tetex-1.0/data/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/software/tetex-1.0/data/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(/software/tetex-1.0/data/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 1999/02/16 v1.0l Standard LaTeX Graphics (DPC,SPQR)
+
+(/software/tetex-1.0/data/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/software/tetex-1.0/data/texmf/tex/latex/config/graphics.cfg)
+Package graphics Info: Driver file: pdftex.def on input line 80.
+
+(/software/tetex-1.0/data/texmf/tex/latex/graphics/pdftex.def
+File: pdftex.def 1999/01/26 v0.02l graphics/color for pdftex
+\Gread@gobject=\count90
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/software/tetex-1.0/data/texmf/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 29.
+)
+(/software/tetex-1.0/data/texmf/tex/latex/amslatex/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/software/tetex-1.0/data/texmf/tex/latex/amslatex/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/software/tetex-1.0/data/texmf/tex/latex/amslatex/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks18
+\ex@=\dimen105
+))
+(/software/tetex-1.0/data/texmf/tex/latex/amslatex/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen106
+)
+(/software/tetex-1.0/data/texmf/tex/latex/amslatex/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count91
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count92
+\leftroot@=\count93
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count94
+\DOTSCASE@=\count95
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen107
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count96
+\c@MaxMatrixCols=\count97
+\dotsspace@=\muskip10
+\c@parentequation=\count98
+\dspbrk@lvl=\count99
+\tag@help=\toks19
+\row@=\count100
+\column@=\count101
+\maxfields@=\count102
+\andhelp@=\toks20
+\eqnshift@=\dimen108
+\alignsep@=\dimen109
+\tagshift@=\dimen110
+\tagwidth@=\dimen111
+\totwidth@=\dimen112
+\lineht@=\dimen113
+\@envbody=\toks21
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/software/tetex-1.0/data/texmf/tex/latex/misc/fullpage.sty
+Style Option FULLPAGE Version 2 as of 15 Dec 1988
+)
+\c@definition=\count103
+\c@theorem=\count104
+ (a5.aux)
+\openout1 = `a5.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+ (/software/tetex-1.0/data/texmf/tex/context/base/supp-pdf.tex
+(/software/tetex-1.0/data/texmf/tex/context/base/supp-mis.tex
+loading : Context Support Macros / Missing
+\protectiondepth=\count105
+\scratchcounter=\count106
+\scratchdimen=\dimen114
+\scratchskip=\skip46
+\scratchmuskip=\muskip11
+\scratchbox=\box28
+\scratchread=\read2
+\scratchwrite=\write4
+\nextbox=\box29
+\nextdepth=\dimen115
+\everyline=\toks23
+\!!counta=\count107
+\!!countb=\count108
+\recursecounter=\count109
+)
+loading : Context Support Macros / PDF
+\nofMPsegments=\count110
+\nofMParguments=\count111
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 30.
+ (/software/tetex-1.0/data/texmf/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 1995/01/05 v2.2e AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 30.
+
+(/software/tetex-1.0/data/texmf/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 1995/01/05 v2.2e AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 30.
+
+(/software/tetex-1.0/data/texmf/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2eLaTeX symbol font definitions
+) [1
+
+[/software/tetex-1.0/data/texmf/dvips/config/pdftex.map][/software/tetex-1.0/da
+ta/texmf.local/dvips/config/txfonts/txr.map]] [2] [3] [4] [5] [6] [7
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 56--61
+
+ []
+
+[8] [9] (a5.aux) ) 
+Here is how much of TeX's memory you used:
+ 1567 strings out of 10631
+ 18384 string characters out of 268108
+ 266734 words of memory out of 485779
+ 4530 multiletter control sequences out of 10000+30000
+ 11645 words of font info for 47 fonts, out of 400000 for 1000
+ 14 hyphenation exceptions out of 1000
+ 27i,6n,22p,225b,335s stack positions out of 300i,100n,500p,300000b,4000s
+<cmtt10.pfb><cmsy10.pfb><cmr10.pfb><cmbx12.pfb><cmr12.pfb><cm
+r17.pfb>
+Output written on a5.pdf (9 pages, 60062 bytes).

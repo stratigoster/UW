@@ -1,0 +1,17 @@
+Place your answers within the square brackets "[ ]".
+An example is given.
+
+To move ahead one word while in command mode type [w].
+There are a total of [21] buttons along the top.
+To exit with saving type in [:q!].
+While in command mode, if you type ":colorscheme blue",
+the background colour becomes [blue] and the foreground colour becomes [white].
+To write the current file, type (in command mode) [:w].
+To insert at the current location, type (in command mode) [i].
+To insert one character after the current location, type (in command mode) [a].
+To insert at the beginning of the current line, type (in command mode) [I].
+The character that you would see repeatedly if you used gvim to 
+open a new file is [~].
+To determine your current line number, type [(C-g)].
+To delete 3 lines (while in command mode), type [3dd] 
+(your answer should be 3 characters).

@@ -1,0 +1,2 @@
+ps -u npow -o user,pid,comm,args
+kill -9 2185

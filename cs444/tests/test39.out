@@ -1,0 +1,5 @@
+***ERROR***:3:38:	Conflicting declaration `plus:function (integer,float) return void'
+
+------
+Compilation error
+------

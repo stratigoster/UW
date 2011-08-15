@@ -1,0 +1,8 @@
+#!/bin/bash
+
+name=`basename $0`
+rm -f a.out
+echo "(exit)" | mzscheme -f main.scm -m -- $@
+if [[ -f a.out ]]; then
+  chmod a+x a.out
+fi

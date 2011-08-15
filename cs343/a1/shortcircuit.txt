@@ -1,0 +1,20 @@
+(a) If we have (A && B) in a conditional expression, and A is false, then the
+expression will evaluate to false _without_ evaluating B. Otherwise the
+expression evaluates to B.
+
+If we have (A || B) in a conditional expression, and A is true, then the
+expression will evaluate to true _without_ evaluationg B. Otherwise the
+expression evaluates to B.
+
+(b)
+
+for (;;) {
+  if (Values[i] == HighValue || Values[i] > Max) break;
+  ...
+}
+  
+(c) Built-in operators && and || are short-ciruit operators and so evaluate
+their arguments lazily (see (a) for explanation on how those short-circuit
+operators work). User defined versions of && and || behave as functions, and
+so _all_ their arguments are evaluated eagerly.  As a result of this, their
+short-circuit properties are lost.

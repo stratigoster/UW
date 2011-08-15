@@ -1,0 +1,121 @@
+ActiveX
+A set of technologies that allows software components to interact with one another in a networked environment, regardless of the language in which the components were created.
+
+address (A) resource record
+A resource record used to map a DNS domain name to a host IP address on the network.
+
+See also: domain name; Domain Name System (DNS); resource record (RR)
+address classes
+Predefined groupings of Internet addresses with each class defining networks of a certain size. The range of numbers that can be assigned for the first octet in the IP address is based on the address class. Class A networks (values 1 to 126) are the largest, with more than 16 million hosts per network. Class B networks (128 to 191) have up to 65,534 hosts per network, and Class C networks (192 to 223) can have up to 254 hosts per network.
+
+See also: Class A IP address; Class B IP address; Class C IP address
+Address Resolution Protocol (ARP)
+In TCP/IP, a protocol that uses broadcast traffic on the local network to resolve a logically assigned IP address to its physical hardware or media access control layer address. 
+
+In ATM, ARP is used two different ways. For classical IP over ATM, ARP is used to resolve addresses to ATM hardware addresses. For ATM LAN emulation, ARP is used to resolve Ethernet/802.3 or Token Ring addresses to ATM hardware addresses.
+agent
+An application that runs on a Simple Network Management Protocol (SNMP) managed device. The agent application is the object of management activities. A computer running SNMP agent software is also sometimes referred to as an agent.
+
+See also: service; Simple Network Management Protocol (SNMP)
+Alerter service
+A service used by the server and other services to notify selected users and computers of administrative alerts that occur on a computer. The Alerter service requires the Messenger service.
+
+See also: administrative alerts; Messenger service; service
+allocation unit
+The smallest amount of disk space that can be allocated to hold a file. All file systems used by Windows organize hard disks based on allocation units. The smaller the allocation unit size, the more efficiently a disk stores information. If you do not specify an allocation unit size when formatting the disk, Windows picks default sizes based on the size of the volume. These default sizes are selected to reduce the amount of space that is lost and the amount of fragmentation on the volume. An allocation unit is also called a cluster.
+
+See also: file system; volume
+American Standard Code for Information Interchange (ASCII)
+A standard single-byte character encoding scheme used for text-based data. ASCII uses designated 7-bit or 8-bit number combinations to represent either 128 or 256 possible characters. Standard ASCII uses 7 bits to represent all uppercase and lowercase letters, the numbers 0 through 9, punctuation marks, and special control characters used in U.S. English. Most current x86-based systems support the use of extended (or "high") ASCII. Extended ASCII allows the eighth bit of each character to identify an additional 128 special symbol characters, foreign-language letters, and graphic symbols.
+
+See also: Unicode
+AppleTalk
+The Apple Computer network architecture and network protocols. A network that has Macintosh clients and a computer running Windows 2000 Server or Windows NT Server with Services for Macintosh functions as an AppleTalk network.
+
+AppleTalk Phase 2
+The extended AppleTalk Internet model designed by Apple Computer that supports multiple zones within a network and extended addressing capacity.
+
+application programming interface (API)
+A set of routines that an application uses to request and carry out lower-level services performed by a computer's operating system. These routines usually carry out maintenance tasks such as managing files and displaying information.
+
+ASCII (American Standard Code for Information Interchange)
+
+See definition for: American Standard Code for Information Interchange (ASCII)
+Assistive Technology Program
+A service that provides recommendations for technology that can help people with disabilities.
+
+Asymmetric Digital Subscriber Line (ADSL)
+A high-bandwidth digital transmission technology that uses existing phone lines and also allows voice transmissions over the same lines. Most of the traffic is transmitted downstream to the user, generally at rates of 512 Kbps to about 6 Mbps.
+
+asynchronous communication
+A form of data transmission in which information is sent and received at irregular intervals, one character at a time. Because data is received at irregular intervals, the receiving modem must be signaled to let it know when the data bits of a character begin and end. This is done by means of start and stop bits.
+
+See also: modem (modulator/demodulator)
+Asynchronous Transfer Mode (ATM)
+A high-speed connection-oriented protocol used to transport many different types of network traffic. ATM packages data in a 53-byte, fixed-length cell that can be switched quickly between logical connections on a network.
+
+See also: protocol
+ATM adaptation layer (AAL)
+The layer of the ATM protocol stack that parses data into the payload portion of the ATM cell for transport across an ATM network.
+
+See also: Asynchronous Transfer Mode (ATM)
+attribute
+For files, information that indicates whether a file is read-only, hidden, ready for archiving (backing up), compressed, or encrypted, and whether the file contents should be indexed for fast file searching. 
+
+In Active Directory, characteristics of an object and the type of information an object can hold. For each object class, the schema defines what attributes an instance of the class must have and what additional attributes it might have.
+
+
+audio input device
+An audio input device records music and voice input into your computer. Examples of audio input devices are CD-ROM players and microphones.
+
+audit policy
+A policy that determines the security events to be reported to the network administrator.
+
+auditing
+The process that tracks the activities of users by recording selected types of events in the security log of a server or a workstation.
+
+authentication
+The process for verifying that an entity or object is who or what it claims to be. Examples include confirming the source and integrity of information, such as verifying a digital signature or verifying the identity of a user or computer.
+
+See also: smart card; trust relationship
+authoritative
+For DNS, describes a DNS server hosting a zone, or a zone containing a name or record. When a DNS server is configured to host a zone, it is said to be authoritative for names that do exist or could exist within that zone. A DNS server is allowed to respond authoritatively to queries for domain names for which it is authoritative. A zone is said to be authoritative for a name if the name exists or could exist within a zone, and it is said to be authoritiative for a record if the owner name of the record exists or could exist within a zone.
+
+See also: DNS Server; domain name; Domain Name System (DNS); name server (NS) resource record; start-of-authority (SOA) resource record; zone
+authoritative restore
+In Backup, a type of restore operation performed on an Active Directory domain controller in which the objects in the restored directory are treated as authoritative, replacing (through replication) all existing copies of those objects. Authoritative restore is applicable only to replicated system state data such as Active Directory data and File Replication service data. Use the Ntdsutil.exe utility to perform an authoritative restore.
+
+See also: Active Directory; nonauthoritative restore
+authorization
+The process that determines what a user is permitted to do on a computer system or network.
+
+Automatic Private IP Addressing (APIPA)
+A feature of Windows XP TCP/IP that automatically configures a unique IP address from the range 169.254.0.1 through 169.254.255.254 and a subnet mask of 255.255.0.0 when the TCP/IP protocol is configured for dynamic addressing and a Dynamic Host Configuration Protocol (DHCP) is not available.
+
+See also: DHCP server; Transmission Control Protocol/Internet Protocol (TCP/IP); IP address
+availability
+A measure of the fault tolerance of a computer and its programs. A highly available computer runs 24 hours a day, 7 days a week.
+
+See also: fault tolerance
+BB-channel
+A single channel of an ISDN line that is used to carry either voice or data information. ISDN Basic Rate Interface (BRI) has 2 B-channels. ISDN Primary Rate Interface (PRI) in North America has 23 B-channels. ISDN Primary Rate Interface (PRI) in Europe has 30 B-channels. B-channel is also called bearer channel.
+
+See also: Integrated Services Digital Network (ISDN)
+background
+The screen background image used on a graphical user interface such as Windows. Any pattern or picture that can be that can be assigned for the first octet in the IP address is based on the address class. Class A networks (values 1 to 126) are the largest, with more than 16 million hosts per network. Class B networks (128 to 191) have up to 65,534 hosts per network, and Class C networks (192 to 223) can have up to 254 hosts per network.
+
+See also: Class A IP address; Class B IP address; Class C IP address
+Address Resolution Protocol (ARP)
+In TCP/IP, a protocol that uses broadcast traffic on the local network to resolve a logically assigned IP address to its physical hardware or media access control layer address. 
+
+In ATM, ARP is used two different ways. Forstored as a bitmap (.bmp) file can be set as a screen background.
+
+background program
+A program that runs while the user is working on another task. The computer's microprocessor assigns fewer resources to background programs than foreground programs.
+
+See also: foreground program
+backup domain controller (BDC)
+In Windows NT Server 4.0 or earlier, a computer running Windows NT Server that receives a copy of the domain's directory database (which contains all account and security policy information for the domain). 
+
+The copy is synchronized periodically and automatically with the master copy on the primary domain controller (PDC). BDCs also authenticate user logon information and can be promoted to function as PDCs as needed. Multiple BDCs can exist in a domain. Windows NT 3.51 and 4.0 BDCs can participate in a Windows 2000 domain when the domain is configured in mixed mode.
+

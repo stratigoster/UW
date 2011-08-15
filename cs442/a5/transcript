@@ -1,0 +1,92 @@
+-== 608 ==- npow@cpu16 -== ~/cs442/a5 ==-
+--> cat test.pl
+a :- !, b, c, d.
+e :- f.
+g.
+abc :- de, fg,hi.
+
+-== 612 ==- npow@cpu16 -== ~/cs442/a5 ==-
+--> ./a.out test.pl g
+3
+
+-== 615 ==- npow@cpu16 -== ~/cs442/a5 ==-
+--> cat blah.pl
+a :- b, !, c.
+b :- d.
+f :- b.
+b.
+a.
+d.
+c :- e.
+c.
+e.
+a :- d.
+f :- a.
+
+-== 617 ==- npow@cpu16 -== ~/cs442/a5 ==-
+--> ./a.out blah.pl f
+3 2 6
+3 4
+11 1 2 6 7 9
+11 1 2 6 8
+
+-== 625 ==- npow@cpu16 -== ~/cs442/a5 ==-
+--> cat t1.pl
+# runs indefinitely
+p :- q, r, s.
+p :- t, u.
+q :- u.
+t.
+u.
+p :- u, p.
+
+-== 624 ==- npow@cpu16 -== ~/cs442/a5 ==-
+--> ./a.out t1.pl p t | head
+2 4 5
+6 5 2 4 5
+6 5 6 5 2 4 5
+6 5 6 5 6 5 2 4 5
+6 5 6 5 6 5 6 5 2 4 5
+6 5 6 5 6 5 6 5 6 5 2 4 5
+6 5 6 5 6 5 6 5 6 5 6 5 2 4 5
+6 5 6 5 6 5 6 5 6 5 6 5 6 5 2 4 5
+6 5 6 5 6 5 6 5 6 5 6 5 6 5 6 5 2 4 5
+6 5 6 5 6 5 6 5 6 5 6 5 6 5 6 5 6 5 2 4 5
+Broken Pipe
+
+-- The above runs forever
+
+-== 672 ==- npow@cpu16 -== ~/cs442/a5 ==-
+--> cat t2.pl
+p :- q, r, s.
+p :- t, u.
+q :- u.
+t.
+u.
+p :- u.
+
+-== 671 ==- npow@cpu16 -== ~/cs442/a5 ==-
+--> ./a.out t2.pl p t
+2 4 5 4
+6 5 4
+
+-== 692 ==- npow@cpu16 -== ~/cs442/a5 ==-
+--> cat t3.pl
+a :- !.
+b.
+c.
+d :- a.
+e :- f, g, h, a.
+f.
+g :- a.
+h :- c, d.
+i :- !.
+
+-== 694 ==- npow@cpu16 -== ~/cs442/a5 ==-
+--> ./a.out t3.pl a
+1
+
+-== 691 ==- npow@cpu16 -== ~/cs442/a5 ==-
+--> ./a.out t3.pl e
+5 6 7 1 8 3 4 1 1
+

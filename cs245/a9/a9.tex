@@ -1,0 +1,159 @@
+\documentclass{article}[12pt]
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{fullpage}
+\usepackage{fitch}
+
+\title{CS245 Assignment 9}
+\author{Nissan Pow}
+
+\begin{document}
+\maketitle
+
+\section*{Question 1}
+
+Loop Invariant: \\
+$\{z = i^{2}\}$ \\ \\
+$\{n \ge 1\}$ \\
+$\{1 = 1^{2}\}$ \qquad Implied (obvious) \\
+$i = 1;$ \\
+$\{1 = i^{2}\}$ \qquad Assignment \\
+$z = 1;$ \\
+$\{z = i^{2}\}$ \qquad Assignment \\
+while (i != n) \{ \\
+\indent $\{z = i^{2} \land i \neq n\}$ \qquad While \\
+\indent $\{z + (2(i+1)-1) = (i+1)^{2}\}$ \qquad Implied (a) \\
+\indent i = i + 1; \\
+\indent $\{z + (2i - 1) = i^{2}\}$ \qquad Assignment \\
+\indent z = z + (2*i - 1); \\
+\indent $\{z = i^{2}\}$ \qquad Assignment \\
+\} \\
+$\{(z = i^{2}) \land (i = n)\}$ \qquad While \\
+$\{z = n^{2}\}$ \qquad Implied (obvious) \\
+
+\subsection*{Implied (a)}
+
+\begin{eqnarray*}
+  \begin{fitch}
+    \fa \fh (z = i^{2}) \land (i \neq n) & Assumption \\
+    \fa \fa z = i^{2} & 1,$\land$\_E \\
+    \fa \fa z + (2(i+1) - 1) = z + (2(i+1) - 1) & =\_I \\
+    \fa \fa z + (2(i+1) - 1) = z + 2i + 1 & 3,Algebra \\
+    \fa \fa z + (2(i+1) - 1) = i^{2} + 2i + 1 & 2,4,=\_E \\
+    \fa \fa z + (2(i+1) - 1) = (i+1)^{2} & 5,Algebra \\
+    \fa Line1 \Rightarrow Line6 & 1-6,$\Rightarrow$\_I \\
+  \end{fitch}
+\end{eqnarray*}
+
+\newpage
+\section*{Question 2}
+
+Loop Invariant: \\
+$\{(\forall k. \ \ 1 \le k \le i-1 \Rightarrow max \ge A[k])$ \\
+
+\subsection*{Case 1}
+
+Case: $e_{2} \ge e_{1}$ \\
+$\{n \ge 2\}$ \\
+$\{(\forall k. \ \ 1 \le k \le 1 \Rightarrow A[1] \ge A[k]) \land (2 \le n)\}$ \qquad Implied (a) \\
+max = A[1]; \\
+$\{(\forall k. \ \ 1 \le k \le 1 \Rightarrow max \ge A[k]) \land (2 \le n)\}$ \qquad Assignment \\
+for i = 2 to n \{ \\
+$\indent \{(\forall k. \ \ 1 \le k \le i-1 \Rightarrow max \ge A[k]) \land (2 \le i) \land (i \le n)\}$ \qquad For-Loop \\
+$\indent \{(\forall k. \ \ 1 \le k \le i-1 \Rightarrow max \ge A[k]) \land (2 \le i) \land (i \le n)\}$ \qquad Implied (obvious) \\
+\indent if (max $<$ A[i]) \{ \\
+$\indent \indent \{(\forall k. \ \  1 \le k \le i-1 \Rightarrow max \ge A[k]) \land (2 \le i) \land (i \le n) \land (max < A[i])\}$ \qquad If-Then \\
+$\indent \indent \{(\forall k. \ \ 1 \le k \le i \Rightarrow A[i] \ge A[k]\}$ \qquad Implied (b) \\
+\indent \indent max = A[i]; \\
+$\indent \indent \{(\forall k. \ \  1 \le k \le i \Rightarrow max \ge A[k]\} \qquad$ Assignment \\
+$\indent \}$ \\
+$\indent \{\forall k. \ \ 1 \le k \le i \Rightarrow max \ge A[k]\}$ \qquad If-Then \\
+$\indent \{\forall k. \ \ 1 \le k \le i \Rightarrow max \ge A[k]\}$ \qquad Implied (obvious) \\
+$\}$ \\
+$\{(\forall k. \ \ 1 \le k \le i-1 \Rightarrow max \ge A[k]) \land (i = n+1) \}$ \qquad For-Loop \\
+$\{(\forall k. \ \ 1 \le k \le n \Rightarrow max \ge A[k])\}$ \qquad Implied (obvious) \\
+
+\subsection*{Implied (a)}
+
+We will first show that: \\
+$(\forall k. \ \ 1 \le k \le 1 \Rightarrow A[1] \ge A[k])$ is a tautology. \\
+\begin{equation*}
+  \begin{fitch}
+    \fa \fh \forall k. \ \ 1 \le k \le 1 & Assumption \\
+    \fa \fa k = 1 & 1, Algebra \\
+    \fa \fa A[1] = A[1] & =\_I \\
+    \fa \fa A[1] \ge A[1] & 3, Algebra \\
+    \fa \fa A[1] \ge A[k] & 2,4, =\_E \\
+    \fa  \forall k. \ \ 1 \le k \le 1 \Rightarrow A[1] \ge A[k] & 1-5 $\Rightarrow$\_I \\
+  \end{fitch}
+\end{equation*}
+
+$(n \ge 2) \Rightarrow ((\forall k. \ \ 1 \le k \le 1 \Rightarrow A[1] \ge A[k]) \land (2 \le n))$ \\
+\begin{equation*}
+  \begin{fitch}
+    \fa \forall k. \ \ 1 \le k \le 1 \Rightarrow A[1] \ge A[k] & Premise (proven above) \\
+    \fa \fh n \ge 2 & Assumption \\
+    \fa \fa (\forall k. \ \ 1 \le k \le 1 \Rightarrow A[1] \ge A[k]) \land (n \ge 2) & 1,2,$\land$\_I \\
+    \fa (n \ge 2) \Rightarrow ((\forall k. \ \ 1 \le k \le 1 \Rightarrow A[1] \ge A[k]) \land (n \ge 2)) & 2-3,$\Rightarrow$\_I \\
+  \end{fitch}
+\end{equation*}
+
+\newpage
+\subsection*{Implied (b)}
+($(\forall k. \ \  1 \le k \le i-1 \Rightarrow max \ge A[k]) \land (2 \le i) \land (i \le n) \land (max < A[i])) \Rightarrow (\forall k. \ \ 1 \le k \le i \Rightarrow A[i] \ge A[k])$
+
+\begin{eqnarray*}
+  \begin{fitch}
+    \fa \fh (\forall k. \ \  1 \le k \le i-1 \Rightarrow max \ge A[k]) \land (2 \le i) \land (i \le n) \land (max < A[i]) & Assumption \\
+    \fa \fa \forall k. \ \ 1 \le k \le i-1 \Rightarrow max \ge A[k] & 1, $\land$\_E \\
+    \fa \fa max < A[i] & 1,$\land$\_E \\
+    \fa \fa A[i] \ge max & 3,Algebra \\
+    \fa \fa A[i] \ge A[i] & Algebra \\
+    \fa \fa \forall k. \ \ 1 \le k \le i-1 \Rightarrow A[i] \ge A[k] & 2,4,=\_E \\
+    \fa \fa \forall k. \ \ 1 \le k \le i \Rightarrow A[i] \ge A[k] & 5,6,Algebra \\
+    \fa Line1 \Rightarrow Line7 & 1-7,$\Rightarrow$\_I \\
+  \end{fitch}
+\end{eqnarray*}
+
+\subsection*{Case 2}
+
+Case: $e_{1} > e_{2}$ \\
+$\{n = 1\}$ \\
+$\{(\forall k. \ \ 1 \le k \le 1 \Rightarrow A[1] \ge A[k]) \land (n = 1)\}$ \qquad Implied (a) \\
+max = A[1]; \\
+$\{(\forall k. \ \ 1 \le k \le 1 \Rightarrow max \ge A[k]) \land (n = 1)\}$ \qquad Assignment \\
+for i = 2 to n \{ \\
+\indent if (max $<$ A[i]) \{ \\
+\indent \indent max = A[i]; \\
+$\indent \}$ \\
+$\}$ \\
+$\{(\forall k. \ \ 1 \le k \le i-1 \Rightarrow max \ge A[k]) \land (i = n+1)\}$ \qquad For-Loop \\
+$\{(\forall k. \ \ 1 \le k \le n \Rightarrow max \ge A[k])\}$ \qquad Implied (obvious) \\
+
+\subsection*{Implied (a)}
+
+We will first show that: \\
+$(\forall k. \ \ 1 \le k \le 1 \Rightarrow A[1] \ge A[k])$ is a tautology. \\
+\begin{equation*}
+  \begin{fitch}
+    \fa \fh \forall k. \ \ 1 \le k \le 1 & Assumption \\
+    \fa \fa k = 1 & 1, Algebra \\
+    \fa \fa A[1] = A[1] & =\_I \\
+    \fa \fa A[1] \ge A[1] & 3, Algebra \\
+    \fa \fa A[1] \ge A[k] & 2,4, =\_E \\
+    \fa  \forall k. \ \ 1 \le k \le 1 \Rightarrow A[1] \ge A[k] & 1-5 $\Rightarrow$\_I \\
+  \end{fitch}
+\end{equation*} \\
+
+$\{(n = 1) \Rightarrow ((\forall k. \ \ 1 \le k \le 1 \Rightarrow A[1] \ge A[k]) \land (n = 1))$ \\
+\begin{equation*}
+  \begin{fitch}
+    \fa \fh (n = 1) & Assumption \\
+    \fa \fa \forall k. \ \ 1 \le k \le 1 \Rightarrow A[1] \ge A[k] & Premise (proven above) \\
+    \fa \fa (\forall k. \ \ 1 \le k \le 1 \Rightarrow A[1] \ge A[k]) \land (n = 1) & 1,2,$\land$\_I \\
+    \fa Line1 \Rightarrow Line3 & 1-3,$\Rightarrow$\_I \\
+  \end{fitch}
+\end{equation*}
+
+\end{document}
+

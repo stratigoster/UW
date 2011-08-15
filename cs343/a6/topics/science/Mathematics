@@ -1,0 +1,257 @@
+<TITLE>Mathematics</TITLE>
+<TOPIC>Mathematics</TOPIC>
+<TOPIC>Math</TOPIC>
+<TOPIC>Maths</TOPIC>
+<TOPIC>science</TOPIC>
+<TEXT>
+Mathematics is commonly defined as the study of patterns of structure, change, 
+and space; more informally, one might say it is the study of 'figures and 
+numbers'. In the formalist view, it is the investigation of axiomatically 
+defined abstract structures using logic and mathematical notation; other views 
+are described in Philosophy of mathematics. Mathematics might be seen as a 
+simple extension of spoken and written languages, with an extremely precisely 
+defined vocabulary and grammar, for the purpose of describing and exploring 
+physical and conceptual relationships.
+
+Although mathematics itself is not usually considered a natural science, the 
+specific structures that are investigated by mathematicians often have their 
+origin in the natural sciences, most commonly in physics. However, 
+mathematicians also define and investigate structures for reasons purely 
+internal to mathematics, because the structures may provide, for instance, a 
+unifying generalization for several subfields, or a helpful tool for common 
+calculations. Finally, many mathematicians study the areas they do for purely 
+aesthetic reasons, viewing mathematics as an art form rather than as a practical
+orapplied science. Some mathematicians like to refer to their subject as "the 
+Queen of Sciences".
+
+Mathematics is often abbreviated to math (in American English) or maths (in 
+British English).
+
+Overview and history of mathematics -- See the article on the history of 
+mathematics for details.
+
+The word "mathematics" comes from the Greek (/máthema/) which means "science, 
+knowledge, or learning"; (/mathematikós/) means "fond of learning".
+
+The major disciplines within mathematics arose out of the need to do 
+calculations in commerce, to measure land and to predict astronomical events. 
+These three needs can be roughly related to the broad subdivision of mathematics
+into the study of structure, space and change.
+
+The study of structure starts with numbers, first the familiar natural numbers 
+and integers and their arithmetical operations, which are recorded in elementary
+algebra. The deeper properties of whole numbers are studied in number theory. The
+investigation of methods to solve equations leads to the field of abstract 
+algebra, which, among other things, studies rings and fields, structures that 
+generalize the properties possessed by the familiar numbers. The physically 
+important concept of vectors, generalized to vector spaces and studied in linear
+algebra, belongs to the two branches of structure and space.
+
+The study of space originates with geometry, first the Euclidean geometry and 
+trigonometry of familiar three-dimensional space (also applying to both more and
+less dimensions), later also generalized to non-Euclidean geometries which play a
+central role in general relativity. Several long standing questions about ruler 
+and compass constructions were finally settled by Galois theory. The modern 
+fields of differential geometry and algebraic geometry generalize geometry in 
+different directions: differential geometry emphasizes the concepts of 
+functions, fiber bundles, derivatives, smoothness and direction, while in 
+algebraic geometry geometrical objects are described as solution sets of 
+polynomial equations. Group theory investigates the concept of symmetry 
+abstractly and provides a link between the studies of space and structure. 
+Topology connects the study of space and the study of change by focusing on the 
+concept of continuity.
+
+Understanding and describing change in measurable quantities is the common theme
+of the natural sciences, and calculus was developed as a most useful tool for 
+doing just that. The central concept used to describe a changing variable is 
+that of a function. Many problems lead quite naturally to relations between a 
+quantity and its rate of change, and the methods to solve these are studied in 
+the field of differential equations. The numbers used to represent continuous 
+quantities are the real numbers, and the detailed study of their properties and 
+the properties of real-valued functions is known as real analysis. For several 
+reasons, it is convenient to generalise to the complex numbers which are 
+studied in complex analysis. Functional analysis focuses attention on (typically 
+infinite-dimensional) spaces of functions, laying the groundwork for quantum 
+mechanics among many other things. Many phenomena in nature can be described by 
+dynamical systems and chaos theory deals with the fact that many of these 
+systems exhibit unpredictable yet deterministic behavior.
+
+In order to clarify and investigate the foundations of mathematics, the fields 
+of set theory, mathematical logic and model theory were developed.
+
+When computers were first conceived, several essential theoretical concepts were
+shaped by mathematicians, leading to the fields of computability theory, 
+computational complexity theory, information theory and algorithmic information 
+theory. Many of these questions are now investigated in theoretical computer 
+science. Discrete mathematics is the common name for those fields of mathematics
+useful in computer science.
+
+An important field in applied mathematics is statistics, which uses probability 
+theory as a tool and allows the description, analysis and prediction of 
+phenomena and is used in all sciences. Numerical analysis investigates the 
+methods of efficiently solving various mathematical problems numerically on 
+computers and takes rounding errors into account.
+
+Topics in mathematics
+
+An alphabetical and subclassified list of mathematical topics is available. The 
+following list of subfields and topics reflects one organizational view of 
+mathematics.
+
+Quantity
+
+In general, these topics and ideas present explicit measurements of sizes of 
+numbers or sets, or ways to find such measurements.
+
+Number -- Natural number -- Pi-- Integers -- Rational numbers-- Real numbers -- 
+Complexnumbers -- Hypercomplex numbers-- Quaternions -- Octonions -- Sedenions 
+-- Hyperreal numbers -- Surreal numbers-- Ordinal numbers -- Cardinal numbers 
+-- /p/-adic numbers-- Integer sequences -- Mathematical constants -- Number names
+-- Infinity -- Base
+
+Change
+
+These topics give ways to measure change in mathematical functions, and changes 
+between numbers.
+
+Arithmetic -- Calculus -- Vector calculus -- Analysis-- Differential equations--
+Dynamicalsystems and chaos theory-- List of functions
+
+Structure
+
+These branches of mathematics measure size and symmetry of numbers, and various 
+constructs.
+
+Abstract algebra -- Number theory-- Algebraic geometry-- Group theory-- Monoids 
+-- Analysis -- Topology -- Linear algebra -- Graph theory-- Universal algebra 
+-- Category theory -- Order theory
+
+Space
+
+These topics tend to quantify a more visual approach to mathematics than others.
+
+Topology -- Geometry -- Trigonometry -- Algebraic geometry-- Differential 
+geometry-- Differential topology-- Algebraic topology-- Linear algebra 
+-- Fractal geometry 
+
+Discrete mathematics
+
+Topics in discrete mathematics deal with branches of mathematics with objects 
+that can only take on specific, separated values.
+
+Combinatorics -- Naive set theory-- Probability -- Theory of computation -- 
+Finite mathematics-- Cryptography -- Graph theory -- Game theory 
+
+
+Applied mathematics
+
+Fields in applied mathematics use knowledge of mathematics to real world 
+problems.
+
+Mechanics -- Numerical analysis-- Optimization-- Probability-- Statistics -- 
+Financial mathematics 
+
+
+Famous theorems and conjectures
+
+These theorems have interested mathematicians and non-mathematicians alike.
+
+Fermat's last theorem -- Goldbach's conjecture -- Twin Prime Conjecture-- 
+Gödel's incompleteness theorems-- Poincaré conjecture-- Cantor's diagonal 
+argument---- Four color theorem-- Zorn's lemma -- Euler's identity -- Scholz 
+Conjecture-- Church-Turing thesis
+
+Important theorems
+
+These are theorems that have changed the face of mathematics throughout history.
+
+Riemann hypothesis -- Continuum hypothesis -- P=NP-- Pythagorean theorem-- 
+Central limit theorem-- Fundamental theorem of calculus-- Fundamental theorem of
+algebra -- Fundamental theorem of arithmetic --Fundamental theorem of 
+projective geometry-- classification theorems of surfaces -- Gauss-Bonnet theorem 
+
+Foundations and methods
+
+Such topics are approaches to mathematics, and influence the way mathematicians 
+study their subject.
+
+Philosophy of mathematics -- Mathematical intuitionism -- Mathematical 
+constructivism -- Foundations of mathematics -- Set theory -- Symbolic logic 
+-- Model theory -- Category theory-- Theorem-proving -- Logic -- Reverse 
+Mathematics-- Table of mathematical symbols
+
+
+History and the world of mathematicians
+
+History of mathematics -- Timeline of mathematics -- Mathematicians-- Fields 
+medal -- Abel Prize -- Millennium Prize Problems (Clay Math Prize) -- 
+International Mathematical Union -- Mathematics competitions -- Lateral thinking
+
+Mathematics and other fields
+
+Mathematics and architecture -- Mathematics and education-- Mathematics of 
+musical scales 
+
+Mathematical tools
+
+Old:
+
+Abacus 
+Napier's bones, Slide Rule 
+Ruler and Compass 
+Mental calculation 
+ 
+New:
+
+Calculators and computers 
+Programming languages 
+Computer algebra systems (listing) 
+Internet shorthand notation 
+statistical analysis software
+   o SPSS 
+   o SAS 
+
+Quotes
+
+Referring to the axiomatic method, where certain properties of an (otherwise 
+unknown) structure are assumed and consequences thereof are then logically 
+derived, Bertrand Russell said: "Mathematics may be defined as the subject in 
+which we never know what we are talking about, nor whether what we are saying is
+true." This may explain why John Von Neumann once said: "In mathematics you don't
+understand things. You just get used to them."
+
+About the beauty of Mathematics, Bertrand Russell said in "Study of 
+Mathematics":"Mathematics, rightly viewed, possesses not only truth, but supreme
+beauty-- a beauty cold and austere, like that of sculpture, without appeal to 
+any part of our weaker nature, without the gorgeous trappings of painting or 
+music, yet sublimely pure, and capable of a stern perfection such as only the 
+greatest art can show. The true spirit of delight, the exaltation, the sense of 
+being more than Man, which is the touchstone of the highest excellence, is to be
+foundin mathematics as surely as poetry."
+
+Elucidating the symmetry between the creative and logical aspects of 
+mathematics, W.S. Anglin observed, in "Mathematics and History":"Mathematics is 
+not a careful march down a well-cleared highway, but a journey into a strange 
+wilderness, where the explorers often get lost. Rigour should be a signal to the
+historianthat the maps have been made, and the real explorers have gone 
+elsewhere."
+
+Mathematics is not...
+
+    Numerology 
+    Accountancy 
+
+
+Bibliography
+
+Courant, R. and H. Robbins, "What Is Mathematics?" (1941); 
+Davis, Philip J. and Hersh, Reuben, "The Mathematical Experience". Birkhäuser, 
+    Boston, Mass., 1980. A gentle introduction to the world of mathematics. 
+Gullberg, Jan,"Mathematics--From the Birth of Numbers". W.W. Norton, 1996. An 
+    encyclopedic overview of mathematics presented in clear, simple language. 
+Hazewinkel, Michiel (ed.),"Encyclopaedia of Mathematics". Kluwer Academic 
+    Publishers 2000. A translated and expanded version of a Soviet math 
+    encyclopedia, in ten (expensive) volumes, the most complete and authoritative
+    work available. Also in paperback and on CD-ROM. 
+Kline, M., "Mathematical Thought from Ancient to Modern Times" (1973);
+</TEXT>

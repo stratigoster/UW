@@ -1,0 +1,43 @@
+- structure even = DFA(Even0s_DFA);
+structure even : sig val run : Spec.Sigma list -> bool end
+- even.run [1,1,1];
+GC #0.0.0.1.4.55:   (0 ms)
+val it = true : bool
+- even.run [1,0];
+val it = false : bool
+- even.run [0,0,1,1,0,0,1];
+val it = true : bool
+
+
+- structure s = NFA(EndsInZero_NFA);
+structure s : sig val run : Spec.Sigma list -> bool end
+- s.run [1,1,1];
+val it = false : bool
+- s.run [1,1,1,0];
+val it = true : bool
+- s.run [1,0,1,0,1];
+val it = false : bool
+- s.run [1,0,1,1,1,0,0,0];
+val it = true : bool
+- s.run [1,0,1,1,1,0,0,0,1,0,0,0,1,0,1,0,1,0];
+val it = true : bool
+
+
+- structure foo = Intersection (structure Spec1=Even0s_DFA and Spec2=Even0sOdd1s_DFA);
+structure foo : DFASIG
+- structure fooInterp = DFA(foo);
+structure fooInterp : sig val run : Spec.Sigma list -> bool end
+- fooInterp.run [0,0,0,0,0];
+val it = false : bool
+- fooInterp.run[0,0,1,1,0,1];
+val it = false : bool
+- fooInterp.run[0,0,0,1,1,1,0];
+val it = true : bool
+- fooInterp.run[1,1,1];
+GC #0.0.0.1.4.61:   (0 ms)
+val it = true : bool
+- fooInterp.run[0,1];
+val it = false : bool
+- fooInterp.run[1,0,0];
+val it = true : bool
+

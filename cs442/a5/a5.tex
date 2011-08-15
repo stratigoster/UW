@@ -1,0 +1,62 @@
+\documentclass[onecolumn,11pt]{article}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\usepackage{amsfonts}
+\usepackage{alltt}
+\usepackage[latin1]{inputenc}
+\usepackage{moreverb}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{fullpage}
+\usepackage{alltt}
+
+\title{CS442 Assignment 4}
+\author{Nissan Pow\\20187246\\npow}
+\date{\today}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newcommand{\nonterm}[1]{\ensuremath{\langle\mbox{\emph{#1}}\rangle}}
+\newcommand{\post}[2]{\ensuremath{\frac{\begin{array}{c}#1\end{array}}{\begin{array}{c}#2\end{array}}}}
+\newcommand{\sem}[1]{\ensuremath{[\![#1]\!]}}
+
+\begin{document}
+\maketitle
+
+\section*{Part A}
+\begin{enumerate}
+  \item{Yes there is a type that is a subtype of every other type - it is called Bottom. There is a function type that is a supertype of every other function type, and its type is Top $\to$ Bottom}
+  \item{The rule says that every polymorphic type is a subtype of it's specialized self. This makes sense, since we can always use the polymorphic type wherever the specialized one is valid.}
+  \item{}
+  \item{}
+  \item{}
+\end{enumerate}
+
+\section*{Parts B-E}
+FILE: a5.e
+\verbatimtabinput[2]{a5.e}
+
+FILE: rule.e
+\verbatimtabinput[2]{rule.e}
+
+FILE: database.e
+\verbatimtabinput[2]{database.e}
+
+\clearpage
+
+\subsection*{Transcript}
+\verbatimtabinput[2]{transcript}
+
+NOTES: \\
+blah.pl is to test that the cut works correctly \\
+t1.pl is the example from page 168 of the notes, and illustrates a non-terminating search \\
+t2.pl is the example from page 167 of the notes, and just tests that searching works properly \\
+t3.pl tests whether we can handle the cut as the last item in a rule. \\
+
+\end{document}

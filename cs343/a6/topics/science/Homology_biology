@@ -1,0 +1,49 @@
+<TITLE>Homology (biology)</TITLE>
+<TOPIC>Homology (biology)</TOPIC>
+<TOPIC>Homology</TOPIC>
+<TOPIC>biology</TOPIC>
+<TOPIC>science</TOPIC>
+<TEXT>
+In biology, two or more structures are said to be homologous if they are alike 
+because of shared ancestry. This could be evolutionary ancestry, meaning that 
+the structures evolved from some structure in a common ancestor (the wings of 
+bats and the arms of humans are homologous in this sense) or developmental 
+ancestry, meaning that the structures arose from the same tissue in embryonal 
+development (the ovaries of females and the testicles of males are homologous in
+this sense).
+
+Homology has to be distinguished from "analogy"; for instance, the wings of 
+insects and the wings of birds are analogous but not homologous. These similar 
+structures most likely evolved through different pathways, a process known as 
+convergent evolution.
+
+In genetics, homology is used in reference to protein or DNA sequences, meaning 
+that the given sequences share ancestry. Homology can be of two types: orthology
+or paralogy. Sequences are orthologous if they are homologous and were separated 
+by a speciation event; if a gene exists in a species, and that species diverges 
+into two species, then the copies of this gene in the resulting species are 
+orthologous. Sequences are paralogous if they are homologous and were separated 
+by a gene duplication event; if a gene in an organism is duplicated, each copy 
+of the gene is paralogous to the other.
+
+Homology among proteins and DNA is often concluded on the basis of sequence 
+similarity, especially in bioinformatics. For example, in general, if two genes 
+have an almost identical DNA sequence, it is likely that they are homologous. 
+However, it may be that the sequence similarity did not arise from their sharing
+a common ancestor; short sequences may be similar by chance, or sequences may be 
+similar because both were selected to bind to a particular protein, such as a 
+transcription factor. Such sequences are similar but not homologous.
+
+A "homologous pair" of chromosomes in a diploid cell is a matching pair of 
+chromosomes, one derived from each parent of the organism. Except for the sex 
+chromosomes, the chromosomes of each homologous pair share significant sequence 
+similarity across their entire length, and thus typically contain the same 
+sequence of genes. The sex chromosomes have a shorter region of sequence 
+similarity. Based on the sequence similarity and our knowledge of biology, we 
+can presume that the chromosomes are paralogous.
+
+Many algorithms exist to cluster protein sequences into sequence families, which
+aresets of mutually homologous sequences.
+
+See also: Sequence alignment 
+</TEXT>

@@ -1,0 +1,242 @@
+<TITLE>Phreaking</TITLE>
+<TOPIC>Phreaking</TOPIC>
+<TOPIC>security</TOPIC>
+<TOPIC>computer security</TOPIC>
+<TOPIC>computer</TOPIC>
+<TOPIC>computers</TOPIC>
+<TEXT>
+"Phreaking" is a slang term for the action of making a telephone system do 
+something that it normally should not allow. It is an illegal activity (the 
+illegal act being the theft of telephone service), but one formerly pursued by a
+large number of computer and electronics hobbyists out of curiosity. Other 
+reasons why many people attempted (or succeeded in) phone phreaking during the 
+1960s and 1970s included the (then) very high cost of long-distance telephone 
+service, and a desire to rebel against the AT&T telephone monopoly.
+
+A phreak or phreaker is a person who engages in the act of manipulating phones 
+in this way. The tools of the phone phreak are electronic devices known 
+as "boxes", originally the blue box, but later the black box, red box, beige box 
+and clear box, etc.
+
+Most of the techniques formerly used in phreaking are no longer effective due to
+changes in the telephone system. Some of these changes were evolutionary, and 
+some were designed specifically to disallow such access. Moreover, the cost of 
+telephone calls has diminished to the point where few would find it worthwhile 
+to engage in toll fraud; and there are numerous competing providers of telephone
+service (except for most wired local service which remains controlled by regional
+Bell operating companies--remnants of the former AT&T monopoly).
+
+The crossbar system
+
+In the 1960s the US phone system used a mechanical device for call switching 
+known as the crossbar. The crossbar system could control phone switching by 
+watching the voltage on the lines connected to the user's phones. When the user 
+picked up the handset, the voltage dropped from about 48 V to about 10 V, so the
+crossbar knew that person wanted to place a call. It would then play a dial tone 
+and wait for the user to dial. It could also tell when the user had hung up when
+it saw the voltage increase back to about 48 V again. When a call was received, 
+the crossbar would switch to an intermittent ring voltage of about 90 VAC at 20 
+Hz to make the hammer repeatedly strike the bell inside the phone and cause the 
+phone to ring.
+
+Dialing worked in a similar fashion; the mechanical, spring-loaded rotary dial 
+found on older telephones functioned by quickly connecting and disconnecting the
+line. At the phone company central office, the lines were connected to a series 
+of mechanical disks (stepping relays) that rotated one position for every 
+"click", so seven such clicks would turn the disk seven positions. After dialing
+several numbers in this way (typically seven in North America), the line would
+eventually be connected to another phone, which would start ringing. Anyone, with
+some practice, may to this day dial a telephone by repeatedly clicking the 
+receiver, one click for a "1", two clicks in rapid succession for a "2", ten 
+clicks in rapid succession for a "zero".
+
+Switching through the use of electromechanical stepping relays only worked 
+for "local" calls, telephones connected to the same central office shared a 
+common crossbar. Long-distance calls, however, required a method of switching 
+telephone calls that did not require a physical electrical connection.
+
+Between central offices, long lines were employed which at first required the 
+intervention of a human operator. In order to reduce or eliminate the need for 
+operator assistance, AT&T began a system of "direct distance dialing" which 
+relied on the use of area codes, special three-digit prefixes containing 
+either "1" or"0" as the second digit.
+
+No local telephone number could begin with any of the three-digit area codes, so
+they could be distinguished from long-distance calls. When detecting an area 
+code, the line was switched to an outbound long line. Dialing a long distance 
+became similar to dialing locally, with the exception that you are first 
+switched to a remote central office who will handle the rest of the dialing. For
+instance if you dial 416-555-1212 the local central office switch will 
+immediately forward your call to the 416 switch in Toronto over a long line, and
+fromthere the rest of the numbers will dial a Toronto call as if you were local.
+
+Dialing pulses will not travel over long distances, which will filter them out 
+due to capacitance. During the 1960s, an increasing number of calls were being 
+carried by microwave links and even satellite relays, in which case there was 
+no electrical connection between the two end offices at all. In order to allow 
+the dialing signals to travel between offices then, AT&T devised a device that 
+translated the pulses into tones, which is, after all, what the phone system is 
+built to handle. At the far end office another similar device translates the 
+tones back into pulses, dialing the existing switch. These tones, known as 
+multi-frequency, included not only numbers, but various commands for signaling 
+things like hanging up the call.
+
+In the 1970s, the area code system was augmented by requiring callers to dial "1"
+before the area code. This enabled all the former area codes to be used as local 
+exchange prefixes, and enabled any three-digit combination to be used as an area
+code. The prefix "011" was later implemented to permit overseas calls to be dialed
+without operator assistance in a similar fashion (though in some areas, for a 
+time the code 011 would simply reach an overseas operator).
+
+The origins of phreaking<LINK>security:pages/security/Phreaking</LINK>
+
+The precise origin of phone phreaking is disputed.
+
+In one account, one day a blind student was playing with the phones in his local
+university when he whistled into it, and the phone suddenly hung up. After some 
+experimentation and a few calls to local technicians, he learned that he had 
+stumbled across the "user had hung up" tone, 2600 Hz. When the system heard it, 
+it hung up the phone, thinking the call was ended.
+
+Some time later the soon-to-be famous phreak John Draper, alias Captain Crunch, 
+learned of the technique from a local group of blind phreaks. He was an 
+electronics hobbyist, which is why they had learned of him, and soon constructed
+what would later be known as a blue box, which generated the 2600Hz tone. He 
+later discovered that a toy whistle in boxes of Cap'n Crunch cereal also 
+produced the same tone. Just as one may still dial a telephone by repeatedly 
+clicking the receiver, Draper discovered that one could dial using a series of 
+rapidly pulsed 2600 Hz tones on a Cap'n Crunch whistle.
+
+In 1971, some hippies discovered the possibility of making free calls. A 
+militant faction of the hippie movement, known as "yippies", started a magazine 
+called Youth International Party Line (the name both referred to the political 
+nature of the movement and to its obvious telephonic emphasis). The paper's 
+mission was to teach methods of telephone fraud. Yippies considered themselves a
+type of tough hippies willing to use violence and terrorism to obliterate (as 
+far as possible) American society. As opposed to classical anarchists, they were
+not opposed to technology; rather, they exploited all knowledge and resources 
+available to them. One of the most frightening aspects of the yippie movement 
+was that many of its members were quite intelligent. Prominent yippie "leaders" 
+were Abbie Hoffman and Jerry Rubin.
+
+In 1973, a faction of technology fanatics broke away from the yippie movement 
+and formed an expressly anti-social and anarchistic organization around the YIPL
+paper (now known as TAP, or Technical Assistance Program). Within a short period 
+of time, there was a global network of phreakers. The basic philosophy of the 
+paper was still the same as that of the Youth International Party.
+
+Scanning also existed, and was indeed quite prominent, at this time. Control 
+codes and test lines were far more easy to find, and included numbers like 
+11211. These codes can no longer be dialed, as most telephone systems will 
+process them as long distance (1-121-1...) or star commands (1121= 21).
+
+2600 Hz
+
+2600 Hz, the key to early phreaking, was a signal sent to the long-distance 
+switch to indicate that the user had hung up the phone. At that point the call 
+was not completely disconnected. Although the long-distance hardware thought the
+call was disconnected, the local user was still physically connected to their 
+local crossbar---it knew that the user was still connected because the voltage 
+never dropped. This left the system in an inconsistent state. The dialer was 
+still connected to a long-distance trunk line and switch at the remote switching
+centerthat was perfectly willing to complete or further route calls.
+
+A number of people in the 1960s discovered a loophole that resulted from this 
+combination of features. The trick was to call a toll free number or 
+long-distance directory number and then play the 2600 Hz tone into the line 
+before the call was answered on the other side of the line. Then they simply 
+dialed the number they actually wanted on a blue box, and the remote crossbar 
+happily connected them for free. Of course when they were connected to the 
+diverted call their local central office would be alert and the technicians 
+began searching for inordinately long directory calls or excessive dialing to 
+particular toll free numbers. Many phone phreaks were forced to use pay 
+telephones as the telephone company technicians regularly tracked long-distance 
+toll free calls in an elaborate cat-and-mouse game.
+
+As the knowledge spread, the growing number of phone phreaks became a minor 
+culture onto their own. They were able to train their ears to determine how the 
+long lines routed their calls. Sympathetic (or easily social-engineered) 
+<LINK>security:pages/security/Social_engineering_computer_security</LINK>
+telephone company employees gave them the various routing codes to use
+international satellites and various trunk lines like expert operators. The phone
+companies quickly caught on to the scheme and slowly deployed a number of systems
+to defeat it, but the phreaks felt that a true solution would be impossible
+because it would require adding hardware (a filter) to every line on every
+crossbar in the world. Unless the phone company replaced all their hardware,
+phreaking would be impossible to stop. AT&T instead turned to "the law" for help,
+and a number of the more famous phreaks were caught by the FBI.
+
+Eventually, the phone companies in North America did, in fact, replace all their
+hardware. They didn't do it to stop the phreakers, but simply as a matter of 
+course as they moved to fully digital switching systems. Unlike the crossbar, 
+where the switching signals were carried on the same lines, the new systems used
+separate lines for signalling that the phreakers couldn't get to. This system is 
+known as Common Channel Interoffice Signaling.
+
+One box, two box, red box, blue box
+
+Many phreaking techniques can be implemented with small electronic circuits, 
+easily made by hobbyists once the secret of their operation is known. The first 
+circuit to generate the switching tones needed to reroute long-distance calls 
+was nicknamed the blue box by an early phreak who had built one in a blue 
+enclosure. Soon, other types of phreaking circuits were given similar names.
+
+At one point, pay telephones used specific tones (separate from the MF tones 
+used for numbers) to signal the deposit of a coin. These tones, then used only 
+for long distance and overseas calling, would signal the amount deposited to a 
+tolling computer called ACTS. Phreaks learned the frequencies used and produced 
+circuits to spoof them. Such a device became known as a red box. Though it was 
+also possible to call one pay phone from another and then simply record the 
+sounds as coins were deposited in the first pay telephone. The phreaked call was
+then completed and when the operator asked for payment the phreak would play 
+back the recording of the sounds (including the physical sound of the coins 
+being deposited into the coin box) into the mouthpiece of the telephone for the 
+benefit of the operator. To combat this, telephone companies used myriad devices
+local to the payphone, including a muted handset. Red-boxing (the act of using 
+red boxes) ceased to work in most areas in the 1980s when the phone companies 
+installed a sensor that actually detected the coin falling into the box. Finally
+they moved this signaling out of band completely. However, in some areas where 
+telephone equipment was not upgraded until later, it remained effective into the
+1990s. Dozens of other types of "boxes" were invented. In the BBS scene of the 
+late 1980s and early 1990s, crude ASCII art diagrams of phreaking box schematics
+circulated on bulletin board systems. Many of these designs simply cloned 
+particular telephone features not usually accessible on residential phones, such
+as a hold button or the letter keys used in Autovon (the silver box). Many were 
+useless, some were faulty, and some were pure hoaxes: for instance, a "blotto 
+box" which supposedly could take out an area code with a huge electrical 
+charge.
+
+Modern day phreaking
+
+To some extent, phreaking continues to the modern-day. Because the point for 
+many was not simply to gain free long-distance access but to learn how the 
+systems worked, the telephone companies have not been able to completely kill 
+the art. Modern-day phreaking activities are mostly comprised of scanning, or 
+using the DTMF tones to dial various numbers looking for tests. Others include 
+hacking the new digitally-controlled payphones, which have a number of control 
+codes, and manipulating the various test numbers. Some phreaks also try to "scan"
+for tones used as control codes on systems, or manipulate operators into doing 
+things they should not. A small number of people also go about opening utility 
+boxes (located on the ground, in people's lawns) and plugging telephones into 
+them, however this is extremely illegal and it is very easy to get caught.
+
+The various tests that are exploited by phreakers today are partially listed 
+below:
+
+Alberta Termination Test Line 
+Quiet Termination 
+Loop line 
+Ringback 
+ANAC 
+ 
+Features of interest to phreakers are partially listed below:
+
+ANI 
+CNA 
+
+Famous phone phreaks
+
+John Draper 
+Joybubbles 
+Evan Doorbell 
+</TEXT>

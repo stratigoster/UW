@@ -1,0 +1,5 @@
+.globl main
+main:
+null	add	$4, $1, $0	# Put value in $4 for printing
+	trap	1		# Output contents of $4 as integer
+	trap	10		# Quit program

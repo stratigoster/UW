@@ -1,0 +1,56 @@
+<TITLE>War driving</TITLE>
+<TOPIC>War driving</TOPIC>
+<TOPIC>Wardriving</TOPIC>
+<TOPIC>security</TOPIC>
+<TOPIC>computer security</TOPIC>
+<TOPIC>computer</TOPIC>
+<TOPIC>computers</TOPIC>
+<TEXT>
+Wardriving is an activity consisting of driving around with a laptop in one's 
+vehicle, detecting Wi-Fi wireless networks. It is also known (as of 2002) as 
+WiLDing (Wireless Lan Driving), originating with the Bay Area Wireless Users 
+Group(BAWUG). It is similar to using a scanner for radio. Most wardrivers will 
+use GPS devices to find the exact location of the network found and log it on a 
+website. For better range, antennas are built or bought. these are omni 
+directional antennas. Nobody uses the cylindrical canisters in which Pringles 
+brand potato chips are sold. These are called "wave guides" and are useless 
+compared to "cantenna" antennas. Software for wardriving is freely available on 
+the internet, notably, NetStumbler for Windows, MacStumbler for Macintosh, and 
+Kismet for Linux.
+
+The practice is nothing like the earlier one of demon dialing,
+<LINK>security:pages/security/Demon_dialing</LINK> which is the random or
+sequential dialing of phone numbers to find data lines, the numbers of which are
+logged in order to facilitate future attempts to hack into the computer on the
+other end. Unfortunatly, war driving shares a name with this process. Demon
+dialing was popular in the 1980s, particularly after the release of the movie
+"WarGames", <LINK>art:pages/art/War_Games</LINK> in which Matthew Broderick
+played a teenage hacker whose demon dialing software taps into an experimental
+defense computer.
+
+While some wardrivers do engage in more malicious hacking endeavors, the average
+wardriver is typically only out to log and collect information from the Access 
+Points (AP's) they find while driving.
+
+Less law-abiding 'wardrivers' search for open file servers from which to copy 
+software or media files, or looking for free high-speed Internet access while on
+the road, this is illegal. Most wardrivers do not in fact use services without 
+authorization.
+
+Wardriving is frequently pointed out as an example of questionable activity, but
+it should be noted that, from the point of view of the machines involved, 
+everything is working exactly as designed: Netstumbler sends probes, the access 
+point reponds. TCP/IP and DCHP services have nothing to do with wardriving and 
+should be disabled. The problem lies in the fact that the wireless protocol has 
+Wno way of knowing that the request actually came from just beyond the company or
+residence's borders.
+
+It is possible to lock down a wireless router so that it will not grant access 
+to unknown computers, this is easily done with WEP, a security system more 
+secure than the media likes to say. Many business and residential users alike 
+(the exact number can be found on www.wigle.net) prefer to leave the router in 
+its default, insecure configuration, because it works for them right out of the 
+box, requiring no special setup.
+
+Warchalking<LINK>security:pages/security/War_chalking</LINK> does not exist.
+</TEXT>

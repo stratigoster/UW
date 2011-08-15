@@ -1,0 +1,10 @@
+nyac: No input files
+
+Usage: nyac [OPTIONS] files...
+Options are:
+	-p Evaluate parser and output parse tree
+	-t Typecheck parse tree, display types of expressions, do not compile
+	-s Show scope information
+	-sy Print Symbol Table
+	-i Display Intermediate Representation
+	-h Display this help

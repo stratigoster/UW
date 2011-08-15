@@ -1,0 +1,189 @@
+/*********************************************************
+CS241 
+Assignment #3
+Yylex.0
+
+A sample scanner that recognizes numbers divisible by
+3 and 5.
+
+*********************************************************/
+
+%%
+
+%cup
+
+%state START, A, B, C, ZERO, ERROR, FINAL
+
+%{
+	// Here is where any extra Java methods, etc. would go, if needed.
+%}
+
+%eof{
+        System.out.println ("Done!");
+%eof}
+
+%% 
+
+<YYINITIAL> [0]	{ 
+	yybegin (ZERO);	
+}
+
+<YYINITIAL> [147] {
+	yybegin (A);
+}
+
+<YYINITIAL> [258] {
+	yybegin (B);
+}
+
+<YYINITIAL> [369] {
+	yybegin (C);
+}
+
+<YYINITIAL> [\n] {
+	yybegin (ERROR);
+	System.out.println("Rejected");
+	System.exit(-1);
+}
+
+<YYINITIAL> . {
+	yybegin (ERROR);
+	System.out.println("Rejected");
+	System.exit(-1);
+}
+
+<START> [0] {
+	yybegin (START);
+}
+
+<START> [147] {
+	yybegin (A);
+}
+
+<START> [258] {
+	yybegin (B);
+}
+
+<START> [369] {
+	yybegin (C);
+}
+
+<START> [\n] {
+	yybegin (FINAL);
+}
+
+<START> . {
+	yybegin (ERROR);
+	System.out.println("Rejected");
+	System.exit(-1);
+}
+
+<ZERO> [0] {
+	yybegin (ZERO);
+}
+
+<ZERO> [\n] {
+	yybegin (ERROR);
+	System.out.println("Rejected");
+	System.exit(-1);
+}
+
+<ZERO> [1-9] {
+	yybegin (START);
+}
+
+<ZERO> . {
+	yybegin (ERROR);
+	System.out.println("Rejected");
+	System.exit(-1);
+}
+
+<A> [0369] {
+	yybegin (A);
+}
+
+<A> [147] {
+	yybegin (B);
+}
+
+<A> [28] {
+	yybegin (C);
+}
+
+<A> [5] {
+	yybegin(START);
+}
+
+<A> . {
+	yybegin (ERROR);
+	System.out.println("Rejected");
+	System.exit(-1);
+}
+
+<A> [\n] {
+	yybegin (ERROR);
+	System.out.println("Rejected");
+	System.exit(-1);
+}
+
+<B> [258] {
+	yybegin (A);
+}
+
+<B> [147] {
+	yybegin (C);
+}
+
+<B> [0369] {
+	yybegin (B);
+}
+
+<B> . {
+	yybegin (ERROR);
+	System.out.println("Rejected");
+	System.exit(-1);
+}
+
+<B> [\n] {
+	yybegin (ERROR);
+	System.out.println("Rejected");
+	System.exit(-1);
+}
+
+<C> [369] {
+	yybegin (C);
+}
+
+<C> [258] {
+	yybegin (B);
+}
+
+<C> [0] {
+	yybegin (START);
+}
+
+<C> [147] {
+	yybegin (A);
+}
+
+<C> . {
+	yybegin (ERROR);
+	System.out.println("Rejected");
+	System.exit(-1);
+}
+
+<C> [\n] {
+	yybegin (ERROR);
+	System.out.println("Rejected");
+	System.exit(-1);
+}
+
+<ERROR> . {
+	yybegin (ERROR);
+	System.exit(-1);
+}
+
+<ERROR> [\n] {
+	yybegin (ERROR);
+	System.exit(-1);
+}

@@ -1,0 +1,58 @@
+<TITLE>War Games</TITLE>
+<TOPIC>War Games</TOPIC>
+<TOPIC>film</TOPIC>
+<TEXT>
+"WarGames" was a 1983 science fiction film written by Lawrence Lasker and Walter
+F. Parkes, and directed by John Badham. The film starred Matthew Broderick in
+his first major film role as David Lightman, Ally Sheedy as Jennifer Mack,
+Dabney Coleman as John McKittrick, and John Wood as Stephen Falken.
+
+The movie was a hit, costing US$12 million, but grossing over$79 million in the 
+US alone. The NORAD set was the most expensive single movie set ever built up 
+to that time, at the staggering cost of$1 million.
+
+Warning: Plot details follow.
+
+In the film, Broderick, a hacker, uses his 1970s vintage IMSAI microcomputer and
+modem (connected to the telephone by an acoustic coupler) to gain access to the 
+NORAD military artificial intelligence computer system called WOPR 9 that can 
+control the United States' arsenal of ICBMs.
+
+The teenager, unaware of the machine's real purpose, discovers what he believes 
+to be a simulation game called "Global Thermonuclear War" and begins to "play." 
+Unbeknownst to him, WOPR sets in motion preparations for a real attack against 
+the Soviet Union. With the aid of the machine's creator (Wood), disaster is 
+narrowly averted when the hacker manages to teach WOPR about the futility of war
+by getting it to play endless drawn games of tic-tac-toe against itself which 
+segue into cycles through all the nuclear war stategies that WOPR has devised. 
+WOPR then learns that "the only winning move is not to play."
+
+It was in part a cautionary tale about technology and the dangers of leaving 
+machines in control of unleashing destruction, in an echo of the Doomsday device
+of "Dr.Strangelove". It also generalized the idea of the Cold War period in the 
+1970s and 1980s that somewhere there was a "button" that when pressed would nuke 
+the whole world away (the button, marked "LAUNCH", had several prominent 
+close-ups), and its final sequence graphically demonstrated the concept of 
+mutual assured destruction (MAD). Also, it was one of the first movies to deal 
+with teenage hackers and their activities.
+
+At least one computer/video game was licensed from the "WarGames" movie, 
+published in 1983 by THORN EMI Video under the movie's name and the alternative 
+name "Computer War". It was released for the Atari 8-bit family and the Commodore
+VIC-20,and possibly for other platforms as well.
+
+The user account "Stephen Falken" was present by default for a long time in the 
+operating system NetBSD, in homage to "WarGames".
+
+See also:
+demon dialing, <LINK>security:pages/security/Demon_dialing</LINK>
+warchalking,<LINK>security:pages/security/War_chalking</LINK>
+war dialing,<LINK>security:pages/security/War_dialing</LINK>
+war driving <LINK>security:pages/security/War_driving</LINK>
+(the latter three actually derived from "War Games")
+
+Notes
+
+1. WOPR= War Operations Plan and Response; in the movie, this computer system is
+   running a program named "Joshua"
+</TEXT>

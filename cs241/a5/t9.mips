@@ -1,0 +1,25 @@
+.globl main
+main:
+	llo	$1, 0		# Load 0
+	lhi	$1, 0
+	sw	$1, -12($30)	# saving variable
+_E1:				# while
+	lw	$1, -12($30)	# load int variable
+	llo	$2, 10		# Load 10
+	lhi	$2, 10
+	slt	$1, $1, $2	# comparing
+	blez	$1, _L1
+	lw	$1, -12($30)	# load int variable
+	llo	$2, 1		# Load 1
+	lhi	$2, 1
+	add	$1, $1, $2	# adding
+	sw	$1, -12($30)	# saving variable
+	lw	$1, -12($30)	# load int variable
+	add	$4, $1, $0	# printing int
+	trap	1
+	j	_E1
+_L1:				# while end
+	addi	$1, $0, 10	# Load ASCII value
+	add	$4, $1, $0	# printing char
+	trap	101
+	trap	10		# Quit

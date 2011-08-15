@@ -1,0 +1,6 @@
+-== 271 ==- npow@cpu16 -== ~/compilers/docs/correct ==-
+--> ./fibrec.exe
+Please enter a number:  10
+
+The  10 th fibonacci number is  55
+

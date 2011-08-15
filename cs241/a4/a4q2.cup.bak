@@ -1,0 +1,129 @@
+import java.util.*;
+
+terminal			SEMI;
+terminal			OPENP;
+terminal			CLOSEP;
+terminal			OPENB;
+terminal			CLOSEB;
+terminal			COMMA;
+terminal			AMPERSAND;
+terminal			NOT;
+terminal			OR;
+
+terminal			RETURN;
+
+terminal			IF;
+terminal			ELSEIF;
+terminal			ELSE;
+terminal			WHILE;
+
+terminal			IN;
+terminal			OUT;
+terminal			INSIGN;
+terminal			OUTSIGN;
+terminal			ASSIGN;
+
+terminal			STRUCT;
+terminal			PERIOD;
+
+terminal String			TYPE;
+terminal String			MULOP;
+terminal String			ADDOP;
+terminal String			RELOP;
+terminal String			EQOP;
+
+terminal Integer		INT;
+terminal Character		CHAR;
+terminal Boolean		BOOL;
+terminal String			ID;
+
+non terminal			SL;
+non terminal			field_list, field_defn; // structures
+non terminal			var_decln, vars, struct_var_decln, struct_vars;
+non terminal			structure;
+non terminal 			components, element;
+non terminal			expr, expr1, expr2, expr3, expr4, expr5, expr6, expr7; // expressions
+non terminal			procedure, procedure_call; // procedures
+non terminal			body, body_part; // body of procedures
+non terminal			param_list, param, var_list, var;
+non terminal			input, output;
+non terminal			assign, while;
+non terminal			if, elseif, elseif_else, else; // conditionals
+non terminal			field_acc, field_accs;
+
+SL				::=	components;
+
+components			::=	components element
+				| 	element;
+
+element				::=	structure
+				|	var_decln SEMI
+				|	input SEMI
+				|	output SEMI
+				|  	expr SEMI
+				|	assign SEMI
+				|	while SEMI
+				|	if SEMI
+				|	procedure_call SEMI
+				|	procedure;
+
+struct_var_decln		::= 	TYPE ID struct_vars | ID ID struct_vars | TYPE ID | ID ID;
+struct_vars			::=	COMMA ID struct_vars | COMMA ID;
+
+var_decln			::=	TYPE ID vars | TYPE ID;
+vars				::=	COMMA ID vars | COMMA ID;
+
+structure			::=	STRUCT ID OPENB field_list CLOSEB
+				| 	STRUCT OPENB field_list CLOSEB ID SEMI;
+
+field_list			::=	field_list field_defn | field_defn;
+field_defn			::=	struct_var_decln SEMI | structure;
+
+expr				::=	expr OR expr1 | expr1;
+expr1				::=	expr1 AMPERSAND expr2 | expr2;
+expr2				::=	expr2 EQOP expr3 | expr3;
+expr3				::=	expr3 RELOP expr4 | expr4;
+expr4				::=	expr4 ADDOP expr5 | expr5;
+expr5				::=	expr5 MULOP expr6 | expr6;
+expr6				::=	NOT expr7 | expr6 PERIOD expr7 | expr7;
+expr7				::=	INT | CHAR | BOOL | ID | OPENP expr CLOSEP; 
+
+body				::= 	body body_part
+				|	body_part;
+
+body_part			::=	structure
+				|	var_decln SEMI
+				|	expr SEMI
+				|	input SEMI
+				|	output SEMI
+				|	assign SEMI
+				|	while SEMI
+				|	procedure
+				|	procedure_call SEMI
+				|	if SEMI
+				|	RETURN SEMI;
+
+param_list			::=	param_list COMMA param | param;
+
+param				::=	TYPE ID | TYPE AMPERSAND ID | ID ID | ID AMPERSAND ID;
+
+procedure			::=	ID OPENP param_list CLOSEP OPENB body CLOSEB
+				|	ID OPENP CLOSEP OPENB body CLOSEB;
+
+input				::=	IN INSIGN expr;
+
+output				::=	OUT OUTSIGN expr6;
+
+assign				::=	expr ASSIGN expr;
+
+while				::=	WHILE expr OPENB body CLOSEB;
+
+if				::=	IF expr OPENB body CLOSEB elseif_else;
+elseif				::=	elseif ELSEIF expr OPENB body CLOSEB | ELSEIF expr OPENB body CLOSEB;
+elseif_else			::=	elseif else | else;
+else				::=	ELSE OPENB body CLOSEB | ;
+
+procedure_call			::=	ID OPENP var_list CLOSEP
+				|	ID OPENP CLOSEP;
+
+var_list			::=	var_list COMMA expr6 | expr6;

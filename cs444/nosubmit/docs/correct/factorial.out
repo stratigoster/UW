@@ -1,0 +1,14 @@
+-== 267 ==- npow@cpu16 -== ~/compilers/docs/correct ==-
+--> ./factorial.exe
+Factorial program
+-2  is not legal to factorialize.
+-1  is not legal to factorialize.
+0  is legal to factorialize and the result is 1
+1  is legal to factorialize and the result is 1
+2  is legal to factorialize and the result is 2
+3  is legal to factorialize and the result is 6
+4  is legal to factorialize and the result is 24
+5  is legal to factorialize and the result is 120
+
+Factorial not possible for -2
+

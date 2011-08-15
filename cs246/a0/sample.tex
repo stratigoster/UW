@@ -1,0 +1,123 @@
+% Created by Adam Drenth, CS 246 Tutor, May 3 2006
+%
+% This file will give you a basic introduction to LaTeX since the easiest way to learn the
+% language is by example.  This file can also be used as a template for building LaTeX files for your 
+% assignments.
+% 
+% The basic structure of a LaTeX file is:
+%   \documentclass{..}[..]
+%   ..
+%   package declarations
+%   ..
+%   tile information (if you wish to use it) like \title, \date, or \author.  To print the
+%	title information you need to include \maketitle in the body of the document.
+%   \begin {document}
+%   ..
+%   Your LaTeX code
+%   ..
+%   \end{document}
+%
+% Note: Pay careful attention to how LaTeX handles whitespace.  Most of the time it just 
+%       ignores it.  Sometimes you may need to use a \\ to tell it to start a new line.
+%
+% Make sure that you at least read the first 10 pages of the Not So Short Introduction to LaTeX.  Its URL is: 
+%
+%    www.ctan.org/tex-archive/info/lshort/english/lshort.pdf
+%
+% It will give you a general feel for the language and a starting point for debugging any small errors
+% you may have while creating a LaTeX document.
+
+\documentclass{article}[12pt]		    % Sets the type of document you wish to create
+
+% Load packages into your LaTeX file
+\usepackage{epsfig}	% Importing .eps files
+\usepackage{verbatim}   % Importing C++ code using \verbatiminput{file}	
+
+% Setting the Title and Author
+\title{Example \LaTeX\ File}
+\author{Your Name}
+
+% Since no date is specified, it will use the current date in the title
+
+% Start body of document
+\begin{document}
+\maketitle		% Print your title
+
+First notice 
+how the white    space       is	    setup in the .tex file.  
+\LaTeX\ will actually remove most of it, and 
+make it appear 
+as 2 sentences, one after the other, instead of broken up text. \\  % This forces a newline
+
+Spaces serve only to seperate words and commands.  A double newline is interpreted as a new paragraph.
+
+\tiny{You} \scriptsize{can} \small{set} \normalsize{fonts} \large{to} \Large{different} \LARGE{sizes}\normalsize{.}
+
+% Start a section in your document.  The "*" makes it so the section title does not have a number
+\section*{Special and Punctuation Characters}
+
+% Note how quotation is done here.  It is 2 ` characters and 2 ' characters. Also notice that \ makes the special
+% character just a character
+There are several ``special'' characters: \\ \$, \&, \%, \#, \_, \{, \}  
+
+The punctuation characters are: . : ; , ? ! ` ' ( ) [ ] - / * @
+
+% This type of Section will have a number in front of it 
+\section{Encapsulated PostScript and C++ Code}
+Its \emph{important} to know how to display .eps {\textbf files}, .cc or .h files 
+easily for the assignments in this course.
+ 
+For example:
+
+% center centers the picture on the page
+\begin{center}
+    Here is a UML diagram from xfig saved as Encapsulated PostScript
+    
+    % This is now you import a file from xfig  
+    % Note: The file is in Encapsulated PostScript!
+    \epsfig{file=Clone.eps, scale=0.5}
+\end{center}
+
+Here is some C++ code loaded from a .cc file
+    % This is the easiest way to import C++ code into your assignments.  Since whitespace is normally
+    % ignored, this beats the hell out of trying to hard code it into your document. There is another
+    % way to do it with the verbatim package that allows you to maintain your indentation in your code,
+    % but this means you need to copy and paste your code in order to compile and test it.
+\verbatiminput{Customer.cc}
+
+\pagebreak % Creates a page break
+
+% Information on how to compile your LaTeX document into a pdf document
+% Notice this it is subsection instead of section.  This title will be labelled 1.1
+\subsection{Compiling \LaTeX}
+The commands are as follows:
+
+% This creates a list without bullets or numbers
+\begin{description}
+    \item {\tt vim sample.tex} \emph{ \% Create your \LaTeX\ file } 
+    \item {\tt latex sample.tex} \emph{ \% Compile your \LaTeX\ file into a
+    .dvi file } 
+    \item {\tt dvi2pdf sample.dvi sample.pdf} \emph{ \% Convert to .pdf file } 
+\end{description}
+
+\section{Tips}  % Section 2
+
+% Enumerate allows you to list things, but uses numbers instead of bullets
+\begin{enumerate}
+    \item Build your \LaTeX\ file gradually. My sure you compile at each step along the
+    way to help you find errors early and quickly.
+    \item Use the Internet!  There is a lot of information and sample code.  This is the best way to learn \LaTeX
+\end{enumerate}
+
+This is just the very basics of \LaTeX.  There is plenty of additional
+information at:
+
+% Itemize lists off items using bullets.  Notice that it has a \begin and \end.
+\begin{itemize}
+    \item www.ctan.org/tex-archive/info/lshort/english/lshort.pdf
+    \item http://ist.uwaterloo.ca/cs/latex
+    \item master.stat.tku.edu.tw/docu/latex/old/figsinltx.pdf
+    \item http://www.cs.nyu.edu/~yap/student/LatexBasics.html
+\end{itemize}
+
+\end{document}	% End of body of document

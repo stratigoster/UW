@@ -1,0 +1,50 @@
+V "GNAT Lib v3.11p "
+M P W=b
+P
+R nvnnnvnvvvvnnnnnnnnnvnn
+
+U hello%b		hello.adb		6C22081A SU IL
+W foo%s			foo.adb			foo.ali
+W text_io%s		text_io.ads		text_io.ali
+
+U hello%s		hello.ads		003784B9 NE SU IL
+
+D ada.ads		19980730010108 2359F9ED
+D a-except.ads		19980730010107 6A1703FC
+D a-finali.ads		19980730010107 3F32DEEF
+D a-filico.ads		19980730010107 1DECB9AC
+D a-ioexce.ads		19980730010015 175CB67B
+D a-stream.ads		19980730010017 5F7C277B
+D a-tags.ads		19980730010107 31E153B3
+D a-textio.ads		19980730010020 2D24B708
+D foo.ads		20070303042810 4C92D311
+D hello.ads		20070227231231 003784B9
+D hello.adb		20070306051602 58D339AE
+D system.ads		19980730010110 3C862020
+D s-exctab.ads		19980730010110 1A552981
+D s-ficobl.ads		19980730010027 2CBC0DFF
+D s-finimp.ads		19980730010107 1C201C0F
+D s-finroo.ads		19980730010107 166D4EDA
+D s-secsta.ads		19980730010109 6DF20AF1
+D s-stalib.ads		19980730010109 67F0D90E
+D s-stoele.ads		19980730010109 53D42DCF
+D s-stratt.ads		19980730010030 346D77CF
+D s-tasoli.ads		19980730010110 77201540
+D s-unstyp.ads		19980730010032 7918B0AB
+D text_io.ads		19980730010010 7854661C
+D unchconv.ads		19980730010105 72DC4539
+X 8 a-textio.ads
+245U14*Put 11|62r5
+X 9 foo.ads
+1U9*foo 11|2r6
+X 10 hello.ads
+1U11*hello 11|4b11
+X 11 hello.adb
+5I11 t
+6A8 me 7r21
+7i3 size
+23A8 btree 24r25 25c8
+24P8 pbtree 25r33
+X 23 text_io.ads
+21U9*Text_IO 11|1r6 1r19
+

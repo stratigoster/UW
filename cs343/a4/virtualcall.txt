@@ -1,0 +1,32 @@
+(a) The sample code was compiled using gcc 3.4.2, and the runtimes listed below:
+
+VIRT undefined, no optimizations:
+User: 0m2.410s
+
+VIRT undefined, O2 optimizations:
+User: 0m0.940s
+
+VIRT defined, no optimizations:
+User: 0m3.410s
+
+VIRT defined, O2 optimizations:
+User: 0m1.780s
+
+With no optimizations, using virtual functions are almost 1.4 times slower than
+using the same function defined without the virtual keyword. This is so because
+with virtual functions, the actual function that is executed must be determined
+at runtime via a lookup in the virtual table of function pointers in each object,
+while with non-virtual functions there is no lookup to be done, and hence it is
+faster.
+
+With optimizations enabled, the compiler was able to optimize both programs,
+with and without VIRT defined. However, using virtual functions is still almost
+1.8 times slower than using non-virtual functions. Since the time improvement in
+both cases are almost the same, the conclusion is that the speed increase is due
+to something other than optimizations on the function calls, probably some
+loop optimizations.
+
+(b) Virtual functions are only necessary when you want the derived class to be
+able to override a function defined in the base class, or you want to force
+the derived class to implement a function that is not implemented in the base
+class.

@@ -1,0 +1,49 @@
+<TITLE>Security cracking</TITLE>
+<TOPIC>Security cracking</TOPIC>
+<TOPIC>cracking</TOPIC>
+<TOPIC>cracker</TOPIC>
+<TOPIC>black-hat hacking</TOPIC>
+<TOPIC>hacking</TOPIC>
+<TOPIC>hacker</TOPIC>
+<TOPIC>security</TOPIC>
+<TOPIC>computer security</TOPIC>
+<TOPIC>computer</TOPIC>
+<TOPIC>computers</TOPIC>
+<TEXT>
+In the context of computer networking, cracking (also called black-hat hacking, 
+or hacking) is the act of compromising the security of a system without 
+permission from an authorized party, usually with the intent of accessing 
+computers connected to the network. (The somewhat similar activity of defeating 
+copy protection devices in software with the intent of using the software 
+illegally is addressed at software cracking.) The term 'cracker' seems to have 
+developed from 'hacker,' with a connotation of forcibility in addition to 
+cleverness.
+
+Cracking techniques can vary from using advanced programming skills and social 
+engineering<LINK>security:pages/security/Social_engineerint_computer_security</LINK>
+to utilizing software developed by others without understanding how the cracking 
+software works. The latter type of cracker is often referred to as a "script 
+kiddie".<LINK>pop_culture:pages/pop_culture/Leet</LINK> (Unskilled crackers are
+far more common than highly skilled ones.) Common software weaknesses exploited
+by crackers include buffer overflows and heap overflows.
+
+Famous crackers
+
+Kevin Mitnick 
+Robert Morris 
+
+Related topics
+
+Software cracking is similar to security cracking. 
+The article on hackers has more information about security cracking. 
+Phreaking <LINK>security:pages/security/Phreaking</LINK> is similar to security
+hacking, but performed on telephone systems. 
+Password cracking <LINK>security:pages/security/Password_cracking</LINK>
+Demon dialing <LINK>security:pages/security/Demon_dialing</LINK>
+Wardialing <LINK>security:pages/security/War_dialing</LINK>
+War driving <LINK>security:pages/security/War_driving</LINK>
+
+External links
+
+The Jargon File for a view of the history of hacker and hacking.
+</TEXT>

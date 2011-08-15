@@ -1,0 +1,6 @@
+***ERROR***:2:19:	ABS takes a numeric type
+***ERROR***:6:19:	MOD  works on numeric values of the same type
+
+------
+Compilation error
+------
